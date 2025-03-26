@@ -6,3 +6,4 @@ logs
 cypress/screenshots
 cypress/videos
 *.env.json
+cypress.env.json
