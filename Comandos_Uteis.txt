@@ -1,0 +1,8 @@
+// Executa os testes gravando na cloud cypress
+    npx cypress run --record --key 3a0e1958-92e5-436e-8fa1-9622e668db42 --spec '.\cypress\e2e\Opera_Front_Web\*.cy.js'
+
+// Abre modo interface cypress
+    npx cypress open
+
+// Executa os testes direcionando para um determinado spec, sem cloud
+    npx cypress run --spec '.\cypress\e2e\Opera_Front_Web\*.cy.js'
