@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-20.04
+  vmImage: windows-latest
 
 steps:
 - task: NodeTool@0
@@ -20,6 +20,6 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    npx cypress run
+    npx cypress run --browser electron
   displayName: 'npx cypress run'
   continueOnError: true
