@@ -47,7 +47,5 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
-
-
         });
     });
