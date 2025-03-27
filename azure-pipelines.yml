@@ -18,12 +18,16 @@ steps:
 - script: |
     sudo npm install --unsafe-perm=true --allow-root cypress
   displayName: 'npm install'
+
+- script: |
+    sudo npm ci
+  displayName: 'npm install'
   
 - script: |
     sudo npm install cypress --save-dev
   displayName: 'npm install'
   
 - script: |
-    npx cypress run
+    sudo npx cypress run
   displayName: npx cypress run
   continueOnError: true
