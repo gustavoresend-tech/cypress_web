@@ -19,7 +19,16 @@ steps:
     npm install
   displayName: 'npm install'
   
-- script: 
-    chmod +x ./node_modules/.bin/cypress
-    npx cypress run
-  displayName: 'cypress run'
+- task: Bash@3
+  displayName: 'Dar permissões de execução'
+  inputs:
+    workingDirectory: '${BUILD_SOURCESDIRECTORY}/cypress/e2e'
+    script: |
+      chmod +x ./node_modules/.bin/cypress
+
+- task: Bash@3
+  displayName: 'Cypress run'
+  inputs:
+    workingDirectory: '${BUILD_SOURCESDIRECTORY}/cypress/e2e'
+    script: |
+      npx cypress run
