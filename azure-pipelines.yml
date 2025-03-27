@@ -18,9 +18,8 @@ steps:
 - script: |
     npm install
   displayName: 'npm install'
-  
-- task: Bash@3
-  inputs:
-      targetType: 'inline'
-      script: 'npx cypress run  --spec ''.\cypress\e2e\Opera_Front_Web\*.cy.js'''
+
+- script: |
+    npx cypress run  --spec '.\cypress\e2e\Opera_Front_Web\*.cy.js'
+  displayName: 'npx cypress run spec Opera_Front_Web'
   continueOnError: true
