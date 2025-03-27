@@ -18,3 +18,8 @@ steps:
 - script: |
     npm install
   displayName: 'npm install'
+  
+- script: |
+    npx cypress run
+  displayName: 'npx cypress run'
+  continueOnError: true
