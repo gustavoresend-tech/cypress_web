@@ -6,3 +6,7 @@
 
 // Executa os testes direcionando para um determinado spec, sem cloud
     npx cypress run --spec '.\cypress\e2e\Opera_Front_Web\*.cy.js'
+
+// Geracao de chaves SSH para uso no Azure DevOps
+    ssh-keygen -t rsa-sha2-256
+    cat C:\Users\gustavo.valadao\.ssh\id_rsa.pub
