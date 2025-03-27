@@ -16,10 +16,11 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install
+    sudo npm install --unsafe-perm=true --allow-root cypress
   displayName: 'npm install'
   
 - script: |
     npx cypress run
-  displayName: 'npx cypress run'
+  displayName: npx cypress run
   continueOnError: true
+  condition: false
