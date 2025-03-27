@@ -21,5 +21,5 @@ steps:
 
 - script: |
     npx cypress run
-  displayName: 'npx cypress run spec Opera_Front_Web'
+  displayName: 'npx cypress run'
   continueOnError: true
