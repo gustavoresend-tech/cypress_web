@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-20.04
+  vmImage: ubuntu-16.04
 
 steps:
 - task: NodeTool@0
@@ -20,15 +20,7 @@ steps:
   displayName: 'npm install'
   
 - task: Bash@3
-  displayName: 'Dar permissões de execução'
-  inputs:
-    workingDirectory: '${BUILD_SOURCESDIRECTORY}/cypress/e2e'
-    script: |
-      chmod +x ./node_modules/.bin/cypress
-
-- task: Bash@3
   displayName: 'Cypress run'
   inputs:
-    workingDirectory: '${BUILD_SOURCESDIRECTORY}/cypress/e2e'
     script: |
       npx cypress run
