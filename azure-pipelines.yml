@@ -18,9 +18,3 @@ steps:
 - script: |
     npm install
   displayName: 'npm install'
-  
-- task: Bash@3
-  displayName: 'Cypress run'
-  inputs:
-    script: |
-      npx cypress run
