@@ -20,6 +20,6 @@ steps:
   displayName: 'npm install'
 
 - script: |
-    npx cypress run  --spec '.\cypress\e2e\Opera_Front_Web\*.cy.js'
+    npx cypress run
   displayName: 'npx cypress run spec Opera_Front_Web'
   continueOnError: true
