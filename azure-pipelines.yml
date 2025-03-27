@@ -20,6 +20,6 @@ steps:
   displayName: 'npm install'
   
 - script: 
-     chmod +x ./node_modules/.bin/cypress
-     npx cypress run
+    chmod +x ./node_modules/.bin/cypress
+    npx cypress run
   displayName: 'cypress run'
