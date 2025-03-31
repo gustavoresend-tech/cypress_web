@@ -28,8 +28,14 @@ describe('Validar Menu Operações', () => {
         cy.wait(1000);
         // clica na opção "Minhas Operações"
         cy.get(':nth-child(2) > .nav-link').click();
+
+        // aguarda todos elementos da página carregarem
+        cy.window().its('document').should('have.property', 'readyState', 'complete');
+        // verifica se a url da página carregada esta conforme esperado
+        cy.url().should('contain', 'https://opera.hml.pjus.com.br/board/operador');
         // aguarda 1 segundo
         cy.wait(1000);
+        // captura print da tela atual
         cy.screenshot('18-Minhas_Operacoes',{overwrite: true});
         // aguarda 1 segundo
         cy.wait(1000);
