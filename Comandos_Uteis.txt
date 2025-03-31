@@ -2,9 +2,9 @@
     npx cypress run --record --key 3a0e1958-92e5-436e-8fa1-9622e668db42 --spec '.\cypress\e2e\Opera_Front_Web\*.cy.js'
 
 // Abre modo interface cypress
-    npx cypress open
+    npx cypress open --browser electron
 
-// Executa os testes direcionando para um determinado spec, sem cloud
+// Executa os testes direcionando para um determinado spec
     npx cypress run --spec '.\cypress\e2e\Opera_Front_Web\*.cy.js'
 
 // Geracao de chaves SSH para uso no Azure DevOps

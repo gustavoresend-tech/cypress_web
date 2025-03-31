@@ -4,3 +4,4 @@ cypress/videos
 cypress.env.json
 node_modules
 *.txt 
+Comandos_Uteis.txt
