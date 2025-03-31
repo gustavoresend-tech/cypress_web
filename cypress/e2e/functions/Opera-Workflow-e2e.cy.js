@@ -26,6 +26,13 @@
         it('Validar Login SSO', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA').click();
+        cy.get('.card > .g-2')
+        .invoke('text').then((text) => {
+            cy.wrap(text).as('card');
+            cy.log('@card');
+            cy.contains('@card').click()
+        })
+
 
         // clica em "Emissão de CNDs automáticas"
         cy.contains('Emissão de CNDs automáticas').click();
@@ -47,5 +54,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+
+        cy.get('#link-voltar-para-todas-etapas').click();
+        cy.wait(3000);
+
+        cy.contains('@card').click();
+
         });
     });

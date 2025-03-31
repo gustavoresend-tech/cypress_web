@@ -19,17 +19,15 @@ describe('Validar Login SSO', () => {
             cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
             cy.wait(2000);
             cy.get('[type="submit"]').click();
+            cy.wait(2000);
             cy.get('[id="idSIButton9"]').click();
-            //cy.get('#idBtn_Back').click();
-            // Aguarda 3 segundos
-            // cy.wait(3000);
         });
 
     });
     it('Validar Login SSO', () => {
         // Verifica pagina inicial
-        //cy.screenshot('00-Apos_Login',{overwrite: true});
+        cy.screenshot('00-Apos_Login',{overwrite: true});
         //cy.url().should('contain', '/opera.hml.pjus.com.br/board');
-        //cy.wait(1000);
+        cy.wait(1000);
     });
 });
