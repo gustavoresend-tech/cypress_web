@@ -65,6 +65,5 @@ describe('Validar Atividades "Inicia / Aprova"', () => {
         cy.screenshot('01-Ativ_StatusFinal',{overwrite: true});
         // Aguarda 2 segundos
         cy.wait(2000);
-
     });
 });

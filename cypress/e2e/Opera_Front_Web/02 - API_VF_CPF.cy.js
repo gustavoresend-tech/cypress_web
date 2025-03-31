@@ -1,5 +1,5 @@
 describe('API Operacao - Valor Futuro', () => {
-    it('should send a POST request to the API', () => {
+    it('Validar API Operacao - Valor Futuro', () => {
       cy.request({
         method: 'POST',
         url: 'https://opera.api.hml.pjus.com.br/api/V1/Operacoes',

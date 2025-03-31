@@ -1,5 +1,5 @@
-describe('API Operacao - Valor Futuro', () => {
-    it('should send a POST request to the API', () => {
+describe('API Operacao - Valor Futuro CNPJ', () => {
+    it('Validar API Operacao - Valor Futuro CNPJ', () => {
       cy.request({
         method: 'POST',
         url: 'https://opera.api.hml.pjus.com.br/api/V1/Operacoes',
@@ -10,7 +10,7 @@ describe('API Operacao - Valor Futuro', () => {
         body: {
           "titular": {
             "nome": "Teste-QA - Cypress",
-            "documento": "205.349.371-28",
+            "documento": "35.490.557.0001-32",
             "dataNascimento": "1985-06-15T12:57:31.215Z",
             "nomePai": "QA Silva",
             "nomeMae": "QA Souza",
