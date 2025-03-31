@@ -3,7 +3,7 @@
     // ENTAO: devo visualizar as atividades iniciadas por mim na plataforma Opera
     // E: preciso ter a opção de finalizar as atividades iniciadas
 
-describe('Validar Login SSO', () => {
+describe('Validar Menu Operações', () => {
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -21,7 +21,7 @@ describe('Validar Login SSO', () => {
         });
 
     });
-    it('Validar Login SSO', () => {
+    it('Validar Menu Operações', () => {
         // entrar no menu de operações
         cy.get('.mx-2').click();       
         // aguarda 1 segundo
