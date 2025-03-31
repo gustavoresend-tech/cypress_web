@@ -21,7 +21,7 @@ steps:
 
 - script: |
     npm ci
-  displayName: 'npm install'
+  displayName: 'npm dependecy'
     
 - script: |
     npx cypress run
