@@ -1,13 +1,28 @@
+// DADO: que preciso inserir um novo card de precatório na esteira da aplicação Opera
+// E: esse precatório NAO tem valor fututo e tem input de CPF
+// QUANDO: envio a requisição com os dados de body preebchidos corretamente
+// ENTAO: o response.status deve retornar (200 OK); 
+// E: o card deve ser inserido no inicio da esteira conforme os dados incluidos no body
+
+
+// Descreve o bloco de testes para a API de Operação - Valor Futuro CNPJ
 describe('API Operacao - Valor Futuro CNPJ', () => {
+  // Descreve o teste individual para a API
   it('Validar API Operacao - Valor Futuro CNPJ', () => {
-cy.request({
-  method: 'POST',
-  url: 'https://opera.api.hml.pjus.com.br/api/V1/Operacoes',
-  headers: {
-    'accept': '*/*',
-    'Content-Type': 'application/json'
-  },
-  body: {
+    cy.request({
+      // Método da requisição
+      method: 'POST',
+      // URL da API
+      url: 'https://opera.api.hml.pjus.com.br/api/V1/Operacoes',
+      // Cabeçalhos da requisição
+      headers: {
+        // Tipo de conteúdo aceito
+        'accept': '*/*',
+        // Tipo de conteúdo enviado
+        'Content-Type': 'application/json'
+},
+  body: { // Corpo da requisição
+    // Informacoes do titular do crédito
     "titular": {
       "nome": "Teste-QA - Cypress",
       "documento": "925.910.640-08",
@@ -31,6 +46,7 @@ cy.request({
       "agencia": "12364",
       "contaDigito": "56789-0"
     },
+// Informacoes do credito precatorio
     "credito": {
       "processo": "98765432-1",
       "precatorio": "2023-0001123456",
@@ -59,6 +75,7 @@ cy.request({
       "operacaoDescricao": "TRF5 Comum",
       "classificacaoOperacao": 1
     },
+    // Informações da proposta do precatorio
     "proposta": {
       "valorProposta": 1300505,
       "possuiValorFuturo": false,
@@ -72,9 +89,10 @@ cy.request({
       "negociadorEmail": "Teste-QA@pjus.com.br"
     }
   }
-}).then((response) => {
-  expect(response.status).to.eq(200);        
-  // Adicione mais verificações conforme necessário
-});
-});
+      // testes assert
+    }).then((response) => {
+      expect(response.status).to.eq(200);        
+      // Adicione mais verificações conforme necessário
+    });
+  });
 })

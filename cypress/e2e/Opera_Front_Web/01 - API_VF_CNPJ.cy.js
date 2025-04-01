@@ -1,14 +1,30 @@
+// DADO: que preciso inserir um novo card de precatório na esteira da aplicação Opera
+// E: esse precatório precisa ter valor fututo com input de CNPJ
+// QUANDO: envio a requisição com os dados de body preebchidos corretamente
+// ENTAO: o response.status deve retornar (200 OK); 
+// E: o card deve ser inserido no inicio da esteira conforme os dados incluidos no body
+
+
+// Descreve o bloco de testes para a API de Operação - Valor Futuro CNPJ
 describe('API Operacao - Valor Futuro CNPJ', () => {
+  // Descreve o teste individual para a API
     it('Validar API Operacao - Valor Futuro CNPJ', () => {
+      // Realiza uma requisição POST para a API
       cy.request({
+        // Método da requisição
         method: 'POST',
+        // URL da API
         url: 'https://opera.api.hml.pjus.com.br/api/V1/Operacoes',
+        // Cabeçalhos da requisição
         headers: {
+          // Tipo de conteúdo aceito
           'accept': '*/*',
+          // Tipo de conteúdo enviado
           'Content-Type': 'application/json'
         },
-        body: {
-          "titular": {
+        body: {  // Corpo da requisição
+          // Informacoes do titular do crédito
+          "titular": { 
             "nome": "Teste-QA - Cypress",
             "documento": "35.490.557.0001-32",
             "dataNascimento": "1985-06-15T12:57:31.215Z",
@@ -31,6 +47,7 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
             "agencia": "12364",
             "contaDigito": "56789-0"
           },
+          // Informacoes do credito precatorio
           "credito": {
             "processo": "51655552-1",
             "precatorio": "2023-0001123456",
@@ -59,6 +76,7 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
             "operacaoDescricao": "TRF1 Comum",
             "classificacaoOperacao": 1
           },
+          // Informações da proposta do precatorio
           "proposta": {
             "valorProposta": 730264,
             "possuiValorFuturo": true,
@@ -86,6 +104,7 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
             "negociadorEmail": "Testes-QA@pjus.com.br"
           }
         }
+      // testes assert
       }).then((response) => {
         expect(response.status).to.eq(200);        
         // Adicione mais verificações conforme necessário
