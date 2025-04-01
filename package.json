@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "cypress.config.js",
   "scripts": {
-    "test": "npx cypress run --browser electron",
-    "open": "npx cypress open --browser electron"
+    "Cypress Run": "npx cypress run --spec './cypress/e2e/Opera_Front_Web/*.cy.js' --browser electron",
+    "Cypress Open": "npx cypress open --browser electron"
   },
   "keywords": [],
   "author": "Gustavo-QA",
