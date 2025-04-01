@@ -13,7 +13,7 @@ describe('Validar Login SSO', () => {
             // Volta para a origem, página pjus board
             cy.visit('https://opera.hml.pjus.com.br/board');
             // Configura exibição da tela de teste
-            cy.viewport(1280, 720);
+            cy.viewport(1280, 1024);
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.get('[type="submit"]').click();
