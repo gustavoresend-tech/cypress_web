@@ -1,9 +1,0 @@
-
-Modelo para BDD (Gherkin)
-
-    // DADO:
-    // QUANDO:
-    // ENTAO:
-    // E:
-
-
