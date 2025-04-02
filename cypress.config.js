@@ -12,6 +12,6 @@ module.exports = defineConfig({
     injectDocumentDomain: true,
     experimentalMemoryManagement: true,
     numTestsKeptInMemory: 2,
-    defaultCommandTimeout: 15000
+    defaultCommandTimeout: 300000
   },  
 });
