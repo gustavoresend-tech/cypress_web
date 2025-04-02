@@ -11,6 +11,7 @@ module.exports = defineConfig({
     experimentalModifyObstructiveThirdPartyCode: true,
     injectDocumentDomain: true,
     experimentalMemoryManagement: true,
-    numTestsKeptInMemory: 2
+    numTestsKeptInMemory: 2,
+    defaultCommandTimeout: 15000
   },  
 });

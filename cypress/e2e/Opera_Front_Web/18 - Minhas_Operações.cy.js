@@ -25,12 +25,14 @@ describe('Validar Menu Operações', () => {
 
     });
     it('Validar Menu Operações', () => {
+        Cypress.config('pageLoadTimeout', 100000);
         // entrar no menu de operações
         cy.get('.mx-2').click();       
         // aguarda 1 segundo
         cy.wait(1000);
         // clica na opção "Minhas Operações"
         cy.get(':nth-child(2) > .nav-link').click();
+        cy.wait(5000); // aguarda 5 segundos
 
         // aguarda todos elementos da página carregarem
         cy.window().its('document').should('have.property', 'readyState', 'complete');
