@@ -5,7 +5,7 @@
     // ENTAO: o calculo deve ser realizado
     // E: a folha de calculo exibida na tela
 
-    describe('Validar Login SSO', () => {
+    describe('Validar Cálculo Precatório', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -28,7 +28,7 @@
 
         // INICIO DOS TESTES
 
-        it('Valida Workflow e2e', () => {
+        it('Validar Cálculo Precatório', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA-WorkFlow').click();
         cy.screenshot('e2e-02-Card_Selecionado',{overwrite: true});
