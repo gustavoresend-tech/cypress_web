@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "cypress.config.js",
   "scripts": {
-    "Cypress Run": "npx cypress run --spec './cypress/e2e/Opera_Front_Web/*.cy.js' --browser electron",
+    "Cypress Run": "npx cypress run --spec './cypress/e2e/Opera_Front_Web/*.cy.js' --browser edge",
     "Cypress Open": "npx cypress open --browser electron"    
   },
   "keywords": [],

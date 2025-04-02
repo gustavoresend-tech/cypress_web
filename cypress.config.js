@@ -5,13 +5,13 @@ module.exports = defineConfig({
 
   e2e: {
     env: {hideXhr: true},
-    //fixturesFolder: false,
+    fixturesFolder: false,
     chromeWebSecurity: false,
-    defaultBrowser: 'electron',
+    //defaultBrowser: 'electron',
     experimentalModifyObstructiveThirdPartyCode: true,
     injectDocumentDomain: true,
     experimentalMemoryManagement: true,
-    numTestsKeptInMemory: 2,
-    defaultCommandTimeout: 300000
+    numTestsKeptInMemory: 10,
+    //defaultCommandTimeout: 300000
   },  
 });

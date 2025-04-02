@@ -6,7 +6,7 @@
     // E: deverá ser possível iniciar e aprovar cada atividade separadamente
 
 describe('Validar Atividades "Inicia / Aprova"', () => {
-
+    Cypress.config('pageLoadTimeout', 15000);
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -17,19 +17,19 @@ describe('Validar Atividades "Inicia / Aprova"', () => {
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.get('[type="submit"]').click();
-            cy.wait(2000); // aguarda 2 segundos
+            cy.wait(1000); // aguarda 1 segundos
             // Insere e-senha e submete
             cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
-            cy.wait(2000); // aguarda 2 segundos
+            cy.wait(1000); // aguarda 1 segundos
             cy.get('[type="submit"]').click();
-            cy.wait(2000); // aguarda 2 segundos
+            cy.wait(1000); // aguarda 1 segundos
             cy.get('[id="idSIButton9"]').click();
         });
     });
 
     it('Validar Atividades "Inicia / Aprova"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste').click();
         // Acessa a tab "Atividades"
         cy.get('#atividades-tab > .d-flex > .ms-2').click();
         cy.screenshot('01-Ativ_Tela-Inicial',{overwrite: true});

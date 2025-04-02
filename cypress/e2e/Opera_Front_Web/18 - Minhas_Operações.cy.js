@@ -4,6 +4,7 @@
     // E: preciso ter a opção de finalizar as atividades iniciadas
 
 describe('Validar Menu Operações', () => {
+    Cypress.config('pageLoadTimeout', 15000);
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -25,7 +26,6 @@ describe('Validar Menu Operações', () => {
 
     });
     it('Validar Menu Operações', () => {
-        Cypress.config('pageLoadTimeout', 100000);
         // entrar no menu de operações
         cy.get('.mx-2').click();       
         // aguarda 1 segundo
