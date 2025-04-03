@@ -5,3 +5,4 @@ cypress.env.json
 node_modules
 *.txt 
 Comandos_Uteis.txt
+cypress.env.json
