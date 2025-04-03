@@ -204,7 +204,7 @@
         // preenche o campo "Término formação"
         cy.get('#DataTerminoFormacao').type('2021-01-01', { force: true });        
 
-        //// preenche o campo "% honorários"
+        // preenche o campo "% honorários"
         cy.get('#step-informacoes-basicas-tab-pane > :nth-child(2) > :nth-child(5) > .form-control').clear().type('30', { force: true });        
 
         // preenche o campo "Data EC-62"
