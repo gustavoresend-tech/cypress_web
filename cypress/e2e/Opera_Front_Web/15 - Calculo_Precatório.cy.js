@@ -273,8 +273,7 @@
 
         // clica btn "Calcular"    
         cy.get('#step-PJUS-tab-pane > .float-end > .btn-primary').click();
-        cy.screenshot('e2e-02-Calculo', {overwrite: true});
-        cy.wait(3000); // aguarda 3 segundos
+        cy.wait(1000); // aguarda 1 segundos
 
         // clicar btn "Finalizar"
         cy.get('#btn-abrir-modal-finalizar-calculo').click();
@@ -284,7 +283,11 @@
 
         // clicar btn "Finalizar"
         cy.get('#btn-aprovar-atividade').click();
-        cy.wait(3000); // aguarda 3 segundos
+        cy.wait(1000); // aguarda 1 segundos
+        cy.get('#calculo-operacao-tab').click();
+        cy.wait(1000); // aguarda 1 segundos
+        cy.screenshot('e2e-02-Calculo', {overwrite: true});
+
 
         });
     });

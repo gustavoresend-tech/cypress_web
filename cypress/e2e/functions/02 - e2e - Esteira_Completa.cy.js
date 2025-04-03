@@ -1,12 +1,11 @@
     // DADO: que preciso simular o workflow completo de um precatório na plataforma Opera
-    // QUANDO: 
-    // E: 
-    // E: 
-    // E: 
-    // ENTAO: 
-    // E: 
+    // E: realizar o calculo de precatorio
+    // QUANDO: inicio a atividade "Calculo precatório"
+    // E: preencho os campos solicitados
+    // ENTAO: o calculo deve ser realizado
+    // E: a folha de calculo exibida na tela
 
-    describe('Validar Login SSO', () => {
+    describe('Validar Cálculo Precatório', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -29,7 +28,7 @@
 
         // INICIO DOS TESTES
 
-        it('Valida Workflow e2e', () => {
+        it('Validar Cálculo Precatório', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA-WorkFlow').click();
         cy.screenshot('e2e-02-Card_Selecionado',{overwrite: true});
@@ -274,8 +273,7 @@
 
         // clica btn "Calcular"    
         cy.get('#step-PJUS-tab-pane > .float-end > .btn-primary').click();
-        cy.screenshot('e2e-02-Calculo', {overwrite: true});
-        cy.wait(3000); // aguarda 3 segundos
+        cy.wait(1000); // aguarda 1 segundos
 
         // clicar btn "Finalizar"
         cy.get('#btn-abrir-modal-finalizar-calculo').click();
@@ -285,7 +283,62 @@
 
         // clicar btn "Finalizar"
         cy.get('#btn-aprovar-atividade').click();
-        cy.wait(3000); // aguarda 3 segundos
+        cy.wait(1000); // aguarda 1 segundos
+        cy.get('#calculo-operacao-tab').click();
+        cy.wait(1000); // aguarda 1 segundos
+        cy.screenshot('e2e-02-Calculo', {overwrite: true});
+
+        // VOLTA PARA O PROCESSO DE ATIVIDADES
+
+        // clicar em "Atividades"
+        cy.get('#atividades-tab').click();
+        cy.wait(2000); // aguarda 2 segundos
+        // clicar em "Parecer do cedente"
+        cy.contains('Pendente').eq(0).click({ force: true });
+        //cy.contains('Parecer do cedente').click({ force: true });
+        // clica no btn "Iniciar"
+        cy.get('#btn-iniciar-atividade').click();
+        cy.wait(2000); // aguarda 2 segundos        
+        // clica no btn "Aprovar"
+        cy.get('#atividades > .btn').click({ force: true });
+        //cy.screenshot('e2e-02-Parecer do cedente',{overwrite: true});
+        //bhscy.wait(2000); // aguarda 2 segundos
+
+        // // clicar em "Conferência não técnica das informações"
+        // cy.contains('Conferência não técnica das informações').click();
+        // // clica no btn "Iniciar"
+        // cy.get('#btn-iniciar-atividade').click();
+        // // clica no btn "Finalizar"
+        // cy.get('#btn-finalizar-atividade').click();
+        // cy.screenshot('e2e-02-Conferência não técnica',{overwrite: true});
+        // cy.wait(2000); // aguarda 2 segundos
+
+        // // clicar em "Elaboração do parecer jurídico"
+        // cy.contains('Elaboração do parecer jurídico').click();
+        // // clica no btn "Iniciar"
+        // cy.get('#btn-iniciar-atividade').click();
+        // // clica no btn "Finalizar"
+        // cy.get('#btn-finalizar-atividade').click();
+        // cy.screenshot('e2e-02-Elaboração do parecer jurídico',{overwrite: true});
+        // cy.wait(2000); // aguarda 2 segundos
+
+        // // clicar em "Comitê de Aprovação"
+        // cy.contains('Comitê de Aprovação').click();
+        // // clica no btn "Iniciar"
+        // cy.get('#btn-iniciar-atividade').click();
+        // // clica no btn "Finalizar"
+        // cy.get('#btn-finalizar-atividade').click();
+        // cy.screenshot('e2e-02-Comitê de Aprovação',{overwrite: true});
+        // cy.wait(2000); // aguarda 2 segundos
+
+
+
+
+
+
+
+
+
 
         });
     });
