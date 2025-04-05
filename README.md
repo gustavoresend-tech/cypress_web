@@ -8,7 +8,7 @@ Projeto de Testes Automatizados com Cypress
 Resumo
 ======
 
-Este projeto utiliza o framework Cypress para realizar testes automatizados de interface do usuário (UI) em uma aplicação web.
+Este projeto utiliza o framework Cypress, para realizar testes automatizados de interface do usuário (UI) na aplicação Opera.
 Todas as aplicações testadas e automatizadas estão sob patente da empresa PJUS.
 
 =======================
@@ -19,6 +19,7 @@ Cypress package version: (14.1.0);
 Cypress binary version: (14.1.0);
 Electron version: (33.2.1);
 Chromium: (132.0.6834.196);
+Microsoft Edge: (134.0.3124.93);
 Bundled Node version: (20.18.1);
 JavaScript (ECMAScript 6+);
 Node.js (18.20.8);
@@ -30,7 +31,7 @@ Estrutura do Projeto:
 ====================
 
 cypress: pasta raiz do projeto Cypress;
-integration: pasta com os testes de integração
+e2e: pasta com os testes funcionais
 support: pasta com os arquivos de suporte para os testes
 fixtures: pasta com os dados de teste
 plugins: pasta com os plugins do Cypress
@@ -64,18 +65,21 @@ Se você deseja contribuir com o projeto, por favor, siga as seguintes etapas:
 5 - Caso encontre erros nas linhas de comentário corrija;
 4 - Envie um pull request para o repositório original;
 5 - Resolva os conflitos de Merge.
+6 - Solicite ajuda se necessitar.
+7 - Compartilhe suas necessidades, informações e sugestões
 
 =======
 Licença:
 =======
 
 Este projeto é licenciado sob a licença MIT;
-Este projeto é de uso exclusivo da Empresa PJUS nas suas plataformas de desenvolvimento;
-Autor/Criador: @gustavo.rates Email: gustavo.rates@service.pjus.com.br.
+Este projeto é de uso exclusivo da Empresa PJUS, nas suas plataformas de desenvolvimento;
+Autor: @gustavo.rates Email: gustavo.rates@service.pjus.com.br.
+Contribuições: <nome> <Email>
 
 =======
 Contato:
 =======
 
-Se você tiver alguma dúvida ou precisar de ajuda, por favor, entre em contato com o mantenedor do projeto.
-** @gustavo.rates Email: gustavo.rates@service.pjus.com.br
+Se você tiver alguma dúvida ou precisar de ajuda, por favor, entre em contato com a equipe de QA PJUS.
+Também posso te ajudar: @gustavo.rates Email: gustavo.rates@service.pjus.com.br

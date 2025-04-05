@@ -11,7 +11,15 @@ module.exports = defineConfig({
     experimentalModifyObstructiveThirdPartyCode: true,
     injectDocumentDomain: true,
     experimentalMemoryManagement: true,
-    numTestsKeptInMemory: 10,
-    //defaultCommandTimeout: 300000
+    numTestsKeptInMemory: 50,
+    defaultCommandTimeout: 60000,
+    pageLoadTimeout: 600000,
+    requestTimeout: 60000,
+    responseTimeout: 60000,
+    execTimeout: 60000,
+    taskTimeout: 60000,
+    video: true,
+    videoCompression: true,
+    videosFolder: 'cypress/videos'
   },  
 });

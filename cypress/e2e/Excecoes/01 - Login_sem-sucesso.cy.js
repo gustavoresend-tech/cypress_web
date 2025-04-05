@@ -17,20 +17,21 @@ describe('Validar Login SSO', () => {
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.wait(1000); // aguarda 1 segundo
-            cy.screenshot('00-Usuario_email',{overwrite: true});
+            cy.screenshot('01-Exc_Usuario_email',{overwrite: true});
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
             // Insere e-senha e submete
-            cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
-            cy.wait(2000); // aguarda 2 segundos
+            cy.get('[name="passwd"]').type(`${Cypress.env('passwordN')}`, { force: true });
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
-            cy.get('[id="idSIButton9"]').click();
+            cy.screenshot('01-Exc_Login_sem-sucesso',{overwrite: true});
+            cy.wait(2000); // aguarda 2 segundos
+            //cy.get('[id="idSIButton9"]').click();
         });
 
     });
     it('Validar Login SSO', () => {
-        // Verifica pagina inicial
-        cy.screenshot('00-Apos_Login',{overwrite: true});
+        // Verifica se retornou a mensagem de login não permitido
+        cy.get('#passwordError').contains('Sua conta ou senha está incorreta');
     });
 });
