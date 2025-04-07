@@ -31,7 +31,7 @@ describe('Validar Edição de Dados - PROPOSTA', () => {
 
     it('Validar Edição de Dados - PROPOSTA', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste-QA-Titular_OK').click();
         // Acessa aba dados/proposta
         cy.get('#dados-operacao-tab').click();
         cy.get('#btn-tab-dados-proposta').click();
@@ -45,6 +45,14 @@ describe('Validar Edição de Dados - PROPOSTA', () => {
         cy.get('.mt-3 > :nth-child(2) > :nth-child(3) > .form-control').click().clear().type('Testado', { force: true });
         cy.screenshot('03-Edicao_Proposta',{overwrite: true});
         cy.get('#btn-salvar-dados-editados').click();
+
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Proposta_OK{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
     });
 
 });

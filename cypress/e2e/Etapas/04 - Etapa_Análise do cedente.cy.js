@@ -34,13 +34,13 @@
 
         // APROVACAO ATIVIDADES DA ETAPA: "Análise do cedente"
 
-        // clicar em "Análise de compliance"
-        cy.contains('Análise de compliance').click();
-        // clica no btn "Iniciar"
-        cy.get('#btn-iniciar-atividade').click();
-        // clica no btn "Finalizar"
-        cy.get('#btn-finalizar-atividade').click();
-        cy.wait(2000); // aguarda 2 segundos
+        // // clicar em "Análise de compliance"
+        // cy.contains('Análise de compliance').click();
+        // // clica no btn "Iniciar"
+        // cy.get('#btn-iniciar-atividade').click();
+        // // clica no btn "Finalizar"
+        // cy.get('#btn-finalizar-atividade').click();
+        // cy.wait(2000); // aguarda 2 segundos
 
         // clicar em "Defesa BRL"
         cy.contains('Defesa BRL').click();

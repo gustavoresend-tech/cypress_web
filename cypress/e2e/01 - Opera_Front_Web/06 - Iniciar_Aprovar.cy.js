@@ -29,7 +29,7 @@ describe('Validar Atividades "Inicia / Aprova"', () => {
 
     it('Validar Atividades "Inicia / Aprova"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste').click();
+        cy.contains('Teste-QA-Atividade_Criada').click();
         // Acessa a tab "Atividades"
         cy.get('#atividades-tab > .d-flex > .ms-2').click();
         cy.screenshot('01-Ativ_Tela-Inicial',{overwrite: true});
@@ -62,9 +62,26 @@ describe('Validar Atividades "Inicia / Aprova"', () => {
         cy.screenshot('01-Ativ_Iniciar-03',{overwrite: true});
         cy.get('#btn-iniciar-atividade').click();
         cy.screenshot('01-Ativ_Aprovar-03',{overwrite: true});
-        cy.get('#atividades > .btn').click();
+        cy.get('#btn-finalizar-atividade').click();
         // Aguarda 2 segundos
         cy.wait(2000);
+
+        // Acessa, inicializa e Aprova => "Atividade Teste QA"
+        cy.contains('Atividade Teste QA').click();
+        cy.screenshot('01-Ativ_Iniciar-03',{overwrite: true});
+        cy.get('#btn-iniciar-atividade').click();
+        cy.screenshot('01-Ativ_Aprovar-03',{overwrite: true});
+        cy.get('#btn-finalizar-atividade').click();
+        // Aguarda 2 segundos
+        cy.wait(2000);
+
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Conferência inicial{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
 
         // captura estado final das atividades no card
         cy.screenshot('01-Ativ_StatusFinal',{overwrite: true});

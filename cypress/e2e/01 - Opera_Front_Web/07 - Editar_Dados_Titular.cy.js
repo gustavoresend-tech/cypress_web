@@ -29,7 +29,7 @@ describe('Validar Edição de Dados - TITULAR', () => {
 
     it('Validar Edição de Dados - TITULAR', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste-QA-Conferência inicial').click();
         cy.screenshot('03-Tela-Inicial',{overwrite: true});
 
         // Clicar Dados/Titular
@@ -115,5 +115,13 @@ describe('Validar Edição de Dados - TITULAR', () => {
         // cy.screenshot('02-PularEtapa-Modal',{overwrite: true});
         // cy.get('#btn-avancar-etapa').click();
         // cy.reload();
+
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Titular_OK{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
     });
 });

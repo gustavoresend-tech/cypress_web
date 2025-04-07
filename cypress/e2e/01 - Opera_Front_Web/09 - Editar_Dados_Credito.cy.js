@@ -31,7 +31,7 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
 
     it('Validar Edição de Dados - CRÉDITO', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste-QA-Proposta_OK').click();
         // Acessa aba dados/proposta
         cy.get('#dados-operacao-tab').click();
         cy.get('#btn-tab-dados-proposta').click();
@@ -58,5 +58,13 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
         cy.screenshot('03-Edicao_Crédito',{overwrite: true});
         cy.get('#btn-salvar-dados-editados').click();
         //cy.get('#link-voltar-para-todas-etapas').click();
+
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Credito_OK{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
     });
 });

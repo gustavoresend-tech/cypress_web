@@ -4,6 +4,7 @@ module.exports = defineConfig({
   projectId: '6m8q3t',
 
   e2e: {
+    experimentalRunAllSpecs: true,
     env: {hideXhr: true},
     fixturesFolder: false,
     chromeWebSecurity: false,
@@ -18,8 +19,8 @@ module.exports = defineConfig({
     responseTimeout: 60000,
     execTimeout: 60000,
     taskTimeout: 60000,
-    video: true,
-    videoCompression: true,
-    videosFolder: 'cypress/videos'
+    //video: true,
+    // videoCompression: true,
+    //videosFolder: 'cypress/videos'
   },  
 });

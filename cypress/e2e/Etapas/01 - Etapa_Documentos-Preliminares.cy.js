@@ -39,7 +39,7 @@
         // clica no btn "Iniciar"
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Aprovar"
-        cy.get('#atividades > .btn').click();
+        cy.get('#btn-finalizar-atividade').click();
         cy.wait(2000); // Aguarda 2 segundos
 
         // clicar em "Emissão de CNDs manuais"

@@ -28,7 +28,7 @@
 
     it('Validar "Criar Atividades', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste-QA - Cypress').click();
         cy.wait(2000); // Aguarda 2 segundos
         // Clicar criar atividades
         cy.get('#atividades-tab').click();
@@ -36,12 +36,20 @@
         cy.get('#btn-link-para-criar-atividade').click();
         cy.wait(2000); // Aguarda 2 segundos
         cy.screenshot('07-Criar_Atividades',{overwrite: true});
-        cy.contains('teste').click();
+        cy.contains('Atividade Teste QA').click();
         cy.screenshot('07-Atividade_QA',{overwrite: true});
         cy.wait(2000); // Aguarda 2 segundos   
         cy.get('#btn-salvar-cadastro-novas-atividades').click();
         cy.screenshot('07-Atividade_inserida',{overwrite: true});
         cy.wait(2000); // Aguarda 2 segundos
+
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Atividade_Criada{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
 
     });
 });

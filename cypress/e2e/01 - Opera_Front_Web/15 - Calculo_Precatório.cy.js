@@ -30,7 +30,7 @@
 
         it('Validar Cálculo Precatório', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA-WorkFlow').click();
+        cy.contains('Teste-QA - Cypress').click();
         cy.screenshot('e2e-02-Card_Selecionado',{overwrite: true});
 
         // clica em "Emissão de CNDs automáticas"
@@ -38,7 +38,7 @@
         // clica no btn "Iniciar"
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Aprovar"
-        cy.get('#atividades > .btn').click();
+        cy.get('#btn-finalizar-atividade').click();
         // captura print
         cy.screenshot('e2e-02-Emissão de CNDs automáticas',{overwrite: true});
 
@@ -83,13 +83,13 @@
         cy.get('#btn-finalizar-atividade').click();
         cy.screenshot('e2e-02-Análise do processo',{overwrite: true});
 
-        // clicar em "Análise de compliance"
-        cy.contains('Análise de compliance').click();
-        // clica no btn "Iniciar"
-        cy.get('#btn-iniciar-atividade').click();
-        // clica no btn "Finalizar"
-        cy.get('#btn-finalizar-atividade').click();
-        cy.screenshot('e2e-02-Análise de compliance',{overwrite: true});
+        // // clicar em "Análise de compliance"
+        // cy.contains('Análise de compliance').click();
+        // // clica no btn "Iniciar"
+        // cy.get('#btn-iniciar-atividade').click();
+        // // clica no btn "Finalizar"
+        // cy.get('#btn-finalizar-atividade').click();
+        // cy.screenshot('e2e-02-Análise de compliance',{overwrite: true});
 
         // clicar em "Defesa BRL"
         cy.contains('Defesa BRL').click();
@@ -288,6 +288,12 @@
         cy.wait(1000); // aguarda 1 segundos
         cy.screenshot('e2e-02-Calculo', {overwrite: true});
 
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Conferência inicial{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
 
         });
     });

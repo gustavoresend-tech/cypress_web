@@ -31,7 +31,7 @@ describe('Validar ação "Pular Etapas"', () => {
 
     it('Validar ação "Pular Etapas"', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste-QA - Cypress').click();
         cy.screenshot('02-Tela-Inicial',{overwrite: true});
 
         // Clicar "Pular Etapas" | Aqui o cliente / lead saira da primeira etapa para última "Pagamento"

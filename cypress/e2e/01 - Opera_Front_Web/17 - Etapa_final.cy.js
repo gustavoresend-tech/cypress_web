@@ -32,8 +32,7 @@ describe('Validar "ir para etapa final"', () => {
     Cypress._.times(1, () => {
     it('Validar "ir para etapa final"', () => {
         // Acessa o primeiro card dispoível no worlflow
-        //cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(1) > .px-2 > .flex-column > :nth-child(1) > .text-decoration-none').click();
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste-QA - Cypress').click();
 
         // Clicar "Pular Etapas"
         // Aqui o cliente / lead saira da primeira etapa para última "Pagamento"
