@@ -62,7 +62,7 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
         // Altera nome do card
         cy.get('#dados-operacao-tab').click();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Credito_OK{enter}');
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Conferência inicial{enter}');
         cy.wait(2000); // Aguarda 2 segundos
         cy.get('#atividades-tab').click();
 

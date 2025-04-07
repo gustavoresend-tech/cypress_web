@@ -182,6 +182,13 @@
 
         // INICIA PROCESSO DE MONTAGEM DO CÁLCULO
 
+        // Altera o nome do card para contemplar o nome da etapa atual
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Análise de cálculo{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
         // clicar em "Calcular valor do precatório"
         cy.contains('Calcular valor do precatório').click();
         // clica no btn "Iniciar"
@@ -291,7 +298,7 @@
         // Altera nome do card
         cy.get('#dados-operacao-tab').click();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Conferência inicial{enter}');
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Parecer do cedente{enter}');
         cy.wait(2000); // Aguarda 2 segundos
         cy.get('#atividades-tab').click();
 
