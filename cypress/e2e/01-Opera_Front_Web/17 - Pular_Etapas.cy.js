@@ -96,6 +96,14 @@ describe('Validar "ir para etapa final"', () => {
         // Vai para etapa: Pagamento
         cy.get('#btn-abrir-modal-pular-etapa').click();
         cy.get('#btn-avancar-etapa').click();
+
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Pagamento{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
     });
     });
 });
