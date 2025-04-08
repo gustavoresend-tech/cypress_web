@@ -4,6 +4,11 @@
 Projeto de Testes Automatizados com Cypress
 ###########################################
 
+Veja no link abaixo as melhores práticas para os projetos Cypress:
+
+https://docs.cypress.io/app/core-concepts/best-practices?utm_source=Binary%3A+App&utm_medium=Docs+Menu&utm_content=Best+Practices
+
+
 ======
 Resumo
 ======
@@ -41,7 +46,7 @@ node_modules: pasta com as dependências do projeto
 Instalação e Configuração:
 =========================
 
-1- Clone o repositório do projeto: git clone <url-do-repositório>
+1 - Clone o repositório do projeto: git clone <url-do-repositório>
 2 - Instale as dependências do projeto: npm install ou yarn install
 3 - Configure o ambiente de teste: cypress open ou npx cypress open
 
@@ -49,7 +54,7 @@ Instalação e Configuração:
 Execução dos Testes:
 ===================
 
-1- Execute os testes: cypress run ou npx cypress run
+1 - Execute os testes: cypress run ou npx cypress run
 2 - Verifique os resultados dos testes no console ou no relatório gerado pelo Cypress
 
 ============
