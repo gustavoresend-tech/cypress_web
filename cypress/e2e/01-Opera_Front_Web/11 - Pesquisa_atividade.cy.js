@@ -1,10 +1,10 @@
-    // DADO: que estou na pagina de detalhamento de um precatório/lead aba "Atividades"
-    // E: quero pesquisar por uma atividade
-    // QUANDO: clico no btn "Criar atividade"
-    // E: seleciono o campo de pesquisa
-    // E: preencho o conteudo a ser pesquisado
-    // E: clico na lupa para pesquisar o conteudo
-    // ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
+// DADO: que estou na pagina de detalhamento de um precatório/lead aba "Atividades"
+// E: quero pesquisar por uma atividade
+// QUANDO: clico no btn "Criar atividade"
+// E: seleciono o campo de pesquisa
+// E: preencho o conteúdo a ser pesquisado
+// E: clico na lupa para pesquisar o conteúdo
+// ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
 
     describe('Validar "Pesquisar Atividades"', () => {
         beforeEach(() => {

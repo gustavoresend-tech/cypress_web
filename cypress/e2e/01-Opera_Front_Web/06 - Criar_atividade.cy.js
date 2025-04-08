@@ -1,9 +1,8 @@
-    
-    // DADO: que estou na pagina de detalhamento de um card/precatório aba "Atividades"
-    // QUANDO: clico no btn "Criar atividade"
-    // E: seleciono uma atividade disponível
-    // E: clico no btn "Confirmar"
-    // ENTAO: as atividades selecionadas devem ser inseridas no grid de atividades do card/precatório
+// DADO: que estou na pagina de detalhamento de um card/precatório aba "Atividades"
+// QUANDO: clico no btn "Criar atividade"
+// E: seleciono uma atividade disponível
+// E: clico no btn "Confirmar"
+// ENTAO: as atividades selecionadas devem ser inseridas no grid de atividades do card/precatório
 
     describe('Validar "Criar Atividades"', () => {
     beforeEach(() => {

@@ -1,10 +1,10 @@
-    // DADO: que preciso acessar a plataforma Opera web
-    // QUANDO: acesso o link: https://opera.hml.pjus.com.br/board 
-    // E: a pagina for direcionada para o login Microsoft
-    // E: o email correto for inserido
-    // E: a senha correta for inserida
-    // ENTAO: o acesso deve ser realizado com sucesso
-    // E: a página inicial exibida conforme default
+// DADO: que preciso acessar a plataforma Opera web
+// QUANDO: acesso o link: https://opera.hml.pjus.com.br/board 
+// E: a pagina for direcionada para o login Microsoft
+// E: o email correto for inserido
+// E: a senha correta for inserida
+// ENTAO: o acesso deve ser realizado com sucesso
+// E: a página inicial exibida conforme default
 
 describe('Validar Login SSO', () => {
     beforeEach(() => {

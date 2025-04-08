@@ -1,7 +1,7 @@
-    // DADO: que estou logado e preciso verificar as atividades da minha responsabilidade na plataforma Opera
-    // QUANDO: clico na opção "Minhas Operações"
-    // ENTAO: devo visualizar as atividades iniciadas por mim na plataforma Opera
-    // E: preciso ter a opção de finalizar as atividades iniciadas
+// DADO: que estou logado e preciso verificar as atividades iniciadas por mim na plataforma Opera
+// QUANDO: clico na opção "Minhas Operações"
+// ENTAO: devo visualizar as minhas atividades na plataforma Opera
+// E: preciso ter a opção de finalizar as atividades iniciadas
 
 describe('Validar Menu Operações', () => {
     Cypress.config('pageLoadTimeout', 15000);

@@ -1,9 +1,10 @@
-    // DADO: que estou logado na plataforma Opera web PJUS
-    // E: quero reprovar uma operação completa no workflow
-    // QUANDO:entro no detalhamento da operação
-    // E: clico no btn "Reprovar operacao"
-    // E: confirmo a operacao no modal exibido
-    // ENTAO: ???
+// DADO: que estou logado na plataforma Opera web PJUS
+// E: quero reprovar uma operação completa no workflow da esteira
+// QUANDO: entro no detalhamento da operação
+// E: clico no btn "Reprovar operação"
+// E: confirmo a operação no modal exibido
+// ENTAO: o card deve ser reprovado
+// E: o card não poderá mais ser processado na esteira
 
     describe('Validar "Reprovar Operação"', () => {
         beforeEach(() => {

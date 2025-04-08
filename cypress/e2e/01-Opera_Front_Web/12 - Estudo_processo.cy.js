@@ -1,9 +1,19 @@
-        
-    // DADO: que estou na pagina de detalhamento de um precatório/lead
-    // QUANDO: clico na aba "Estudo do processo"
-    // E: Clico no Btn "Escrever memória"
-    // E: insiro dados/informações
-    // ENTAO: quando clico em postar o conteúdo inserido deverá ser salvo e guardado em memória
+// DADO: que estou logado e na pagina de detalhamento de um precatório/lead
+// QUANDO: clico na aba "Estudo do processo"
+// ENTAO: as opções descritas abaixo devem estar disponíveis
+// e: para cada opções deve ser possível inserir e salvar informações, de texto e mídia
+
+// PROVIDÊNCIA: CEDENTE;
+// PROVIDÊNCIA: PATRONOS DA CAUSA;
+// PROVIDÊNCIA: CÁLCULO;
+// PROVIDÊNCIA: FORMALIZAÇÃO;
+// PROVIDÊNCIA: COPIAS;
+// PROVIDÊNCIA: OUTRAS;
+// SINTESE PROCESSUAL;
+// ULTIMAS MOVIMENTAÇÕES;
+// ANALISE DOCUMENTAL;
+// ANALISE DE CEDETES (CND);
+// DADOS DO CALCULO
 
         describe('Validar "Estudo do processo"', () => {
     beforeEach(() => {
@@ -33,13 +43,54 @@
  
         // Clicar Estudo do processo e postar
         cy.get('#estudo-processo-tab').click();
-        cy.wait(3000); // Aguarda 5000 milissegundos (5 segundos)
-        cy.screenshot('04-Memoria_Vazia',{overwrite: true});
-        cy.get('#btn-abrir-editor-estudo-processo').click();
-        cy.screenshot('04-Editor',{overwrite: true});
-        cy.get('#btn-postar-estudo-processo').click();
-        cy.wait(3000); // Aguarda 5000 milissegundos (5 segundos)
-        cy.screenshot('04-Memoria_apos_postagem',{overwrite: true});
-        cy.get('#link-voltar-para-todas-etapas').click();
+        cy.wait(1000); // Aguarda 1 segundo
+
+        // verificar se os itens do menu suspenso estão disponíveis
+        cy.contains('PROVIDÊNCIA: CEDENTE').click();
+        //cy.get('#comentario-ProvidenciaCedente_ifr').type('TESTANDO{enter}',{force: true});
+        cy.get('#accordion-estudo-processso-ProvidenciaCedente > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-ProvidenciaCedente').contains('Alterações salvas com sucesso.');
+
+        cy.contains('PROVIDÊNCIA: PATRONOS DA CAUSA').click();
+        cy.get('#accordion-estudo-processso-ProvidenciaPatronosDaCausa > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-ProvidenciaPatronosDaCausa').contains('Alterações salvas com sucesso.');
+
+        cy.contains('PROVIDÊNCIA: CÁLCULO').click();
+        cy.get('#accordion-estudo-processso-ProvidenciaCalculo > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-ProvidenciaCalculo').contains('Alterações salvas com sucesso.');
+
+        cy.contains('PROVIDÊNCIA: FORMALIZAÇÃO').click();
+        cy.get('#accordion-estudo-processso-ProvidenciaFormalizacao > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-ProvidenciaFormalizacao').contains('Alterações salvas com sucesso.');
+
+        cy.contains('PROVIDÊNCIA: CÓPIAS').click();
+        cy.get('#accordion-estudo-processso-ProvidenciaCopias > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-ProvidenciaCopias').contains('Alterações salvas com sucesso.');
+
+        cy.contains('PROVIDÊNCIA: OUTRAS').click();
+        cy.get('#accordion-estudo-processso-ProvidenciaOutras > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-ProvidenciaOutras').contains('Alterações salvas com sucesso.');
+
+        cy.contains('SÍNTESE PROCESSUAL').click();
+        cy.get('#accordion-estudo-processso-SinteseProcessual > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-SinteseProcessual').contains('Alterações salvas com sucesso.');
+
+        cy.contains('ÚLTIMAS MOVIMENTAÇÕES').click();
+        cy.get('#accordion-estudo-processso-UltimasMovimentacoes > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-UltimasMovimentacoes').contains('Alterações salvas com sucesso.');
+
+        cy.contains('ANÁLISE DOCUMENTAL').click();
+        cy.get('#accordion-estudo-processso-AnaliseDocumental > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-AnaliseDocumental').contains('Alterações salvas com sucesso.');
+
+        cy.contains('ANÁLISE DO CEDENTE (CND)').click();
+        cy.get('#accordion-estudo-processso-AnaliseCedenteCND > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        cy.get('#feedback-save-AnaliseCedenteCND').contains('Alterações salvas com sucesso.');
+
+        cy.contains('DADOS DO CÁLCULO').click();
+        cy.get('#accordion-estudo-processso-DadosCalculo > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
+        //cy.get('#comentario-DadosCalculo_ifr').type('TESTANDO{enter}',{force: true});
+        cy.get('#feedback-save-DadosCalculo').contains('Alterações salvas com sucesso.');
+
     });
 });

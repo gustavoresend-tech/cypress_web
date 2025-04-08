@@ -1,10 +1,9 @@
-    
-    // DADO: que estou na pagina de detalhamento de um precatório/lead
-    // QUANDO: clico na opção "Dados"
-    // ENTAO: devem ser exibidas as abas: Titular | Proposta | Crédito
-    // E: os campos de cada aba devem ser exibidos
-    // E: deve ser possível editar os dados
-    // E: deve ser possivel salvar os dados editados
+// DADO: que estou logado e na pagina de detalhamento de um precatório/lead
+// QUANDO: clico na opção "Dados"
+// ENTAO: devem ser exibidas as abas: Titular | Proposta | Crédito
+// E: os campos da aba Crédito devem estar visíveis
+// E: deve ser possível editar os dados
+// E: deve ser possível salvar os dados editados
 
 describe('Validar Edição de Dados - CRÉDITO', () => {
     beforeEach(() => {

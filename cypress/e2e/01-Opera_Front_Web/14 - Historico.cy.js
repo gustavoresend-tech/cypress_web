@@ -1,8 +1,7 @@
-    
-    // DADO: que estou na pagina de detalhamento de um precatório/lead
-    // QUANDO: clico na aba "Histórico"
-    // ENTAO: deve ser exibida tela com histórico das ações realizadas no card até o momento
-    // E: as entradas devem estar separadas por data
+// DADO: que estou logado e na pagina de detalhamento de um precatório/lead
+// QUANDO: clico na aba "Histórico"
+// ENTAO: deve ser exibida tela com informações do histórico das ações realizadas no card até o momento
+// E: as entradas devem estar separadas por data, usuário mais a atividade realizada
 
     describe('Validar "Histórico"', () => {
     beforeEach(() => {

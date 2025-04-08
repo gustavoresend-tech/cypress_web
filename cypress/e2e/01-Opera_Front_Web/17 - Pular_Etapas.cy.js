@@ -1,10 +1,10 @@
-    // DADO: que estou logado na plataforma
-    // E: preciso validar a opção "Pular etapa"
-    // QUANDO: acesso o detalhamento do cliente / lead
-    // E: clico no btn "Pular Etapa"
-    // ENTAO: uma tela de confirmação deve ser exibida com os btn´s "Avançar" / "Cancelar"
-    // E: o cliente / lead deve ter novas atividades inseridas
-    // E: o cliente deve ser direcionado para proxima etapa do workflow
+// DADO: que estou logado na plataforma precisando validar a opção "Pular etapa"
+// QUANDO: acesso o detalhamento do cliente / lead
+// E: clico no btn "Pular Etapa"
+// E: preencho uma nota no modal exibido
+// E: clico na opção avançar
+// ENTAO: o cliente deve ser direcionado para próxima etapa do workflow
+// E: o cliente / lead deve ter novas atividades inseridas de acordo com a etapa alcançada
 
 
 // Login SSO Microsoft

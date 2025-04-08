@@ -1,9 +1,9 @@
-
-    // DADO: que estou logado na plataforma Opera web
-    // E: preciso Iniciar/Aprovar atividades
-    // QUANDO: entro em um card/precatório
-    // ENTAO: as atividades devem estar visiveis conforme a etapa que o card se encontra
-    // E: deverá ser possível iniciar e aprovar cada atividade separadamente
+// DADO: que estou logado na plataforma Opera web
+// E: preciso Iniciar/Aprovar atividades
+// QUANDO: entro em um card/precatório
+// e: acesso o detalhamento de um precatório
+// ENTAO: as atividades devem estar visíveis conforme a etapa que o card se encontra
+// E: deverá ser possível iniciar e aprovar cada atividade separadamente
 
 describe('Validar Atividades "Inicia / Aprova"', () => {
     Cypress.config('pageLoadTimeout', 15000);
@@ -37,25 +37,26 @@ describe('Validar Atividades "Inicia / Aprova"', () => {
         // Acessa, inicializa e Aprova => "Atualização do registro civil"
         cy.contains('Atualização do registro civil').click();
         cy.screenshot('01-Ativ_Iniciar',{overwrite: true});
-        // Aguarda 3 segundos
-        cy.wait(3000);
+        cy.wait(2000); // Aguarda 2 segundos
         cy.get('#btn-iniciar-atividade').click();
         cy.screenshot('01-Ativ_Aprovar',{overwrite: true});
         cy.get('#btn-finalizar-atividade').click();
-        // Aguarda 2 segundos
-        cy.wait(2000);
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(2000); // Aguarda 2 segundos
 
         // Acessa, inicializa e Aprova => "Emissão de CNDs manuais"
         cy.contains('Emissão de CNDs manuais').click();
         cy.screenshot('01-Ativ_Iniciar-02',{overwrite: true});
-        // Aguarda 2 segundos
-        cy.wait(2000);
+        cy.get('#btn-finalizar-atividade').click();
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(2000); // Aguarda 2 segundos
 
         cy.get('#btn-iniciar-atividade').click();
         cy.screenshot('01-Ativ_Aprovar-02',{overwrite: true});
         cy.get('#btn-finalizar-atividade').click();
-        // Aguarda 2 segundos
-        cy.wait(2000);
+        cy.wait(2000); // Aguarda 2 segundos
 
         // Acessa, inicializa e Aprova => "Emissão de CNDs automáticas"
         cy.contains('Emissão de CNDs automáticas').click();
@@ -63,8 +64,7 @@ describe('Validar Atividades "Inicia / Aprova"', () => {
         cy.get('#btn-iniciar-atividade').click();
         cy.screenshot('01-Ativ_Aprovar-03',{overwrite: true});
         cy.get('#btn-finalizar-atividade').click();
-        // Aguarda 2 segundos
-        cy.wait(2000);
+        cy.wait(2000); // Aguarda 2 segundos
 
         // Acessa, inicializa e Aprova => "Atividade Teste QA"
         cy.contains('Atividade Teste QA').click();
@@ -72,8 +72,7 @@ describe('Validar Atividades "Inicia / Aprova"', () => {
         cy.get('#btn-iniciar-atividade').click();
         cy.screenshot('01-Ativ_Aprovar-03',{overwrite: true});
         cy.get('#btn-finalizar-atividade').click();
-        // Aguarda 2 segundos
-        cy.wait(2000);
+        cy.wait(2000); // Aguarda 2 segundos
 
         // Altera nome do card
         cy.get('#dados-operacao-tab').click();
@@ -85,7 +84,6 @@ describe('Validar Atividades "Inicia / Aprova"', () => {
 
         // captura estado final das atividades no card
         cy.screenshot('01-Ativ_StatusFinal',{overwrite: true});
-        // Aguarda 2 segundos
-        cy.wait(2000);
+        cy.wait(2000); // Aguarda 2 segundos
     });
 });

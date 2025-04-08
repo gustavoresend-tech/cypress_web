@@ -1,11 +1,10 @@
-    
-    // DADO: que estou na pagina de detalhamento de um precatório/lead
-    // QUANDO: clico na aba "Todos os arquivos"
-    // ENTAO: deve ser aberta tela com opções para /anexar arquivos
-    // E: o btn "Adicionar arquivo" deve estar presente
-    // E: o lista que descreve os tipos de arquivos deve estar presente
-    // E: o btn "Enviar" deve estar presente
-    // E: os campos Nome do documento | Tipo | Data de Envio | Ação devem estar presentes
+// DADO: que estou na pagina de detalhamento de um precatório/lead
+// QUANDO: clico na aba "Todos os arquivos"
+// ENTAO: deve ser aberta tela com opções para /anexar arquivos
+// E: o btn "Adicionar arquivo" deve estar presente
+// E: o lista que descreve os tipos de arquivos deve estar presente
+// E: o btn "Enviar" deve estar presente
+// E: os campos Nome do documento | Tipo | Data de Envio | Ação devem estar presentes
 
     describe('Validar "Upload de arquivos"', () => {
     beforeEach(() => {

@@ -1,6 +1,6 @@
 // DADO: que preciso inserir um novo card de precatório na esteira da aplicação Opera
-// E: esse precatório NAO tem valor fututo e tem input de CPF
-// QUANDO: envio a requisição com os dados de body preebchidos corretamente
+// E: esse precatório NAO tem valor fututo e tem input de CNPJ
+// QUANDO: envio a requisição com os dados de body preenchidos corretamente
 // ENTAO: o response.status deve retornar (200 OK); 
 // E: o card deve ser inserido no inicio da esteira conforme os dados incluidos no body
 
