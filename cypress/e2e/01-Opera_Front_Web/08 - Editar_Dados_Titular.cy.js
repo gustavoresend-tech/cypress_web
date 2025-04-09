@@ -28,22 +28,22 @@ describe('Validar Edição de Dados - TITULAR', () => {
 
     it('Validar Edição de Dados - TITULAR', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA-Conferência inicial').click();
+        cy.contains('Teste-QA-Atividade_Criada').click();
         cy.screenshot('03-Tela-Inicial',{overwrite: true});
 
         // Clicar Dados/Titular
         cy.get('#dados-operacao-tab').click();
-        cy.wait(3000); // Aguarda 3000 milissegundos (3 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
         cy.screenshot('03-Dados-Titular',{overwrite: true});
 
         // Simula Campo Obrigatorio: Titular
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        cy.wait(3000); // Aguarda 3000 milissegundos (3 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').clear().type('{enter}');
         cy.contains("Campo obrigatório");
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
         cy.screenshot('03-Titular-Campo-Obrigatorio',{overwrite: true});
-        cy.wait(3000); // Aguarda 3000 milissegundos (3 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
         cy.reload();
         cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
@@ -61,7 +61,7 @@ describe('Validar Edição de Dados - TITULAR', () => {
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
         cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
         cy.screenshot('03-CPF_CNPJ-Campo-Obrigatorio',{overwrite: true});
-        cy.wait(3000); // Aguarda 3000 milissegundos (5 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (5 segundos)
         cy.reload();
         cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
 
@@ -73,7 +73,7 @@ describe('Validar Edição de Dados - TITULAR', () => {
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(12) > .form-control').click();
         cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
         cy.screenshot('03-Telefone-Campo-Obrigatorio',{overwrite: true});
-        cy.wait(3000); // Aguarda 3000 milissegundos (5 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (5 segundos)
         cy.reload();
         cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
         cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
@@ -90,7 +90,7 @@ describe('Validar Edição de Dados - TITULAR', () => {
         cy.contains("O CPF informado é inválido.");
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
         cy.screenshot('03-CPF_CNPJ-Campo-Inválido',{overwrite: true});
-        cy.wait(3000); // Aguarda 3000 milissegundos (5 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (5 segundos)
         cy.reload();
         cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
         cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
@@ -105,7 +105,7 @@ describe('Validar Edição de Dados - TITULAR', () => {
         cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
         cy.screenshot('03-Edicao campo Titular',{overwrite: true});
         cy.get('#btn-salvar-dados-editados').click();
-        cy.wait(3000); // Aguarda 3000 milissegundos (3 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
         cy.reload();
         cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
@@ -118,7 +118,7 @@ describe('Validar Edição de Dados - TITULAR', () => {
         // Altera nome do card
         cy.get('#dados-operacao-tab').click();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Titular_OK{enter}');
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Dados-Titular_OK{enter}');
         cy.wait(2000); // Aguarda 2 segundos
         cy.get('#atividades-tab').click();
 

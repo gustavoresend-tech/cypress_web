@@ -29,7 +29,7 @@
 
     it('Validar Upload de arquivo', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste-QA-Estudo-Processo_OK').click();
 
         // Clica na aba "Todos os arquivos"
         cy.get('#todos-arquivos-tab').click();
@@ -50,5 +50,13 @@
         // clica no btn "Enviar"
         cy.get('#btn-enviar-arquivo-operacao').click();
         cy.screenshot('05-Upload',{overwrite: true});
+
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Upload-arq_OK{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
     });
 });

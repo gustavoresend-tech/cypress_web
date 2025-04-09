@@ -15,12 +15,12 @@
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.get('[type="submit"]').click();
-            cy.wait(2000); // aguarda 2 segundos
+            cy.wait(2000); // Aguarda 1 segundos
             // Insere e-senha e submete
             cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
-            cy.wait(2000); // aguarda 2 segundos
+            cy.wait(2000); // Aguarda 1 segundos
             cy.get('[type="submit"]').click();
-            cy.wait(2000); // aguarda 2 segundos
+            cy.wait(2000); // Aguarda 1 segundos
             cy.get('[id="idSIButton9"]').click();
             });    
         });
@@ -29,7 +29,7 @@
 
         it('Validar Cálculo Precatório', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA - Cypress').click();
+        cy.contains('Teste-QA - NAO USAR (Automação)').click();
         cy.screenshot('e2e-02-Card_Selecionado',{overwrite: true});
 
         // clica em "Emissão de CNDs automáticas"
@@ -38,7 +38,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Aprovar"
         cy.get('#btn-finalizar-atividade').click();
-        // captura print
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Emissão de CNDs automáticas',{overwrite: true});
 
         // clicar em "Emissão de CNDs manuais"
@@ -47,6 +51,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Emissão de CNDs manuais',{overwrite: true});
 
         // clicar em "Atualização do registro civil"
@@ -55,6 +64,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Atualização do registro civil',{overwrite: true});
 
         // clicar em "Conferência de documentos"
@@ -63,6 +77,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Conferência de documentos',{overwrite: true});
 
         // clicar em "Comitê de Deliberação"
@@ -71,8 +90,12 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Comitê de Deliberação',{overwrite: true});
-        //cy.wait(2000); // aguarda 2 segundos
 
         // clicar em "Análise do processo"
         cy.contains('Pendente').click();
@@ -80,6 +103,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Análise do processo',{overwrite: true});
 
         // // clicar em "Análise de compliance"
@@ -96,6 +124,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Defesa BRL',{overwrite: true});
 
         // clicar em "Validação da defesa BRL"
@@ -104,6 +137,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Validação da defesa BRL',{overwrite: true});
 
         // clicar em "Análise de documentoscopia"
@@ -112,6 +150,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Análise de documentoscopia',{overwrite: true});
 
         // clicar em "Ajuste na escritura"
@@ -120,6 +163,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Ajuste na escritura',{overwrite: true});
 
         // clicar em "Resumo das CNDs"
@@ -128,6 +176,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Resumo das CNDs',{overwrite: true});
 
         // clicar em "Ligação de antifraude"
@@ -136,6 +189,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Ligação de antifraude',{overwrite: true});
 
         // clicar em "Ajuste nos termos"
@@ -144,6 +202,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Ajuste nos termos',{overwrite: true});
 
         // clicar em "Emissão de termos"
@@ -152,6 +215,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Emissão de termos',{overwrite: true});
 
         // clicar em "Emissão de atestado de capacidade"
@@ -160,6 +228,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Emissão de atestado de capacidade',{overwrite: true});
 
         // clicar em "Solicitar extrato de débito"
@@ -168,6 +241,11 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Solicitar extrato de débito',{overwrite: true});
 
         // clicar em "Emissão do certificado digital"
@@ -176,8 +254,13 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
         cy.screenshot('e2e-02-Emissão do certificado digital',{overwrite: true});
-        cy.wait(5000); // aguarda 5 segundos
+        cy.wait(2000); // Aguarda 1 segundos
 
         // INICIA PROCESSO DE MONTAGEM DO CÁLCULO
 
@@ -185,7 +268,7 @@
         cy.get('#dados-operacao-tab').click();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Análise de cálculo{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
+        cy.wait(1000); // Aguarda 1 segundos
         cy.get('#atividades-tab').click();
 
         // clicar em "Calcular valor do precatório"
@@ -277,29 +360,31 @@
         cy.get('#step-PJUS-tab-pane > :nth-child(2) > :nth-child(2) > .form-control').type('2021-01-01', { force: true });
         cy.screenshot('e2e-02-PJUS', {overwrite: true});
 
-        // clica btn "Calcular"    
-        cy.get('#step-PJUS-tab-pane > .float-end > .btn-primary').click();
-        cy.wait(1000); // aguarda 1 segundos
+        // AJUSTE PARA AGUARDAR MOTOR DE CALCULO
 
-        // clicar btn "Finalizar"
-        cy.get('#btn-abrir-modal-finalizar-calculo').click();
+        // // clica btn "Calcular"    
+        // cy.get('#step-PJUS-tab-pane > .float-end > .btn-primary').click();
+        // cy.wait(1000); // aguarda 1 segundos
 
-        // Preenche modal "Finalizar atividade" calculo
-        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('CALCULO OK', { force: true });
+        // // clicar btn "Finalizar"
+        // cy.get('#btn-abrir-modal-finalizar-calculo').click();
 
-        // clicar btn "Finalizar"
-        cy.get('#btn-aprovar-atividade').click();
-        cy.wait(1000); // aguarda 1 segundos
-        cy.get('#calculo-operacao-tab').click();
-        cy.wait(1000); // aguarda 1 segundos
-        cy.screenshot('e2e-02-Calculo', {overwrite: true});
+        // // Preenche modal "Finalizar atividade" calculo
+        // cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('CALCULO OK', { force: true });
 
-        // Altera nome do card
-        cy.get('#dados-operacao-tab').click();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Parecer do cedente{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
+        // // clicar btn "Finalizar"
+        // cy.get('#btn-aprovar-atividade').click();
+        // cy.wait(1000); // aguarda 1 segundos
+        // cy.get('#calculo-operacao-tab').click();
+        // cy.wait(1000); // aguarda 1 segundos
+        // cy.screenshot('e2e-02-Calculo', {overwrite: true});
+
+        // // Altera nome do card
+        // cy.get('#dados-operacao-tab').click();
+        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Parecer do cedente{enter}');
+        // cy.wait(1000); // Aguarda 1 segundos
+        // cy.get('#atividades-tab').click();
 
         });
     });

@@ -24,7 +24,7 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
   body: { // Corpo da requisição
     // Informacoes do titular do crédito
     "titular": {
-      "nome": "Teste-QA - Cypress",
+      "nome": "Teste-QA - NAO USAR (Automação)",
       "documento": "925.910.640-08",
       "dataNascimento": "1985-06-15T12:57:31.215Z",
       "nomePai": "QA Silva",

@@ -30,14 +30,14 @@ describe('Validar Edição de Dados - PROPOSTA', () => {
 
     it('Validar Edição de Dados - PROPOSTA', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA-Titular_OK').click();
+        cy.contains('Teste-QA-Dados-Titular_OK').click();
         // Acessa aba dados/proposta
         cy.get('#dados-operacao-tab').click();
         cy.get('#btn-tab-dados-proposta').click();
-        cy.wait(3000); // Aguarda 3000 milissegundos (3 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
         cy.get(':nth-child(1) > :nth-child(2) > .form-select').select('Não', { force: true });
         cy.get(':nth-child(1) > :nth-child(2) > .form-select').select('Sim', { force: true });
-        cy.wait(3000); // Aguarda 3000 milissegundos (3 segundos)
+        cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
         cy.get('.mt-3 > :nth-child(2) > :nth-child(2) > .form-select').select('Não', { force: true });
         cy.get('.mt-3 > :nth-child(2) > :nth-child(2) > .form-select').select('Sim', { force: true });
         cy.get('.mt-3 > :nth-child(1) > :nth-child(3) > .form-control').click().clear().type('Testado', { force: true });
@@ -48,7 +48,7 @@ describe('Validar Edição de Dados - PROPOSTA', () => {
         // Altera nome do card
         cy.get('#dados-operacao-tab').click();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Proposta_OK{enter}');
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Dados-Proposta_OK{enter}');
         cy.wait(2000); // Aguarda 2 segundos
         cy.get('#atividades-tab').click();
 

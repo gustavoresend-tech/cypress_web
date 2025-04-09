@@ -38,7 +38,7 @@
 
     it('Validar "Estudo do processo"', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA').click();
+        cy.contains('Teste-QA-Pesquisa-Atividade_OK').click();
         cy.screenshot('04-Tela-Inicial',{overwrite: true});
  
         // Clicar Estudo do processo e postar
@@ -91,6 +91,14 @@
         cy.get('#accordion-estudo-processso-DadosCalculo > .accordion-body > .form-estudo-processo > .position-relative > .position-absolute > .row > :nth-child(2) > .btn').click();
         //cy.get('#comentario-DadosCalculo_ifr').type('TESTANDO{enter}',{force: true});
         cy.get('#feedback-save-DadosCalculo').contains('Alterações salvas com sucesso.');
+
+        // Altera nome do card
+        cy.get('#dados-operacao-tab').click();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Estudo-Processo_OK{enter}');
+        cy.wait(2000); // Aguarda 2 segundos
+        cy.get('#atividades-tab').click();
+
 
     });
 });

@@ -30,11 +30,11 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
 
     it('Validar Edição de Dados - CRÉDITO', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA-Proposta_OK').click();
+        cy.contains('Teste-QA-Dados-Proposta_OK').click();
         // Acessa aba dados/proposta
         cy.get('#dados-operacao-tab').click();
         cy.get('#btn-tab-dados-proposta').click();
-        cy.wait(3000); // Aguarda 3000 milissegundos (3 segundos)
+        cy.wait(2000); // Aguarda 3000 milissegundos (3 segundos)
         cy.get('#btn-tab-dados-credito').click();
         // Valida os campos do formulário
         cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
@@ -61,7 +61,7 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
         // Altera nome do card
         cy.get('#dados-operacao-tab').click();
         cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Conferência inicial{enter}');
+        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Dados-Credito_OK{enter}');
         cy.wait(2000); // Aguarda 2 segundos
         cy.get('#atividades-tab').click();
 

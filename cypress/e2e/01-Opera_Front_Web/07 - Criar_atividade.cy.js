@@ -27,7 +27,7 @@
 
     it('Validar "Criar Atividades', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA - Cypress').click();
+        cy.contains('Teste-QA - NAO USAR (Automação)').click();
         cy.wait(2000); // Aguarda 2 segundos
         // Clicar criar atividades
         cy.get('#atividades-tab').click();
