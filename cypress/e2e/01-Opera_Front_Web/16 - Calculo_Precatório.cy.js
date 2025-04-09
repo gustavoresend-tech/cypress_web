@@ -27,6 +27,7 @@
 
         // INICIO DOS TESTES
 
+        Cypress._.times(1, () => {
         it('Validar Cálculo Precatório', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA - NAO USAR (Automação)').click();
@@ -386,5 +387,6 @@
         // cy.wait(1000); // Aguarda 1 segundos
         // cy.get('#atividades-tab').click();
 
-        });
     });
+});
+});

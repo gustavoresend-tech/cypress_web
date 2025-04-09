@@ -28,14 +28,14 @@
         });
     
         it('Validar "Reprovar Operação"', () => {
-            // Acessa o primeiro card dispoível no worlflow
-            cy.contains('Teste-QA-Historico_OK').click();
-            // Clicar btn "Reprovar operacao"
-            cy.get('#btn-abrir-modal-reprovar-operacao').click();
-            cy.get('#observacao-reprovar-operacao').click().type('Teste reprovar operacao');
-            cy.get('#btn-reprovar-operacao').click();
-            cy.wait(1000); // Aguarda 1 segundos
-            //cy.get('#link-voltar-para-todas-etapas').click();
+        // Acessa o primeiro card dispoível no worlflow
+        cy.contains('Teste-QA-Historico_OK').click();
+        // Clicar btn "Reprovar operacao"
+        cy.get('#btn-abrir-modal-reprovar-operacao').click();
+        cy.get('#observacao-reprovar-operacao').click().type('Teste reprovar operacao');
+        cy.get('#btn-reprovar-operacao').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        //cy.get('#link-voltar-para-todas-etapas').click();
 
         // Altera nome do card
         cy.get('#dados-operacao-tab').click();
