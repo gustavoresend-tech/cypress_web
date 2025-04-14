@@ -29,23 +29,21 @@
     
         it('Validar "Pesquisar Atividades"', () => {
             // Acessa o primeiro card dispoível no worlflow
-            cy.contains('Teste-QA-Dados-Credito_OK').click();
-            cy.screenshot('08-Atividades selecionada',{overwrite: true});
-            // Clicar criar atividades
-            cy.get('#atividades-tab').click();
-            cy.screenshot('08-Tela_Atividades',{overwrite: true});  
-            cy.get('#btn-link-para-criar-atividade').click();
-            cy.get('#input-filtrar-nova-atividade').click().type('teste {enter}');
-            cy.screenshot('08-Criar_Atividades',{overwrite: true});
-            // Aguarda 2 segundos
-            cy.wait(2000);
+            cy.contains('Teste-QA - NAO USAR (Automação)').click();
 
-        // Altera nome do card
-        cy.get('#dados-operacao-tab').click();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Pesquisa-Atividade_OK{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
+            // Clicar criar atividades
+            cy.get('#btn-link-para-criar-atividade').click();
+            cy.get('#input-filtrar-nova-atividade').click().type('Ajuste');
+            cy.wait(1000); // Aguarda 1 segundos
+            cy.screenshot('11-Pesquisa_Atividades',{overwrite: true});
+            cy.wait(1000); // Aguarda 1 segundos
+
+        // // Altera nome do card
+        // cy.get('#dados-operacao-tab').click();
+        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Pesquisa-Atividade_OK{enter}');
+        // cy.wait(2000); // Aguarda 2 segundos
+        // cy.get('#atividades-tab').click();
 
         });
     });    

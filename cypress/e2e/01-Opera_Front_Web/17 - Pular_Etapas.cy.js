@@ -32,7 +32,7 @@ describe('Validar "ir para etapa final"', () => {
     Cypress._.times(1, () => {
     it('Validar "ir para etapa final"', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA-Operacao-Reprovada').click();
+        cy.contains('Teste-QA - NAO USAR (Automação)').click();
         // Clicar "Pular Etapas"
         // Aqui o cliente / lead saira da primeira etapa para última "Pagamento"
         // Vai para etapa: Conferencia inicial
@@ -99,13 +99,12 @@ describe('Validar "ir para etapa final"', () => {
         cy.get('#btn-abrir-modal-pular-etapa').click();
         cy.get('#btn-avancar-etapa').click();
 
-
-        // Altera nome do card
-        cy.get('#dados-operacao-tab').click();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Pular-Etapas_OK{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
+        // // Altera nome do card
+        // cy.get('#dados-operacao-tab').click();
+        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Pular-Etapas_OK{enter}');
+        // cy.wait(2000); // Aguarda 2 segundos
+        // cy.get('#atividades-tab').click();
 
     });
     });

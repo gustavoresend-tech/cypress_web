@@ -44,7 +44,14 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
             "estado": "MG",
             "banco": "Banco de Dados",
             "agencia": "12364",
-            "contaDigito": "56789-0"
+            "contaDigito": "56789-0",
+            "DataCasamento": "2013-06-15T12:57:31.215Z",
+            "CidadeCasamento": "SAO_PAULO",
+            "EstadoCasamento": "SP",
+            "CartorioCasamento": "29-oficial-de-registro-civil-santo-amaro-sao-paulo",
+            "LivroCasamento": "266",
+            "TermoCasamento": "79038",
+            "PaginaCasamento": "155"    
           },
           // Informacoes do credito precatorio
           "credito": {

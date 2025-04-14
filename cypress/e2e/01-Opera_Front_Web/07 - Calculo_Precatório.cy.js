@@ -27,11 +27,10 @@
 
         // INICIO DOS TESTES
 
-        Cypress._.times(1, () => {
         it('Validar Cálculo Precatório', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA - NAO USAR (Automação)').click();
-        cy.screenshot('e2e-02-Card_Selecionado',{overwrite: true});
+        cy.screenshot('16-Card_Selecionado',{overwrite: true});
 
         // clica em "Emissão de CNDs automáticas"
         cy.contains('Emissão de CNDs automáticas').click();
@@ -44,7 +43,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Emissão de CNDs automáticas',{overwrite: true});
+        cy.screenshot('16-Emissão de CNDs automáticas',{overwrite: true});
 
         // clicar em "Emissão de CNDs manuais"
         cy.contains('Emissão de CNDs manuais').click();
@@ -57,7 +56,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Emissão de CNDs manuais',{overwrite: true});
+        cy.screenshot('16-Emissão de CNDs manuais',{overwrite: true});
 
         // clicar em "Atualização do registro civil"
         cy.contains('Atualização do registro civil').click();
@@ -70,7 +69,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Atualização do registro civil',{overwrite: true});
+        cy.screenshot('16-Atualização do registro civil',{overwrite: true});
 
         // clicar em "Conferência de documentos"
         cy.contains('Conferência de documentos').click();
@@ -83,7 +82,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Conferência de documentos',{overwrite: true});
+        cy.screenshot('16-Conferência de documentos',{overwrite: true});
 
         // clicar em "Comitê de Deliberação"
         cy.contains('Comitê de Deliberação').click();
@@ -96,7 +95,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Comitê de Deliberação',{overwrite: true});
+        cy.screenshot('16-Comitê de Deliberação',{overwrite: true});
 
         // clicar em "Análise do processo"
         cy.contains('Pendente').click();
@@ -109,7 +108,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Análise do processo',{overwrite: true});
+        cy.screenshot('16-Análise do processo',{overwrite: true});
 
         // // clicar em "Análise de compliance"
         // cy.contains('Análise de compliance').click();
@@ -117,7 +116,7 @@
         // cy.get('#btn-iniciar-atividade').click();
         // // clica no btn "Finalizar"
         // cy.get('#btn-finalizar-atividade').click();
-        // cy.screenshot('e2e-02-Análise de compliance',{overwrite: true});
+        // cy.screenshot('16 -Análise de compliance',{overwrite: true});
 
         // clicar em "Defesa BRL"
         cy.contains('Defesa BRL').click();
@@ -130,7 +129,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Defesa BRL',{overwrite: true});
+        cy.screenshot('16-Defesa BRL',{overwrite: true});
 
         // clicar em "Validação da defesa BRL"
         cy.contains('Validação da defesa BRL').click();
@@ -143,7 +142,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Validação da defesa BRL',{overwrite: true});
+        cy.screenshot('16-Validação da defesa BRL',{overwrite: true});
 
         // clicar em "Análise de documentoscopia"
         cy.contains('Análise de documentoscopia').click();
@@ -156,7 +155,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Análise de documentoscopia',{overwrite: true});
+        cy.screenshot('16-Análise de documentoscopia',{overwrite: true});
 
         // clicar em "Ajuste na escritura"
         cy.contains('Ajuste na escritura').click();
@@ -169,7 +168,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Ajuste na escritura',{overwrite: true});
+        cy.screenshot('16-Ajuste na escritura',{overwrite: true});
 
         // clicar em "Resumo das CNDs"
         cy.contains('Resumo das CNDs').click();
@@ -182,7 +181,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Resumo das CNDs',{overwrite: true});
+        cy.screenshot('16-Resumo das CNDs',{overwrite: true});
 
         // clicar em "Ligação de antifraude"
         cy.contains('Ligação de antifraude').click();
@@ -195,7 +194,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Ligação de antifraude',{overwrite: true});
+        cy.screenshot('16-Ligação de antifraude',{overwrite: true});
 
         // clicar em "Ajuste nos termos"
         cy.contains('Ajuste nos termos').click();
@@ -208,7 +207,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Ajuste nos termos',{overwrite: true});
+        cy.screenshot('16-Ajuste nos termos',{overwrite: true});
 
         // clicar em "Emissão de termos"
         cy.contains('Emissão de termos').click();
@@ -221,7 +220,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Emissão de termos',{overwrite: true});
+        cy.screenshot('16-Emissão de termos',{overwrite: true});
 
         // clicar em "Emissão de atestado de capacidade"
         cy.contains('Emissão de atestado de capacidade').click();
@@ -234,7 +233,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Emissão de atestado de capacidade',{overwrite: true});
+        cy.screenshot('16-Emissão de atestado de capacidade',{overwrite: true});
 
         // clicar em "Solicitar extrato de débito"
         cy.contains('Solicitar extrato de débito').click();
@@ -247,7 +246,7 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Solicitar extrato de débito',{overwrite: true});
+        cy.screenshot('16-Solicitar extrato de débito',{overwrite: true});
 
         // clicar em "Emissão do certificado digital"
         cy.contains('Emissão do certificado digital').click();
@@ -260,17 +259,10 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // captura evidencia (print)
-        cy.screenshot('e2e-02-Emissão do certificado digital',{overwrite: true});
+        cy.screenshot('16-Emissão do certificado digital',{overwrite: true});
         cy.wait(2000); // Aguarda 1 segundos
 
         // INICIA PROCESSO DE MONTAGEM DO CÁLCULO
-
-        // Altera o nome do card para contemplar o nome da etapa atual
-        cy.get('#dados-operacao-tab').click();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Análise de cálculo{enter}');
-        cy.wait(1000); // Aguarda 1 segundos
-        cy.get('#atividades-tab').click();
 
         // clicar em "Calcular valor do precatório"
         cy.contains('Calcular valor do precatório').click();
@@ -317,7 +309,7 @@
 
         // preenche o campo "Outras Despesas"
         cy.get(':nth-child(4) > :nth-child(4) > .form-control').clear().type('0',{ force: true });
-        cy.screenshot('e2e-02-Informacoes_Basicas',{overwrite: true});
+        cy.screenshot('16-Informacoes_Basicas',{overwrite: true});
 
         // clica btn "Continuar"
         cy.get('#step-informacoes-basicas-tab-pane > .float-end > .btn').click();
@@ -338,7 +330,7 @@
 
         // preenche campo "data de liquidação"
         cy.get('#step-oficio-tab-pane > :nth-child(2) > :nth-child(2) > .form-control').type('2021-01-01', { force: true });
-        cy.screenshot('e2e-02-Oficio',{overwrite: true});
+        cy.screenshot('16-Oficio',{overwrite: true});
 
         // clica btn "Continuar"
         cy.get('#step-oficio-tab-pane > .float-end > .btn-primary').click();
@@ -359,7 +351,7 @@
 
         // preenche campo "data de liquidação"
         cy.get('#step-PJUS-tab-pane > :nth-child(2) > :nth-child(2) > .form-control').type('2021-01-01', { force: true });
-        cy.screenshot('e2e-02-PJUS', {overwrite: true});
+        cy.screenshot('16-PJUS', {overwrite: true});
 
         // AJUSTE PARA AGUARDAR MOTOR DE CALCULO
 
@@ -378,7 +370,7 @@
         // cy.wait(1000); // aguarda 1 segundos
         // cy.get('#calculo-operacao-tab').click();
         // cy.wait(1000); // aguarda 1 segundos
-        // cy.screenshot('e2e-02-Calculo', {overwrite: true});
+        // cy.screenshot('16-Calculo', {overwrite: true});
 
         // // Altera nome do card
         // cy.get('#dados-operacao-tab').click();
@@ -388,5 +380,4 @@
         // cy.get('#atividades-tab').click();
 
     });
-});
 });

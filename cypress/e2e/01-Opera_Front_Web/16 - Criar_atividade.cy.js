@@ -42,12 +42,13 @@
         cy.screenshot('07-Atividade_inserida',{overwrite: true});
         cy.wait(2000); // Aguarda 2 segundos
 
-        // Altera nome do card
-        cy.get('#dados-operacao-tab').click();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Atividade_Criada{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
+        // // Altera nome do card
+        // cy.get('#dados-operacao-tab').click();
+        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
+        // cy.wait(1000); // Aguarda 1 segundos
+        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Atividade_Criada{enter}');
+        // cy.wait(2000); // Aguarda 2 segundos
+        // cy.get('#atividades-tab').click();
 
 
     });
