@@ -10,7 +10,7 @@ describe('Validar Edição de Dados - TITULAR', () => {
             // Volta para a origem, página pjus board
             cy.visit('https://opera.hml.pjus.com.br/board');
             // Configura exibição da tela de teste
-            cy.viewport(375, 667);
+            cy.viewport(1280, 720);
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.get('[type="submit"]').click();
@@ -117,102 +117,32 @@ describe('Validar Edição de Dados - TITULAR', () => {
         .contains("Estado")
 
         // Banco
-        cy.get('#tab-dados-titular > .row > :nth-child(2) > .mt-3 > :nth-child(2) > .text-label')
+        cy.get('.mt-3 > :nth-child(2) > :nth-child(1) > .input-group-readonly-edit > .text-label')
         .contains("Banco")
 
+        // Código do banco
+        cy.get('.mt-3 > :nth-child(2) > :nth-child(2) > .input-group-readonly-edit > .text-label')
+        .contains("Código do banco")
+
         // Agência
-        cy.get('#tab-dados-titular > .row > :nth-child(2) > .mt-3 > :nth-child(3) > .text-label')
+        cy.get('.mt-3 > :nth-child(3) > :nth-child(1) > .input-group-readonly-edit > .text-label')
         .contains("Agência")
 
-        // Conta e dígito
-        cy.get('#tab-dados-titular > .row > :nth-child(2) > .mt-3 > :nth-child(4) > .text-label')
-        .contains("Conta e dígito")
+        // Digito
+        cy.get('.mt-3 > :nth-child(3) > :nth-child(2) > .input-group-readonly-edit > .text-label')
+        .contains("Dígito")
 
-        // // Simula Campo Obrigatorio: Titular
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').clear().type('{enter}');
-        // cy.contains("Campo obrigatório");
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        // cy.screenshot('03-Titular-Campo-Obrigatorio',{overwrite: true});
-        // cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
-        // cy.reload();
-        // cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
+        // Conta
+        cy.get(':nth-child(4) > :nth-child(1) > .input-group-readonly-edit > .text-label')
+        .contains("Conta")
 
-        // // Simula Campo Obrigatorio: CPF/CNPJ
-        // cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(3) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(3) > .form-control').clear().type('{enter}');
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.contains("Campo obrigatório");
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.screenshot('03-CPF_CNPJ-Campo-Obrigatorio',{overwrite: true});
-        // cy.wait(1000); // Aguarda 1000 milissegundos (5 segundos)
-        // cy.reload();
-        // cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
+        // Digito
+        cy.get(':nth-child(4) > :nth-child(2) > .input-group-readonly-edit > .text-label')
+        .contains("Dígito")
 
-        // // Simula Campo Obrigatorio: Telefone
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(12) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(12) > .form-control').clear().type('{enter}');
-        // cy.contains("Campo obrigatório");
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(12) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.screenshot('03-Telefone-Campo-Obrigatorio',{overwrite: true});
-        // cy.wait(1000); // Aguarda 1000 milissegundos (5 segundos)
-        // cy.reload();
-        // cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-
-        // // Simula Campo Inválido: CPF/CNPJ
-        // cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(3) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(3) > .form-control').clear().type('{enter}');
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(3) > .form-control').type('379.901.052-2{enter}');
-        // cy.contains("O CPF informado é inválido.");
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        // cy.screenshot('03-CPF_CNPJ-Campo-Inválido',{overwrite: true});
-        // cy.wait(1000); // Aguarda 1000 milissegundos (5 segundos)
-        // cy.reload();
-        // cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-
-        // // Simula edição e gravação: Campos a
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().type('-E');
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(3) > .form-control').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (1 segundos)
-        // cy.screenshot('03-Edicao campo Titular',{overwrite: true});
-        // cy.get('#btn-salvar-dados-editados').click();
-        // cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
-        // cy.reload();
-        // cy.get('#dados-operacao-tab > .d-flex > .ms-2').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click();
-        // cy.screenshot('03-Edicao Resultado campo Titular',{overwrite: true});
-        // // cy.get('#btn-abrir-modal-pular-etapa').click();
-        // // cy.screenshot('02-PularEtapa-Modal',{overwrite: true});
-        // // cy.get('#btn-avancar-etapa').click();
-        // // cy.reload();
-
-        // // Altera nome do card
-        // cy.get('#dados-operacao-tab').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Dados-Titular_OK{enter}');
-        // cy.wait(2000); // Aguarda 2 segundos
-        // cy.get('#atividades-tab').click();
+        // Tipo de Conta
+        cy.get('.mb-4 > :nth-child(2) > .mt-3 > :nth-child(5) > .text-label')
+        .contains("Tipo de conta")
 
     });
 });

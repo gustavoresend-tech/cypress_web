@@ -29,7 +29,7 @@
 
         it('Validar Cálculo Precatório', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA - NAO USAR (Automação)').click();
+        cy.contains('Teste-QA-Analise de calculo').click();
         cy.screenshot('16-Card_Selecionado',{overwrite: true});
 
         // clica em "Emissão de CNDs automáticas"
@@ -110,13 +110,18 @@
         // captura evidencia (print)
         cy.screenshot('16-Análise do processo',{overwrite: true});
 
-        // // clicar em "Análise de compliance"
-        // cy.contains('Análise de compliance').click();
-        // // clica no btn "Iniciar"
-        // cy.get('#btn-iniciar-atividade').click();
-        // // clica no btn "Finalizar"
-        // cy.get('#btn-finalizar-atividade').click();
-        // cy.screenshot('16 -Análise de compliance',{overwrite: true});
+        // clicar em "Análise de compliance"
+        cy.contains('Análise de compliance').click();
+        // clica no btn "Iniciar"
+        cy.get('#btn-iniciar-atividade').click();
+        // clica no btn "Finalizar"
+        cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // captura evidencia (print)
+        cy.screenshot('16 -Análise de compliance',{overwrite: true});
 
         // clicar em "Defesa BRL"
         cy.contains('Defesa BRL').click();
@@ -268,116 +273,6 @@
         cy.contains('Calcular valor do precatório').click();
         // clica no btn "Iniciar"
         cy.get('#btn-iniciar-atividade').click();
-
-        // INFORMAÇÕES BÁSICAS
-
-        // Seleciona campo "Desconto de Previdência"
-        cy.get(':nth-child(1) > .form-select').select('Percentual', { force: true });        
-
-        // Preenche campo "Previdência"
-        cy.get('#step-informacoes-basicas-tab-pane > :nth-child(1) > :nth-child(2) > .form-control').clear().type('0', { force: true });        
-
-        // Seleciona campo "Imposto de renda"
-        cy.get(':nth-child(1) > :nth-child(3) > .form-select').select('RRA', { force: true });        
-
-        // preenche campo "Inicio Formação"
-        cy.get('#DataInicioFormacao').type('2021-01-01', { force: true });        
-
-        // preenche o campo "Término formação"
-        cy.get('#DataTerminoFormacao').type('2021-01-01', { force: true });        
-
-        // preenche o campo "% honorários"
-        cy.get('#step-informacoes-basicas-tab-pane > :nth-child(2) > :nth-child(5) > .form-control').clear().type('30', { force: true });        
-
-        // preenche o campo "Data EC-62"
-        // cy.get(':nth-child(3) > :nth-child(1) > .form-control').type('2021-01-01', { force: true });
-
-        // preenche o campo "Valor EC-62"
-        cy.get(':nth-child(3) > :nth-child(2) > .form-control').clear().type('0',{ force: true });        
-
-        // preenche o campo "Valor Penhora"
-        cy.get(':nth-child(3) > :nth-child(3) > .form-control').clear().type('0',{ force: true });        
-
-        // preenche o campo "Débito total do 3"
-        cy.get(':nth-child(4) > :nth-child(1) > .form-control').clear().type('0',{ force: true });        
-        
-        // preenche o campo "Débito total do 3 retido"
-        cy.get(':nth-child(4) > :nth-child(2) > .form-control').clear().type('0',{ force: true });        
-
-        // preenche o campo "ISS"
-        cy.get(':nth-child(4) > :nth-child(3) > .form-control').clear().type('0',{ force: true });
-
-        // preenche o campo "Outras Despesas"
-        cy.get(':nth-child(4) > :nth-child(4) > .form-control').clear().type('0',{ force: true });
-        cy.screenshot('16-Informacoes_Basicas',{overwrite: true});
-
-        // clica btn "Continuar"
-        cy.get('#step-informacoes-basicas-tab-pane > .float-end > .btn').click();
-
-        // OFICIO
-
-        // preenche campo "Principal"
-        cy.get('#step-oficio-tab-pane > :nth-child(1) > :nth-child(1) > .form-control').clear().type('150000',{ force: true });
-
-        // preenche campo "juros"
-        cy.get('#step-oficio-tab-pane > :nth-child(1) > :nth-child(2) > .form-control').clear().type('25000',{ force: true });
-
-        // preenche campo "Vencimento"
-        cy.get('#step-oficio-tab-pane > :nth-child(1) > :nth-child(3) > .form-control').clear().type('2026',{ force: true });
-
-        // preenche campo "data de autuaçao"
-        cy.get('#step-oficio-tab-pane > :nth-child(2) > :nth-child(1) > .form-control').type('2021-01-01', { force: true });
-
-        // preenche campo "data de liquidação"
-        cy.get('#step-oficio-tab-pane > :nth-child(2) > :nth-child(2) > .form-control').type('2021-01-01', { force: true });
-        cy.screenshot('16-Oficio',{overwrite: true});
-
-        // clica btn "Continuar"
-        cy.get('#step-oficio-tab-pane > .float-end > .btn-primary').click();
-
-        // PJUS
-
-        // preenche campo "Principal"
-        cy.get('#step-PJUS-tab-pane > :nth-child(1) > :nth-child(1) > .form-control').clear().type('150000',{ force: true });
-
-        // preenche campo "juros"
-        cy.get('#step-PJUS-tab-pane > :nth-child(1) > :nth-child(2) > .form-control').clear().type('25000',{ force: true });
-
-        // preenche campo "Vencimento"
-        cy.get('#step-PJUS-tab-pane > :nth-child(1) > :nth-child(3) > .form-control').clear().type('2026',{ force: true });
-
-        // preenche campo "data de autuaçao"
-        cy.get('#step-PJUS-tab-pane > :nth-child(2) > :nth-child(1) > .form-control').type('2021-01-01', { force: true });
-
-        // preenche campo "data de liquidação"
-        cy.get('#step-PJUS-tab-pane > :nth-child(2) > :nth-child(2) > .form-control').type('2021-01-01', { force: true });
-        cy.screenshot('16-PJUS', {overwrite: true});
-
-        // AJUSTE PARA AGUARDAR MOTOR DE CALCULO
-
-        // // clica btn "Calcular"    
-        // cy.get('#step-PJUS-tab-pane > .float-end > .btn-primary').click();
-        // cy.wait(1000); // aguarda 1 segundos
-
-        // // clicar btn "Finalizar"
-        // cy.get('#btn-abrir-modal-finalizar-calculo').click();
-
-        // // Preenche modal "Finalizar atividade" calculo
-        // cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('CALCULO OK', { force: true });
-
-        // // clicar btn "Finalizar"
-        // cy.get('#btn-aprovar-atividade').click();
-        // cy.wait(1000); // aguarda 1 segundos
-        // cy.get('#calculo-operacao-tab').click();
-        // cy.wait(1000); // aguarda 1 segundos
-        // cy.screenshot('16-Calculo', {overwrite: true});
-
-        // // Altera nome do card
-        // cy.get('#dados-operacao-tab').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Parecer do cedente{enter}');
-        // cy.wait(1000); // Aguarda 1 segundos
-        // cy.get('#atividades-tab').click();
 
     });
 });

@@ -3,9 +3,9 @@
 // ENTAO: devo visualizar as minhas atividades na plataforma Opera
 // E: preciso ter a opção de finalizar as atividades iniciadas
 
-describe('Validar Tela de pesquisa ID - Resonsivo', () => {
+describe('Validar Tela de pesquisa ID - Responsivo', () => {
     beforeEach(() => {
-        cy.viewport(360, 640);
+        cy.viewport(1920, 1080);
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
@@ -14,26 +14,24 @@ describe('Validar Tela de pesquisa ID - Resonsivo', () => {
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.get('[type="submit"]').click();
-            cy.wait(2000); // aguarda 1 segundos
+            cy.wait(2000); // aguarda 2 segundos
             // Insere e-senha e submete
             cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
-            cy.wait(1000); // aguarda 1 segundos
+            cy.wait(2000); // aguarda 2 segundos
             cy.get('[type="submit"]').click();
-            cy.wait(1000); // aguarda 1 segundos
+            cy.wait(2000); // aguarda 2 segundos
             cy.get('[id="idSIButton9"]').click();
-            cy.wait(1000); // aguarda 1 segundos
-
         });
     });
 
-    it('Validar Tela de pesquisa ID - (360, 640)', () => {
+    it('Validar Pesquisa ID - (1920, 1080)', () => {
         // entrar no menu de pesquisa
         cy.get('.card > .btn').click();        
         cy.wait(2000); // aguarda 2 segundos
 
         // Pesquisa 01
         // Insere ID para pesquisa
-        cy.get('#input-consultar-operacao').clear().type('5fb2a8b0-d044-45fa-837a-08dd79348c9b', { force: true });
+        cy.get('#input-consultar-operacao').clear().type('89ff235d-02ab-4775-66e6-08dd7b5eb5b3', { force: true });
         // clica em pesquisar
         cy.get(':nth-child(3) > .btn').click();
         // verifica se o texto "Operação Encontrada" aparece na tela
@@ -41,7 +39,7 @@ describe('Validar Tela de pesquisa ID - Resonsivo', () => {
 
         // Pesquisa 02
         // Insere ID para pesquisa
-        cy.get('#input-consultar-operacao').clear().type('2452ebe3-db24-4449-5f69-08dd78597661', { force: true });
+        cy.get('#input-consultar-operacao').clear().type('ec355c07-669f-4964-66e4-08dd7b5eb5b3', { force: true });
         // clica em pesquisar
         cy.get(':nth-child(3) > .btn').click();
         // verifica se o texto "Operação Encontrada" aparece na tela
@@ -49,7 +47,7 @@ describe('Validar Tela de pesquisa ID - Resonsivo', () => {
 
         // Pesquisa 03
         // Insere ID para pesquisa        
-        cy.get('#input-consultar-operacao').clear().type('617dc916-636c-4cb8-0f56-08dd792eb825', { force: true });
+        cy.get('#input-consultar-operacao').clear().type('beadbde2-c459-49d9-66e5-08dd7b5eb5b3', { force: true });
         // clica em pesquisar
         cy.get(':nth-child(3) > .btn').click();
         // verifica se o texto "Operação Não encontrada!" aparece na tela
@@ -67,4 +65,3 @@ describe('Validar Tela de pesquisa ID - Resonsivo', () => {
     });
 
 });
-
