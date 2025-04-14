@@ -1,4 +1,5 @@
-// DADO: que estou logado e preciso verificar as atividades iniciadas por mim na plataforma Opera
+// DADO: que estou logado na página raiz https://opera.hml.pjus.com.br/
+// E: preciso verificar as atividades iniciadas por mim na plataforma Opera
 // QUANDO: clico na opção "Minhas Operações"
 // ENTAO: devo visualizar as minhas atividades na plataforma Opera
 // E: preciso ter a opção de finalizar as atividades iniciadas

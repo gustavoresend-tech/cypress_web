@@ -3,9 +3,9 @@
 // QUANDO: entro em um card/precatório
 // e: acesso o detalhamento
 // ENTAO: as atividades devem estar visíveis
-// E: deverá ser possível iniciar e aprovar cada atividade separadamente
+// E: deverá ser possível iniciar e aprovar cada atividade separadamente encaminhando para a próxima etapa
 
-describe('Validar Atividades "Inicia / Aprova"', () => {
+describe('Validar Atividades "Grupo Pré analise"', () => {
     Cypress.config('pageLoadTimeout', 15000);
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft

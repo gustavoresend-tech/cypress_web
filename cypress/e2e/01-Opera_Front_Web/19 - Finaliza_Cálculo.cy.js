@@ -1,5 +1,5 @@
 // DADO: que estou logado precisando simular o calculo de um precatório na plataforma Opera
-// QUANDO: inicio a atividade "Calculo precatório"
+// QUANDO: entro em um card/precatório existente na etapa "Análise de cálculo"
 // E: preencho os campos solicitados
 // ENTAO: o calculo deve ser realizado
 // E: a folha de calculo exibida na tela

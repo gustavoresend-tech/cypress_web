@@ -1,7 +1,7 @@
-// DADO: que estou logado e na pagina de detalhamento de um precatório/lead
+// DADO: que estou logado e na pagina de detalhamento de um card/precatório
 // QUANDO: clico na opção "Dados"
-// ENTAO: devem ser exibidas as abas: Titular | Proposta | Crédito
-// E: os campos da aba Proposta devem estar visíveis
+// E: Seleciono a opção "Proposta"
+// ENTAO: devem ser exibidas os campos da aba Proposta
 
 describe('Validar Edição de Dados - PROPOSTA', () => {
     beforeEach(() => {

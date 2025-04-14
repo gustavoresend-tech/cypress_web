@@ -1,10 +1,11 @@
-// DADO: que estou logado precisando simular o calculo de um precatório na plataforma Opera
-// QUANDO: inicio a atividade "Calculo precatório"
-// E: preencho os campos solicitados
-// ENTAO: o calculo deve ser realizado
-// E: a folha de calculo exibida na tela
+    // DADO: que estou logado na plataforma Opera web
+    // E: preciso Iniciar/Aprovar as atividades até a etapa "Análise de cálculo"
+    // QUANDO: entro em um card/precatório
+    // e: acesso o detalhamento
+    // ENTAO: as atividades devem estar visíveis
+    // E: deverá ser possível iniciar e aprovar cada atividade separadamente encaminhando para a etapa "Análise de cálculo" 
 
-    describe('Validar Cálculo Precatório', () => {
+    describe('Validar Atividades "Análise de cálculo"', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {

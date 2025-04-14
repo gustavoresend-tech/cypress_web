@@ -8,7 +8,7 @@
 
 
 // Login SSO Microsoft
-describe('Validar "ir para etapa final"', () => {
+describe('Validar "Pular etapas"', () => {
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -30,7 +30,7 @@ describe('Validar "ir para etapa final"', () => {
     });
 
     Cypress._.times(1, () => {
-    it('Validar "ir para etapa final"', () => {
+    it('Validar "Pular etapas"', () => {
         // Acessa o primeiro card dispoível no worlflow
         cy.contains('Teste-QA - NAO USAR (Automação)').click();
         // Clicar "Pular Etapas"

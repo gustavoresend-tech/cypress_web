@@ -1,9 +1,7 @@
-// DADO: que estou logado e na pagina de detalhamento de um precatório/lead
+// DADO: que estou logado e na pagina de detalhamento de um card/precatório
 // QUANDO: clico na opção "Dados"
-// ENTAO: devem ser exibidas as abas: Titular | Proposta | Crédito
-// E: os campos da aba Crédito devem estar visíveis
-// E: deve ser possível editar os dados
-// E: deve ser possível salvar os dados editados
+// E: Seleciono a opção "Crédito"
+// ENTAO: devem ser exibidas os campos da aba Crédito
 
 describe('Validar Edição de Dados - CRÉDITO', () => {
     beforeEach(() => {

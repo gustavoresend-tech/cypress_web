@@ -1,4 +1,4 @@
-// DADO: que estou na pagina de detalhamento de um precatório/lead
+// DADO: que estou na pagina de detalhamento de um card/precatório
 // QUANDO: clico na aba "Todos os arquivos"
 // ENTAO: deve ser aberta tela com opções para /anexar arquivos
 // E: o btn "Adicionar arquivo" deve estar presente

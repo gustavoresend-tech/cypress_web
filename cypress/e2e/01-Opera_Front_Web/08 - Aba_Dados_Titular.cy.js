@@ -1,7 +1,7 @@
-// DADO: que estou logado e na pagina de detalhamento de um precatório/lead
+// DADO: que estou logado e na pagina de detalhamento de um card/precatório
 // QUANDO: clico na opção "Dados"
-// ENTAO: devem ser exibidas as abas: Titular | Proposta | Crédito
-// E: os campos da aba Titular devem estar presentes
+// E: Seleciono a opção "Titular"
+// ENTAO: devem ser exibidas os campos da aba Titular
 
 describe('Validar Edição de Dados - TITULAR', () => {
     beforeEach(() => {

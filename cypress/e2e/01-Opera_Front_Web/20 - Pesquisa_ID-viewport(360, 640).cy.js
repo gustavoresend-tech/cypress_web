@@ -1,7 +1,8 @@
-// DADO: que estou logado e preciso verificar as atividades iniciadas por mim na plataforma Opera
-// QUANDO: clico na opção "Minhas Operações"
-// ENTAO: devo visualizar as minhas atividades na plataforma Opera
-// E: preciso ter a opção de finalizar as atividades iniciadas
+// DADO: que estou logado na plataforma Opera, na página raiz "https://opera.hml.pjus.com.br/"
+// E: a resolução configurada é: 360x640
+// QUANDO: clico na opção "Consultar operação por ID"
+// ENTAO: devo visualizar o campo "Encontre uma operação / Pesquise por ID"
+// E: a pesquisa de um ID válido deve ser realizada com sucesso
 
 describe('Validar Tela de pesquisa ID - Responsivo', () => {
     beforeEach(() => {

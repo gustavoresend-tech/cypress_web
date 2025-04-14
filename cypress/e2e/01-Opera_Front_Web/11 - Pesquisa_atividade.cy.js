@@ -1,4 +1,4 @@
-// DADO: que estou na pagina de detalhamento de um precatório/lead aba "Atividades"
+// DADO: que estou na pagina de detalhamento de um card/precatório aba "Atividades"
 // E: quero pesquisar por uma atividade
 // QUANDO: clico no btn "Criar atividade"
 // E: seleciono o campo de pesquisa
