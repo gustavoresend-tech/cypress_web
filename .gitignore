@@ -4,6 +4,7 @@ cypress/videos
 cypress.env.json
 node_modules
 *.txt 
+*.sql
 Comandos_Uteis.txt
 cypress.env.json
 05 - Sql_Query.sql
