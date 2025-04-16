@@ -49,14 +49,9 @@
         cy.get('.row > :nth-child(2) > .form-select').select('Comprovante de Endereço');
         // clica no btn "Enviar"
         cy.get('#btn-enviar-arquivo-operacao').click();
-        cy.screenshot('05-Upload',{overwrite: true});
-
-        // // Altera nome do card
-        // cy.get('#dados-operacao-tab').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Upload-arq_OK{enter}');
-        // cy.wait(2000); // Aguarda 2 segundos
-        // cy.get('#atividades-tab').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('13-Após-Upload',{overwrite: true});
 
     });
 });

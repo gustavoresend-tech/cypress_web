@@ -30,43 +30,47 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
     it('Validar Atividades "Inicia / Aprova"', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA - NAO USAR (Automação)').click();
-        // captura evidencia
-        cy.screenshot('01-Ativ_Tela-Inicial',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Ativ_Tela-Inicial',{overwrite: true});
 
         // Acessa, inicializa e Aprova => "Atualização do registro civil"
         cy.contains('Atualização do registro civil').click();
-        // captura evidencia
-        cy.screenshot('01-Ativ_Iniciar',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Ativ_Iniciar',{overwrite: true});
         cy.wait(2000); // Aguarda 2 segundos
         cy.get('#btn-iniciar-atividade').click();
-        // captura evidencia
-        cy.screenshot('01-Ativ_Aprovar',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Ativ_Aprovar',{overwrite: true});
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(2000); // Aguarda 2 segundos
 
         // Acessa, inicializa e Aprova => "Emissão de CNDs manuais"
         cy.contains('Emissão de CNDs manuais').click();
-        cy.screenshot('01-Ativ_Iniciar-02',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Ativ_Iniciar-02',{overwrite: true});
         cy.get('#btn-iniciar-atividade').click();
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(2000); // Aguarda 2 segundos
-        cy.screenshot('01-Ativ_Aprovar-02',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Ativ_Aprovar-02',{overwrite: true});
         cy.wait(2000); // Aguarda 2 segundos
 
         // Acessa, inicializa e Aprova => "Emissão de CNDs automáticas"
         cy.contains('Emissão de CNDs automáticas').click();
-        cy.screenshot('01-Ativ_Iniciar-03',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Ativ_Iniciar-03',{overwrite: true});
         cy.get('#btn-iniciar-atividade').click();
-        cy.screenshot('01-Ativ_Aprovar-03',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Ativ_Aprovar-03',{overwrite: true});
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(2000); // Aguarda 2 segundos
 
@@ -77,11 +81,11 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
-        // captura evidencia (print)
-        cy.screenshot('e2e-02-Conferência de documentos',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Conferência de documentos',{overwrite: true});
         
         // clicar em "Comitê de Deliberação"
         cy.contains('Comitê de Deliberação').click();
@@ -90,11 +94,11 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
-        // captura evidencia (print)
-        cy.screenshot('e2e-02-Comitê de Deliberação',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Comitê de Deliberação',{overwrite: true});
         
         // clicar em "Análise do processo"
         cy.contains('Pendente').click();
@@ -103,19 +107,24 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
-        // captura evidencia (print)
-        cy.screenshot('e2e-02-Análise do processo',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('06-Análise do processo',{overwrite: true});
         
-       // // clicar em "Análise de compliance"
-       // cy.contains('Análise de compliance').click();
-       // // clica no btn "Iniciar"
-       // cy.get('#btn-iniciar-atividade').click();
-       // // clica no btn "Finalizar"
-       // cy.get('#btn-finalizar-atividade').click();
-       // cy.screenshot('e2e-02-Análise de compliance',{overwrite: true});
+        // clicar em "Análise de compliance"
+        cy.contains('Análise de compliance').click();
+        // clica no btn "Iniciar"
+        cy.get('#btn-iniciar-atividade').click();
+        // clica no btn "Finalizar"
+        cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('06-Análise de compliance',{overwrite: true});
        
        // clicar em "Defesa BRL"
        cy.contains('Defesa BRL').click();
@@ -124,32 +133,11 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
        // clica no btn "Finalizar"
        cy.get('#btn-finalizar-atividade').click();
        //Preenche modal de observação
-       cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
+       cy.get('#observacao-aprovar-atividade').type('Teste-QA');
        cy.get('#btn-aprovar-atividade').click();
        cy.wait(1000); // Aguarda 1 segundos
-       // captura evidencia (print)
-       cy.screenshot('e2e-02-Defesa BRL',{overwrite: true});        
+       // Captura print para evidencia
+       cy.screenshot('06-Defesa BRL',{overwrite: true});        
 
-        // // Acessa, inicializa e Aprova => "Atividade Teste QA"
-        // cy.contains('Atividade Teste QA').click();
-        // cy.screenshot('01-Ativ_Iniciar-03',{overwrite: true});
-        // cy.get('#btn-iniciar-atividade').click();
-        // cy.screenshot('01-Ativ_Aprovar-03',{overwrite: true});
-        // cy.get('#btn-finalizar-atividade').click();
-        // //Preenche modal de observação
-        // cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('Teste-QA')
-        // cy.get('#btn-aprovar-atividade').click();
-        // cy.wait(2000); // Aguarda 2 segundos
-
-        // // Altera nome do card
-        // cy.get('#dados-operacao-tab').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Conferência inicial{enter}');
-        // cy.wait(2000); // Aguarda 2 segundos
-        // cy.get('#atividades-tab').click();
-
-        // // captura estado final das atividades no card
-        // cy.screenshot('01-Ativ_StatusFinal',{overwrite: true});
-        // cy.wait(2000); // Aguarda 2 segundos
     });
 });

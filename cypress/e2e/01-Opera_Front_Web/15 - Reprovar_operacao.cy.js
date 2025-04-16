@@ -34,17 +34,11 @@
         // Clicar btn "Reprovar operacao"
         cy.get('#btn-abrir-modal-reprovar-operacao').click();
         cy.get('#observacao-reprovar-operacao').click().type('Teste reprovar operacao');
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
         cy.screenshot('15-Reprovar_Operacao',{overwrite: true});
         cy.get('#btn-reprovar-operacao').click();
         cy.wait(1000); // Aguarda 1 segundos
-        //cy.get('#link-voltar-para-todas-etapas').click();
-
-        // // Altera nome do card
-        // cy.get('#dados-operacao-tab').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Operacao-Reprovada{enter}');
-        // cy.wait(2000); // Aguarda 2 segundos
-        // cy.get('#atividades-tab').click();
         
         });
     });    

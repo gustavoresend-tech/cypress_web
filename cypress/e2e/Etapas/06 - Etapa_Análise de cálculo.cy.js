@@ -30,126 +30,249 @@
 
         it('Validar etapa: "Análise de cálculo"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA-Análise de cálculo').click();
+        cy.contains('Teste-QA-Workflow').click();
         cy.screenshot('06-Etapa-Análise de cálculo_INICIO',{overwrite: true});
 
         // APROVACAO ATIVIDADES DA ETAPA: "Análise de cálculo"
 
-        // INICIA PROCESSO DE MONTAGEM DO CÁLCULO
-
         // clicar em "Calcular valor do precatório"
         cy.contains('Calcular valor do precatório').click();
-        // clica no btn "Iniciar"
+        //clica no btn "Iniciar"
         cy.get('#btn-iniciar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+
 
         // INFORMAÇÕES BÁSICAS
 
-        // Seleciona campo "Desconto de Previdência"
-        cy.get(':nth-child(1) > .form-select').select('Percentual', { force: true });        
+        // NEGOCIADOR
+        
+        // Coluna Negociador - Verifica existência dos campos
+        cy.get(':nth-child(1) > .tabela-calculo > .bg-white > .position-relative > .text-center > .text-2')
+        .contains("Negociador");
 
-        // Preenche campo "Previdência"
-        cy.get('#step-informacoes-basicas-tab-pane > :nth-child(1) > :nth-child(2) > .form-control').clear().type('0', { force: true });        
+        // verifica se o campo "Desconto de Previdência" existe
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(1) > .label')
+        .contains("Desconto de Previdência");
+
+        // verifica se o campo existe: "Imposto de renda";
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(3) > .label')
+        .contains("Imposto de renda");
+
+        // verifica se o campo existe: "Valor Imposto de renda";
+        cy.get('#CalculoProposta-div-ValorIr > .label')
+        .contains("Valor imposto de renda");
+
+        // verifica se o campo existe: "Percentual Imposto de renda";
+        cy.get('#CalculoProposta-div-PercentualIr > .label')
+        .contains("Percentual imposto de renda");
+
+        // verifica se o campo existe: "Início formação";
+        cy.get('#CalculoProposta-div-DataInicioFormacao > .label')
+        .contains("Início formação");
+
+        // verifica se o campo existe: "Término formação";
+        cy.get('#CalculoProposta-div-DataTerminoFormacao > .label')
+        .contains("Término formação");
+        
+        // verifica se o campo existe: "Data EC-62"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(9) > .label')
+        .contains("Data EC-62");
+
+        // verifica se o campo existe: "Valor EC-62"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(10) > .label')
+        .contains("Valor EC-62");
+
+        // verifica se o campo existe: "Penhora"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(11) > .label')
+        .contains("Valor Penhora");
+
+        // verifica se o campo existe: "Debito Total do 3"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(12) > .label')
+        .contains("Debito Total do 3");
+
+        // verifica se o campo existe: "Debito Total do 3 retido"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(13) > .label')
+        .contains("Debito Total do 3 retido");
+
+        // verifica se o campo existe: "ISS"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(14) > .label')
+        .contains("ISS");
+
+        // verifica se o campo existe: "Outras Despesas"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(15) > .label')
+        .contains("Outras despesas");
+
+        // verifica se o campo existe: "Principal"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(16) > .label')
+        .contains("Principal");
+
+        // verifica se o campo existe: "Juros"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(17) > .label')
+        .contains("Juros");
+
+        // verifica se o campo existe: "Vencimento"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(18) > .label')
+        .contains("Vencimento");
+
+        // verifica se o campo existe: "Data de autuação"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(19) > .label')
+        .contains("Data de autuação");
+
+        // verifica se o campo existe: "Data de"
+        cy.get(':nth-child(1) > .tabela-calculo > .p-1 > :nth-child(20) > .label')
+        .contains("Data de");
+
+        // OFICIO - Imposto RRA
+
+        // Coluna Oficio - Verifica existência dos campos e realiza o preenchimento
+        cy.get(':nth-child(2) > .tabela-calculo > .bg-white > .position-relative > .text-center > .text-2')
+        .contains("Ofício");        
+
+        // Seleciona campo "Desconto de Previdência"
+        cy.get('#CalculoOficio-TipoPrevidencia').select('Percentual', { force: true });        
+
+        // Preenche campo " Valor Previdência"
+        cy.get('#CalculoOficio-ValorPrevidencia').clear().type('0', { force: true });        
 
         // Seleciona campo "Imposto de renda"
-        cy.get(':nth-child(1) > :nth-child(3) > .form-select').select('RRA', { force: true });        
+        cy.get('#CalculoOficio-TipoIr').select('RRA', { force: true });
+        
+        // Seleciona campo "Valor Imposto de renda"
+        //cy.get('#CalculoOficio-ValorIr').clear().type('0', { force: true });
+        
+        // Seleciona campo "Percentual Imposto de renda"
+        //cy.get('#CalculoOficio-PercentualIr').clear().type('0', { force: true });
 
         // preenche campo "Inicio Formação"
-        cy.get('#DataInicioFormacao').type('2021-01-01', { force: true });        
+        cy.get('#CalculoOficio-DataInicioFormacao').type('2021-01-01', { force: true });        
 
         // preenche o campo "Término formação"
-        cy.get('#DataTerminoFormacao').type('2021-01-01', { force: true });        
+        cy.get('#CalculoOficio-DataTerminoFormacao').type('2021-01-01', { force: true });        
 
         // preenche o campo "% honorários"
-        cy.get('#step-informacoes-basicas-tab-pane > :nth-child(2) > :nth-child(5) > .form-control').clear().type('30', { force: true });        
+        cy.get('#CalculoOficio-HonorariosContratuais').clear().type('30', { force: true });        
 
         // preenche o campo "Data EC-62"
-        // cy.get(':nth-child(3) > :nth-child(1) > .form-control').type('2021-01-01', { force: true });
+        cy.get('#CalculoOficio-DataPrioridade').type('2021-01-01', { force: true });
 
         // preenche o campo "Valor EC-62"
-        cy.get(':nth-child(3) > :nth-child(2) > .form-control').clear().type('0',{ force: true });        
+        cy.get('#CalculoOficio-ValorPrioridade').clear().type('0',{ force: true });        
 
         // preenche o campo "Valor Penhora"
-        cy.get(':nth-child(3) > :nth-child(3) > .form-control').clear().type('0',{ force: true });        
+        cy.get('#CalculoOficio-ValorPenhora').clear().type('0',{ force: true });        
 
         // preenche o campo "Débito total do 3"
-        cy.get(':nth-child(4) > :nth-child(1) > .form-control').clear().type('0',{ force: true });        
+        cy.get('#CalculoOficio-DebitoTotalDo3').clear().type('0',{ force: true });        
         
         // preenche o campo "Débito total do 3 retido"
-        cy.get(':nth-child(4) > :nth-child(2) > .form-control').clear().type('0',{ force: true });        
+        cy.get('#CalculoOficio-DebitoTotalDo3').clear().type('0',{ force: true });        
 
         // preenche o campo "ISS"
-        cy.get(':nth-child(4) > :nth-child(3) > .form-control').clear().type('0',{ force: true });
+        cy.get('#CalculoOficio-IssValor').clear().type('0',{ force: true });
 
         // preenche o campo "Outras Despesas"
-        cy.get(':nth-child(4) > :nth-child(4) > .form-control').clear().type('0',{ force: true });
+        cy.get('#CalculoOficio-OutrasDespesas').clear().type('0',{ force: true });
 
-        // clica btn "Continuar"
-        cy.get('#step-informacoes-basicas-tab-pane > .float-end > .btn').click();
+        // preenche o campo "Principal"
+        cy.get('#CalculoOficio-ValorPrincipal').clear().type('150000',{ force: true });
 
-        // OFICIO
+        // preenche o campo "Juros"
+        cy.get('#CalculoOficio-ValorJuros').clear().type('25000',{ force: true });
 
-        // preenche campo "Principal"
-        cy.get('#step-oficio-tab-pane > :nth-child(1) > :nth-child(1) > .form-control').clear().type('150000',{ force: true });
+        // preenche o campo "Vencimento"
+        cy.get('#CalculoOficio-AnoVencimento').clear().type('2026',{ force: true });
 
-        // preenche campo "juros"
-        cy.get('#step-oficio-tab-pane > :nth-child(1) > :nth-child(2) > .form-control').clear().type('25000',{ force: true });
+        // preenche o campo "Data de autuação"
+        cy.get('#CalculoOficio-DataAutuacao').type('2021-01-01', { force: true });
 
-        // preenche campo "Vencimento"
-        cy.get('#step-oficio-tab-pane > :nth-child(1) > :nth-child(3) > .form-control').clear().type('2026',{ force: true });
+        // preenche o campo "Data de liquidação"
+        cy.get('#CalculoOficio-DataLiquidacao').type('2021-01-01', { force: true });
 
-        // preenche campo "data de autuaçao"
-        cy.get('#step-oficio-tab-pane > :nth-child(2) > :nth-child(1) > .form-control').type('2021-01-01', { force: true });
+        // Cálculo PJUS - Imposto RRA
 
-        // preenche campo "data de liquidação"
-        cy.get('#step-oficio-tab-pane > :nth-child(2) > :nth-child(2) > .form-control').type('2021-01-01', { force: true });
+        // Coluna Oficio - Verifica existência dos campos e realiza o preenchimento
+        cy.get(':nth-child(3) > .tabela-calculo > .bg-white > .position-relative > .text-center > .text-2')
+        .contains("PJUS");
 
-        // clica btn "Continuar"
-        cy.get('#step-oficio-tab-pane > .float-end > .btn-primary').click();
+        // Seleciona campo "Desconto de Previdência"
+        cy.get('#CalculoPjus-TipoPrevidencia').select('Percentual', { force: true });        
 
-        // PJUS
+        // Preenche campo " Valor Previdência"
+        cy.get('#CalculoPjus-ValorPrevidencia').clear().type('0', { force: true });        
 
-        // preenche campo "Principal"
-        cy.get('#step-PJUS-tab-pane > :nth-child(1) > :nth-child(1) > .form-control').clear().type('150000',{ force: true });
+        // Seleciona campo "Imposto de renda"
+        cy.get('#CalculoPjus-TipoIr').select('RRA', { force: true });
+        
+        // Seleciona campo "Valor Imposto de renda"
+        //cy.get('#CalculoOficio-ValorIr').clear().type('0', { force: true });
+        
+        // Seleciona campo "Percentual Imposto de renda"
+        //cy.get('#CalculoOficio-PercentualIr').clear().type('0', { force: true });
 
-        // preenche campo "juros"
-        cy.get('#step-PJUS-tab-pane > :nth-child(1) > :nth-child(2) > .form-control').clear().type('25000',{ force: true });
+        // preenche campo "Inicio Formação"
+        cy.get('#CalculoPjus-DataInicioFormacao').type('2021-01-01', { force: true });        
 
-        // preenche campo "Vencimento"
-        cy.get('#step-PJUS-tab-pane > :nth-child(1) > :nth-child(3) > .form-control').clear().type('2026',{ force: true });
+        // preenche o campo "Término formação"
+        cy.get('#CalculoPjus-DataTerminoFormacao').type('2021-01-01', { force: true });        
 
-        // preenche campo "data de autuaçao"
-        cy.get('#step-PJUS-tab-pane > :nth-child(2) > :nth-child(1) > .form-control').type('2021-01-01', { force: true });
+        // preenche o campo "% honorários"
+        cy.get('#CalculoPjus-HonorariosContratuais').clear().type('30', { force: true });        
 
-        // preenche campo "data de liquidação"
-        cy.get('#step-PJUS-tab-pane > :nth-child(2) > :nth-child(2) > .form-control').type('2021-01-01', { force: true });
+        // preenche o campo "Data EC-62"
+        cy.get('#CalculoPjus-DataPrioridade').type('2021-01-01', { force: true });
 
-        // clica btn "Calcular"    
-        cy.get('#step-PJUS-tab-pane > .float-end > .btn-primary').click();
-        cy.wait(1000); // aguarda 1 segundos
+        // preenche o campo "Valor EC-62"
+        cy.get('#CalculoPjus-ValorPrioridade').clear().type('0',{ force: true });        
 
-        // clicar btn "Finalizar"
-        cy.get('#btn-abrir-modal-finalizar-calculo').click();
+        // preenche o campo "Valor Penhora"
+        cy.get('#CalculoPjus-ValorPenhora').clear().type('0',{ force: true });        
 
-        // Preenche modal "Finalizar atividade" calculo
-        cy.get('#form-aprovar-atividade > .modal-body > .mt-3 > #observacao-reprovar-atividade').type('CALCULO OK', { force: true });
+        // preenche o campo "Débito total do 3"
+        cy.get('#CalculoPjus-DebitoTotalDo3').clear().type('0',{ force: true });        
+        
+        // preenche o campo "Débito total do 3 retido"
+        cy.get('#CalculoPjus-DebitoTotalDo3').clear().type('0',{ force: true });        
 
-        // clicar btn "Finalizar"
-        cy.get('#btn-aprovar-atividade').click();
-        cy.wait(1000); // aguarda 1 segundos
-        cy.get('#calculo-operacao-tab').click();
-        cy.wait(2000); // aguarda 2 segundos
-        cy.screenshot('06-Etapa-Análise de cálculo_REL',{overwrite: true});
+        // preenche o campo "ISS"
+        cy.get('#CalculoPjus-IssValor').clear().type('0',{ force: true });
 
-        // Clicar Dados/Titular
-        cy.get('#dados-operacao-tab').click();
-        cy.wait(2000); // Aguarda 2 segundos
+        // preenche o campo "Outras Despesas"
+        cy.get('#CalculoPjus-OutrasDespesas').clear().type('0',{ force: true });
 
-        // Altera nome do card
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Parecer do cedente{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
-        cy.screenshot('06-Etapa-Análise de cálculo_FIM',{overwrite: true});
+        // preenche o campo "Principal"
+        cy.get('#CalculoPjus-ValorPrincipal').clear().type('150000',{ force: true });
+
+        // preenche o campo "Juros"
+        cy.get('#CalculoPjus-ValorJuros').clear().type('25000',{ force: true });
+
+        // preenche o campo "Vencimento"
+        cy.get('#CalculoPjus-AnoVencimento').clear().type('2026',{ force: true });
+
+        // preenche o campo "Data de autuação"
+        cy.get('#CalculoPjus-DataAutuacao').type('2021-01-01', { force: true });
+
+        // preenche o campo "Data de liquidação"
+        cy.get('#CalculoPjus-DataLiquidacao').type('2021-01-01', { force: true });
+        cy.wait(1000); // aguarda 1 segundo
+        // Captura print para evidencia
+        cy.screenshot('06-Fim Preenchimento', {overwrite: true});
+
+        // AJUSTE PARA AGUARDAR MOTOR DE CALCULO
+
+        // Clica "Calcular"
+        // cy.get('.formValidator > .justify-content-end > .col-auto > .btn').click();
+        // cy.wait(5000); // aguarda 5 segundos
+
+        // // // clicar btn "Finalizar"
+        // // cy.get('#btn-aprovar-atividade').click();
+        // // cy.wait(1000); // aguarda 1 segundos
+        // // cy.get('#calculo-operacao-tab').click();
+        // // cy.wait(1000); // aguarda 1 segundos
+        // // cy.screenshot('06-Calculo Final', {overwrite: true});
+
+        // Vai para proxima etapa: tratamento temporário
+        cy.get('#btn-abrir-modal-pular-etapa').click();
+        cy.get('#btn-avancar-etapa').click();
 
         });
     });

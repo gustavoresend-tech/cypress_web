@@ -34,6 +34,7 @@ describe('Validar Edição de Dados - PROPOSTA', () => {
         cy.get('#dados-operacao-tab').click();
         cy.get('#btn-tab-dados-proposta').click();
         cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
         cy.screenshot('09-Dados_Proposta',{overwrite: true});
 
         // Valida se os campos da aba proposta estão presentes
@@ -41,59 +42,38 @@ describe('Validar Edição de Dados - PROPOSTA', () => {
         // Data do aceite
         cy.get(':nth-child(1) > .d-flex > .text-secondary')
         .contains("Data do aceite");
+        cy.wait(1000); // Aguarda 1 segundos
 
         // Negociador
         cy.get('.justify-content-between > :nth-child(2) > .d-flex > .text-secondary')
         .contains("Negociador");
-        
+        cy.wait(1000); // Aguarda 1 segundos
+
         // Valor a vista
         cy.get('.col-12 > .text-3')
         .contains("Valor a vista");
+        cy.wait(1000); // Aguarda 1 segundos
 
         // Intermediário
         cy.get('.mt-3 > :nth-child(1) > :nth-child(2) > .text-label')
         .contains("Intermediário");
+        cy.wait(1000); // Aguarda 1 segundos
 
         // Patrono
         cy.get('.mt-3 > :nth-child(2) > :nth-child(2) > .text-label')
         .contains("Patrono");
+        cy.wait(1000); // Aguarda 1 segundos
 
         // Nome do intermediário
         cy.get('.mt-3 > :nth-child(1) > :nth-child(3) > .text-label')
         .contains("Nome do intermediário");
+        cy.wait(1000); // Aguarda 1 segundos
 
         // Nome do patrono
         cy.get('.mt-3 > :nth-child(2) > :nth-child(3) > .text-label')        
         .contains("Nome do patrono");
+        cy.wait(1000); // Aguarda 1 segundos
 
-        // // Pagamento
-        // cy.get('.col-12 > .table-responsive > .table > thead > tr > :nth-child(1)')
-        // .contains("Pagamento");
-
-        // // Valor
-        // cy.get('.col-12 > .table-responsive > .table > thead > tr > :nth-child(2)')
-        // .contains("Valor");
-
-        // // Data
-        // cy.get('.col-12 > .table-responsive > .table > thead > tr > :nth-child(3)')
-        // .contains("Data");
-
-        // cy.get(':nth-child(1) > :nth-child(2) > .form-select').select('Não', { force: true });
-        // cy.get(':nth-child(1) > :nth-child(2) > .form-select').select('Sim', { force: true });
-        // cy.wait(1000); // Aguarda 1000 milissegundos (3 segundos)
-        // cy.get('.mt-3 > :nth-child(2) > :nth-child(2) > .form-select').select('Não', { force: true });
-        // cy.get('.mt-3 > :nth-child(2) > :nth-child(2) > .form-select').select('Sim', { force: true });
-        // cy.get('.mt-3 > :nth-child(1) > :nth-child(3) > .form-control').click().clear().type('Testado', { force: true });
-        // cy.get('.mt-3 > :nth-child(2) > :nth-child(3) > .form-control').click().clear().type('Testado', { force: true });
-        // cy.screenshot('03-Edicao_Proposta',{overwrite: true});
-        // cy.get('#btn-salvar-dados-editados').click();
-
-        // // Altera nome do card
-        // cy.get('#dados-operacao-tab').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Dados-Proposta_OK{enter}');
-        // cy.wait(2000); // Aguarda 2 segundos
-        // cy.get('#atividades-tab').click();
 
     });
 

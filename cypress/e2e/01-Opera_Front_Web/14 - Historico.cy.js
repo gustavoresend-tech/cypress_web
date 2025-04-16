@@ -27,17 +27,12 @@
     it('Validar aba "Histórico', () => {
         // Acessa o primeiro card dispoível no worlflow
         cy.contains('Teste-QA - NAO USAR (Automação)').click();
-
+        cy.wait(1000); // Aguarda 1 segundos
         // Clicar na aba "Histórico"
         cy.get('#historico-operacao-tab').click();
-        cy.screenshot('14-Histórico',{overwrite: true});
-        
-        // // Altera nome do card
-        // cy.get('#dados-operacao-tab').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Historico_OK{enter}');
-        // cy.wait(2000); // Aguarda 2 segundos
-        // cy.get('#atividades-tab').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('14-Histórico',{overwrite: true});      
 
     });
 });

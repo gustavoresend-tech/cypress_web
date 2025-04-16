@@ -22,9 +22,10 @@ describe('Validar Atividades "Finalizar Esteira"', () => {
         });
     });
 
+    Cypress._.times(6, () => {
     it('Limpeza de esteira 01"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA - NAO USAR (Automação)').click();
+        cy.contains('Teste-QA-Workflow').click();
         // Vai para etapa: Conferencia inicial
         cy.get('#btn-abrir-modal-pular-etapa').click();
         cy.get('#btn-avancar-etapa').click();
@@ -90,126 +91,5 @@ describe('Validar Atividades "Finalizar Esteira"', () => {
         cy.get('#btn-avancar-etapa').click();
         
     });
-
-    // it('Limpeza de esteira 02"', () => {
-    //         // Acessa o card dispoível no worlflow
-    //         cy.contains('Teste-QA-Conferência inicial').click();
-    
-    //         // Vai para etapa: Analise do processo
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Analise do cedente
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Providencias
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Analise de calculo
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Parecer do cedente
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Conferencia final
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Parecer juridico
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Validaçao da operação
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Confecçao do documento
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Assinatura
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Conferencia do translado
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Protocolo de cessao
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Validacoes finais
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Pagamento
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Finaliza o card na esteira
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();        
-    // });
-
-    // it('Limpeza de esteira 03"', () => {
-        
-    //         // Acessa o card dispoível no worlflow
-    //         cy.contains('Teste-QA-Análise de cálculo').click();
-    
-    //         // Vai para etapa: Parecer do cedente
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Conferencia final
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Parecer juridico
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Validaçao da operação
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Confecçao do documento
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Assinatura
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Conferencia do translado
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Protocolo de cessao
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Validacoes finais
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Vai para etapa: Pagamento
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click();
-    
-    //         // Finaliza o card na esteira
-    //         cy.get('#btn-abrir-modal-pular-etapa').click();
-    //         cy.get('#btn-avancar-etapa').click(); 
-
-    //     // Altera nome do card
-    //     cy.get('#dados-operacao-tab').click();
-    //     cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-    //     cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Esteira_Finalizada{enter}');
-    //     cy.wait(2000); // Aguarda 2 segundos
-    //     cy.get('#atividades-tab').click();
-        
-    });
+});
+});

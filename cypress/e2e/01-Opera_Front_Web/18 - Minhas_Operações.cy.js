@@ -29,8 +29,7 @@ describe('Validar Menu Operações', () => {
     it('Validar Menu Operações', () => {
         // entrar no menu de operações
         cy.get('.mx-2').click();       
-        // aguarda 1 segundo
-        cy.wait(1000);
+        cy.wait(1000); // aguarda 1 segundo
         // clica na opção "Minhas Operações"
         cy.get(':nth-child(2) > .nav-link').click();
         cy.wait(5000); // aguarda 5 segundos
@@ -41,7 +40,7 @@ describe('Validar Menu Operações', () => {
         cy.url().should('contain', 'https://opera.hml.pjus.com.br/board/operador');
         // aguarda 1 segundo
         cy.wait(1000);
-        // captura print da tela atual
+        // Captura print para evidencia
         cy.screenshot('18-Minhas_Operacoes',{overwrite: true});
         // aguarda 1 segundo
         cy.wait(1000);

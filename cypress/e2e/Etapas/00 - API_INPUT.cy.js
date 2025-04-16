@@ -24,7 +24,7 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
   body: { // Corpo da requisição
     // Informacoes do titular do crédito
     "titular": {
-      "nome": "Teste-QA-Documentos preliminares",
+      "nome": "Teste-QA-Workflow",
       "documento": "925.910.640-08",
       "dataNascimento": "1985-06-15T12:57:31.215Z",
       "nomePai": "QA Silva",
@@ -44,8 +44,15 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
       "estado": "RJ",
       "banco": "Banco de Dados",
       "agencia": "12364",
-      "contaDigito": "56789-0"
-    },
+      "contaDigito": "56789-0",
+      "DataCasamento": "2013-06-15T12:57:31.215Z",
+      "CidadeCasamento": "SAO_PAULO",
+      "EstadoCasamento": "SP",
+      "CartorioCasamento": "29-oficial-de-registro-civil-santo-amaro-sao-paulo",
+      "LivroCasamento": "266",
+      "TermoCasamento": "79038",
+      "PaginaCasamento": "155"    
+},
 // Informacoes do credito precatorio
     "credito": {
       "processo": "98765432-1",

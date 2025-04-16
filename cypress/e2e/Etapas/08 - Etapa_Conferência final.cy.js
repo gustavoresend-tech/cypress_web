@@ -29,7 +29,7 @@
 
         it('Validar etapa: "Conferência final"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA-Conferência final').click();
+        cy.contains('Teste-QA-Workflow').click();
         cy.screenshot('08-Etapa-Conferência final_INICIO',{overwrite: true});
 
         // APROVACAO ATIVIDADES DA ETAPA: "Conferência final"
@@ -40,17 +40,27 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('08-Conferencia final',{overwrite: true});
+        cy.wait(2000); // Aguarda 1 segundos
 
-        // Clicar Dados/Titular
-        cy.get('#dados-operacao-tab').click();
-        cy.wait(2000); // Aguarda 2 segundos
-
-        // Altera nome do card
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Parecer jurídico{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
-        cy.screenshot('08-Etapa-Conferência final_FIM',{overwrite: true});
-
+        // clicar em "Conferência não técnica das informações"
+        cy.contains('Conferência Final').click();
+        // clica no btn "Iniciar"
+        cy.get('#btn-iniciar-atividade').click();
+        // clica no btn "Finalizar"
+        cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('08-Conferencia final',{overwrite: true});
+        cy.wait(2000); // Aguarda 1 segundos
+        
         });
     });

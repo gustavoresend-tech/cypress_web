@@ -17,7 +17,8 @@ describe('Validar Login SSO', () => {
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.wait(1000); // aguarda 1 segundo
-            cy.screenshot('00-Usuario_email',{overwrite: true});
+            // Captura print para evidencia
+            cy.screenshot('05-Usuario_email',{overwrite: true});
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
             // Insere e-senha e submete
@@ -31,6 +32,7 @@ describe('Validar Login SSO', () => {
     });
     it('Validar Login SSO', () => {
         // Verifica pagina inicial
-        cy.screenshot('00-Apos_Login',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('05-Apos_Login',{overwrite: true});
     });
 });

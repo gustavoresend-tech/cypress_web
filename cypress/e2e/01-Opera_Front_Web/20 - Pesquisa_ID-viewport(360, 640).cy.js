@@ -28,6 +28,9 @@ describe('Validar Tela de pesquisa ID - Responsivo', () => {
     });
 
     it('Validar Pesquisa ID - (360, 640)', () => {
+        // Captura print para evidencia
+        cy.screenshot('20-Menu de pesquisa',{overwrite: true});
+
         // entrar no menu de pesquisa
         cy.get('.card > .btn').click();        
         cy.wait(2000); // aguarda 2 segundos
@@ -39,6 +42,9 @@ describe('Validar Tela de pesquisa ID - Responsivo', () => {
         cy.get(':nth-child(3) > .btn').click();
         // verifica se o texto "Operação Encontrada" aparece na tela
         cy.get('.mx-auto > .text-2').contains('Operação encontrada!');
+        // Captura print para evidencia
+        cy.screenshot('20-Pesquisa 01',{overwrite: true});
+
 
         // Pesquisa 02
         // Insere ID para pesquisa
@@ -47,6 +53,9 @@ describe('Validar Tela de pesquisa ID - Responsivo', () => {
         cy.get(':nth-child(3) > .btn').click();
         // verifica se o texto "Operação Encontrada" aparece na tela
         cy.get('.mx-auto > .text-2').contains('Operação encontrada!');
+        // Captura print para evidencia
+        cy.screenshot('20-Pesquisa 02',{overwrite: true});
+
 
         // Pesquisa 03
         // Insere ID para pesquisa        
@@ -55,6 +64,9 @@ describe('Validar Tela de pesquisa ID - Responsivo', () => {
         cy.get(':nth-child(3) > .btn').click();
         // verifica se o texto "Operação Não encontrada!" aparece na tela
         cy.get('.mx-auto > .text-2').contains('Operação encontrada!');
+        // Captura print para evidencia
+        cy.screenshot('20-Pesquisa 03',{overwrite: true});
+
 
         // Pesquisa 04 - exceção
         // Insere ID para pesquisa        
@@ -64,6 +76,9 @@ describe('Validar Tela de pesquisa ID - Responsivo', () => {
         // verifica se o texto "Erro ao recuperar operação: Sequence contains no elements." aparece na tela
         cy.get('.col-auto > .text-2').contains('Erro ao recuperar operação');
         cy.wait(1000); // aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('20-Pesquisa 04',{overwrite: true});
+
 
     });
 

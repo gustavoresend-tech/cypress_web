@@ -29,7 +29,7 @@
 
         it('Validar etapa: "Análise do processo"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA-Análise do processo').click();
+        cy.contains('Teste-QA-Workflow').click();
         cy.screenshot('03-Etapa-Análise do processo_INICIO',{overwrite: true});
 
         // APROVACAO ATIVIDADES DA ETAPA: "Análise do processo"
@@ -40,7 +40,12 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
-        cy.wait(2000); // aguarda 2 segundos
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('03-Comitê de Deliberação',{overwrite: true});
 
         // clicar em "Análise do processo"
         cy.contains('Pendente').click();
@@ -48,17 +53,12 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
-
-        // Clicar Dados/Titular
-        cy.get('#dados-operacao-tab').click();
-        cy.wait(2000); // Aguarda 2 segundos
-
-        // Altera nome do card
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Análise de cedente{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
-        cy.screenshot('03-Etapa-Análise do processo_FIM',{overwrite: true});
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('03-Análise do processo',{overwrite: true});
 
         });
     });

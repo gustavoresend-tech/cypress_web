@@ -29,45 +29,52 @@
 
         it('Validar etapa: "Documentos preliminares"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA-Documentos preliminares').click();
+        cy.contains('Teste-QA-Workflow').click();
+        // Captura print para evidencia
         cy.screenshot('01-Etapa-Documentos preliminares_INICIO',{overwrite: true});
 
         // APROVAS ATIVIDADES DA ETAPA: "Documentos preliminares"
 
-        // clica em "Emissão de CNDs automáticas"
-        cy.contains('Emissão de CNDs automáticas').click();
-        // clica no btn "Iniciar"
-        cy.get('#btn-iniciar-atividade').click();
-        // clica no btn "Aprovar"
-        cy.get('#btn-finalizar-atividade').click();
-        cy.wait(2000); // Aguarda 2 segundos
-
-        // clicar em "Emissão de CNDs manuais"
-        cy.contains('Emissão de CNDs manuais').click();
-        // clica no btn "Iniciar"
-        cy.get('#btn-iniciar-atividade').click();
-        // clica no btn "Finalizar"
-        cy.get('#btn-finalizar-atividade').click();
-        cy.wait(2000); // Aguarda 2 segundoss
-
-        // clicar em "Atualização do registro civil"
+        // Acessa, inicializa e Aprova => "Atualização do registro civil"
         cy.contains('Atualização do registro civil').click();
-        // clica no btn "Iniciar"
+        // Captura print para evidencia
+        cy.screenshot('01-Ativ_Iniciar',{overwrite: true});
+        cy.wait(2000); // Aguarda 2 segundos
         cy.get('#btn-iniciar-atividade').click();
-        // clica no btn "Finalizar"
+        // Captura print para evidencia
+        cy.screenshot('01-Ativ_Aprovar',{overwrite: true});
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
         cy.wait(2000); // Aguarda 2 segundos
 
-        // Clicar Dados/Titular
-        cy.get('#dados-operacao-tab').click();
+        // Acessa, inicializa e Aprova => "Emissão de CNDs manuais"
+        cy.contains('Emissão de CNDs manuais').click();
+        // Captura print para evidencia
+        cy.screenshot('01-Ativ_Iniciar-02',{overwrite: true});
+        cy.get('#btn-iniciar-atividade').click();
+        cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(2000); // Aguarda 2 segundos
+        // Captura print para evidencia
+        cy.screenshot('01-Ativ_Aprovar-02',{overwrite: true});
         cy.wait(2000); // Aguarda 2 segundos
 
-        // Altera nome do card
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Conferência inicial{enter}');
+        // Acessa, inicializa e Aprova => "Emissão de CNDs automáticas"
+        cy.contains('Emissão de CNDs automáticas').click();
+        // Captura print para evidencia
+        cy.screenshot('01-Ativ_Iniciar-03',{overwrite: true});
+        cy.get('#btn-iniciar-atividade').click();
+        // Captura print para evidencia
+        cy.screenshot('01-Ativ_Aprovar-03',{overwrite: true});
+        cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA')
+        cy.get('#btn-aprovar-atividade').click();
         cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
-        cy.screenshot('01-Etapa-Documentos preliminares_FIM',{overwrite: true});
 
         });
     });

@@ -30,7 +30,8 @@
         it('Validar Cálculo Precatório', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA-Analise de calculo').click();
-        cy.screenshot('16-Card_Selecionado',{overwrite: true});
+        // Captura print para evidencia
+        cy.screenshot('19-Card_Selecionado',{overwrite: true});
 
 
         // INICIA PROCESSO DE MONTAGEM DO CÁLCULO
@@ -250,7 +251,9 @@
 
         // preenche o campo "Data de liquidação"
         cy.get('#CalculoPjus-DataLiquidacao').type('2021-01-01', { force: true });
-        cy.screenshot('16-PJUS', {overwrite: true});
+        cy.wait(1000); // aguarda 1 segundo
+        // Captura print para evidencia
+        cy.screenshot('19-Fim Preenchimento', {overwrite: true});
 
         // AJUSTE PARA AGUARDAR MOTOR DE CALCULO
 
@@ -263,7 +266,7 @@
         // // cy.wait(1000); // aguarda 1 segundos
         // // cy.get('#calculo-operacao-tab').click();
         // // cy.wait(1000); // aguarda 1 segundos
-        // // cy.screenshot('16-Calculo', {overwrite: true});
+        // // cy.screenshot('19-Calculo Final', {overwrite: true});
 
     });
 });

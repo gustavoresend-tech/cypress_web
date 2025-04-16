@@ -113,7 +113,10 @@ describe('API Operacao - Valor Futuro', () => {
 
       // testes assert
       }).then((response) => {
-        expect(response.status).to.eq(200);        
+        // Verifique o status da resposta
+        expect(response.status).to.eq(200);
+        // Captura print para evidencia
+        cy.screenshot('02 - API_VF_CPF',{overwrite: true});
         // Adicione mais verificações conforme necessário
       });
     });

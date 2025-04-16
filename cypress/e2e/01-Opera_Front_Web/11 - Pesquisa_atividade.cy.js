@@ -35,15 +35,9 @@
             cy.get('#btn-link-para-criar-atividade').click();
             cy.get('#input-filtrar-nova-atividade').click().type('Ajuste');
             cy.wait(1000); // Aguarda 1 segundos
+            // Captura print para evidencia
             cy.screenshot('11-Pesquisa_Atividades',{overwrite: true});
             cy.wait(1000); // Aguarda 1 segundos
-
-        // // Altera nome do card
-        // cy.get('#dados-operacao-tab').click();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        // cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Pesquisa-Atividade_OK{enter}');
-        // cy.wait(2000); // Aguarda 2 segundos
-        // cy.get('#atividades-tab').click();
 
         });
     });    

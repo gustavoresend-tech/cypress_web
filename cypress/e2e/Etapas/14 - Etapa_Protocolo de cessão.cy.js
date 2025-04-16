@@ -30,7 +30,7 @@
 
         it('Validar etapa: "Protocolo de cessão"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA-Protocolo de cessão').click();
+        cy.contains('Teste-QA-Workflow').click();
         cy.screenshot('14-Teste-QA-Protocolo de cessão_INICIO',{overwrite: true});
 
         // APROVACAO ATIVIDADES DA ETAPA: "Protocolar cessão"
@@ -41,6 +41,13 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('14-Teste-QA-Protocolo de cessão 02',{overwrite: true});
+        cy.wait(2000); // Aguarda 1 segundos
 
         // clicar em "Verificar movimentação processual"
         cy.contains('Verificar movimentação processual').click();
@@ -48,24 +55,22 @@
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
+        //Preenche modal de observação
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('14-Teste-QA-Protocolo de cessão 03',{overwrite: true});
+        cy.wait(2000); // Aguarda 1 segundos
 
-        // clicar em "Assinaturas"
-        cy.contains('Assinaturas').click();
-        // clica no btn "Iniciar"
-        cy.get('#btn-iniciar-atividade').click();
-        // clica no btn "Finalizar"
-        cy.get('#btn-finalizar-atividade').click();        
 
-        // Clicar Dados/Titular
-        cy.get('#dados-operacao-tab').click();
-        cy.wait(2000); // Aguarda 2 segundos
+        // // clicar em "Assinaturas"
+        // cy.contains('Assinaturas').click();
+        // // clica no btn "Iniciar"
+        // cy.get('#btn-iniciar-atividade').click();
+        // // clica no btn "Finalizar"
+        // cy.get('#btn-finalizar-atividade').click();        
 
-        // Altera nome do card
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').click().clear();
-        cy.get('#tab-dados-titular > .row > :nth-child(1) > .card > :nth-child(2) > .form-control').type('Teste-QA-Validações finais{enter}');
-        cy.wait(2000); // Aguarda 2 segundos
-        cy.get('#atividades-tab').click();
-        cy.screenshot('14-Teste-QA-Protocolo de cessão_FIM',{overwrite: true});
 
         });
     });

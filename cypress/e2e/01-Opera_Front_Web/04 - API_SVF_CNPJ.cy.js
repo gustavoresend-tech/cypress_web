@@ -98,7 +98,10 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
   }
       // testes assert
     }).then((response) => {
-      expect(response.status).to.eq(200);        
+        // Verifique o status da resposta
+        expect(response.status).to.eq(200);
+        // Captura print para evidencia
+        cy.screenshot('04 - API_SVF_CNPJ',{overwrite: true});
       // Adicione mais verificações conforme necessário
     });
   });
