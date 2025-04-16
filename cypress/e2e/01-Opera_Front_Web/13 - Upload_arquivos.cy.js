@@ -36,7 +36,7 @@
 
         // Upload .png
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
-        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.png');
+        cy.get('#btn-upload-file-input-arquivo-label').selectFile('Teste_Upload.png');
         // seleciona o tipo de documento       
         cy.get('.row > :nth-child(2) > .form-select').select('Documento de Identificacao');
         // clica no btn "Enviar"
@@ -44,7 +44,7 @@
 
         // Upload .jpg
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
-        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.jpg');
+        cy.get('#btn-upload-file-input-arquivo-label').selectFile('Teste_Upload.jpg');
         // seleciona o tipo de documento       
         cy.get('.row > :nth-child(2) > .form-select').select('Comprovante de Endereço');
         // clica no btn "Enviar"
@@ -52,7 +52,7 @@
 
         // Upload .pdf
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
-        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.pdf');
+        cy.get('#btn-upload-file-input-arquivo-label').selectFile('Teste_Upload.pdf');
         // seleciona o tipo de documento       
         cy.get('.row > :nth-child(2) > .form-select').select('Certidao de Casamento');
         // clica no btn "Enviar"
@@ -60,7 +60,7 @@
 
         // Upload .docx
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
-        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.docx');
+        cy.get('#btn-upload-file-input-arquivo-label').selectFile('Teste_Upload.docx');
         // seleciona o tipo de documento       
         cy.get('.row > :nth-child(2) > .form-select').select('Cópia Processo');
         // clica no btn "Enviar"
@@ -68,7 +68,7 @@
 
         // Upload .xlsx
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
-        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.xlsx');
+        cy.get('#btn-upload-file-input-arquivo-label').selectFile('Teste_Upload.xlsx');
         // seleciona o tipo de documento       
         cy.get('.row > :nth-child(2) > .form-select').select('Folha de Cálculo');
         // clica no btn "Enviar"

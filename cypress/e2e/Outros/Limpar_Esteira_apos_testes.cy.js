@@ -25,7 +25,7 @@ describe('Validar Atividades "Finalizar Esteira"', () => {
     Cypress._.times(6, () => {
     it('Limpeza de esteira 01"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA-Workflow').click();
+        cy.contains('Teste-QA - NAO USAR (Automação)').click();
         // Vai para etapa: Conferencia inicial
         cy.get('#btn-abrir-modal-pular-etapa').click();
         cy.get('#btn-avancar-etapa').click();

@@ -6,8 +6,8 @@
     "Cypress Run": "npx cypress run --spec './cypress/e2e/01-Opera_Front_Web/*.cy.js' --browser edge",
     "Cypress Run Etapas": "npx cypress run --spec './cypress/e2e/Etapas/*.cy.js' --browser edge",
     "Cypress Run Responsivo": "npx cypress run --spec './cypress/e2e/Responsivos/*.cy.ls' --browser edge",
-    
-    "Cypress Open": "npx cypress open --browser edge"    
+    "Cypress Run Limpar Esteira": "npx cypress run --spec './cypres/e2e/Outros/Limpar_Esteira_apos_testes.cy.js' --browser edge",    
+    "Cypress Open": "npx cypress open --browser edge"
   },
   "keywords": [],
   "author": "Gustavo-QA",
