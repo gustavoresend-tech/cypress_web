@@ -36,7 +36,7 @@
 
         // Upload .png
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
-        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Tela-Inicial.png');
+        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.png');
         // seleciona o tipo de documento       
         cy.get('.row > :nth-child(2) > .form-select').select('Documento de Identificacao');
         // clica no btn "Enviar"
@@ -44,11 +44,37 @@
 
         // Upload .jpg
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
-        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Tela-Inicial.jpg');
+        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.jpg');
         // seleciona o tipo de documento       
         cy.get('.row > :nth-child(2) > .form-select').select('Comprovante de Endereço');
         // clica no btn "Enviar"
         cy.get('#btn-enviar-arquivo-operacao').click();
+
+        // Upload .pdf
+        // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
+        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.pdf');
+        // seleciona o tipo de documento       
+        cy.get('.row > :nth-child(2) > .form-select').select('Certidao de Casamento');
+        // clica no btn "Enviar"
+        cy.get('#btn-enviar-arquivo-operacao').click();
+
+        // Upload .docx
+        // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
+        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.docx');
+        // seleciona o tipo de documento       
+        cy.get('.row > :nth-child(2) > .form-select').select('Cópia Processo');
+        // clica no btn "Enviar"
+        cy.get('#btn-enviar-arquivo-operacao').click();
+
+        // Upload .xlsx
+        // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
+        cy.get('#btn-upload-file-inputarquivo-label').selectFile('Teste_Upload.xlsx');
+        // seleciona o tipo de documento       
+        cy.get('.row > :nth-child(2) > .form-select').select('Folha de Cálculo');
+        // clica no btn "Enviar"
+        cy.get('#btn-enviar-arquivo-operacao').click();
+
+
         cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
         cy.screenshot('13-Após-Upload',{overwrite: true});
