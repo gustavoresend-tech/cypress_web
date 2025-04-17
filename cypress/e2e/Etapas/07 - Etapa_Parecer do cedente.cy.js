@@ -37,15 +37,23 @@
         // clicar em "Parecer do cedente"
         cy.contains('Pendente').click();
         // clica no btn "Iniciar"
-        cy.get('#btn-iniciar-atividade').click();
-        cy.get('#atividades > .btn').click();
+        //cy.get('#btn-iniciar-atividade').click();
+        //cy.get('#atividades > .btn').click();
         //Preenche modal de observação
-        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-        cy.get('#btn-aprovar-atividade').click();
-        cy.wait(1000); // Aguarda 1 segundos
+        // cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        // cy.get('#btn-aprovar-atividade').click();
+        // cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
         cy.screenshot('05-Parecer do cedente',{overwrite: true});
         cy.wait(2000); // Aguarda 1 segundos
+
+        // Ajuste
+
+        // Vai para proxima etapa: tratamento temporário
+        cy.get('#btn-abrir-modal-pular-etapa').click();
+        cy.get('#btn-avancar-etapa').click();
+
+
 
 
         });

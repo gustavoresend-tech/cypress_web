@@ -38,7 +38,14 @@
         cy.contains('Análise de compliance').click();
         // clica no btn "Iniciar"
         cy.get('#btn-iniciar-atividade').click();
-        // clica no btn "Finalizar"
+        // Verifica existência dos campos | ENVIO, STATUS, RETORNO
+        cy.get('#atividades > .card > :nth-child(3) > :nth-child(1) > div > :nth-child(1)')
+        .contains("ENVIO");
+        cy.get(':nth-child(2) > [style="min-width: 200px"] > :nth-child(1)')
+        .contains("STATUS");
+        cy.get('.card > :nth-child(3) > .col > .m-0')
+        .contains("RETORNO");
+        // Finaliza Atividade
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
         cy.get('#observacao-aprovar-atividade').type('Teste-QA');

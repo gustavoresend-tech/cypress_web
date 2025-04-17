@@ -12,20 +12,20 @@ describe('Validar Atividades "Finalizar Esteira"', () => {
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.get('[type="submit"]').click();
-            cy.wait(1000); // aguarda 1 segundos
+            cy.wait(2000); // aguarda 1 segundos
             // Insere e-senha e submete
             cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
-            cy.wait(1000); // aguarda 1 segundos
+            cy.wait(2000); // aguarda 1 segundos
             cy.get('[type="submit"]').click();
             cy.wait(1000); // aguarda 1 segundos
             cy.get('[id="idSIButton9"]').click();
         });
     });
 
-    Cypress._.times(6, () => {
+    Cypress._.times(5, () => {
     it('Limpeza de esteira 01"', () => {
         // Acessa o card dispoível no worlflow
-        cy.contains('Teste-QA - NAO USAR (Automação)').click();
+        cy.contains('Teste-QA-Analise de calculo').click();
         // Vai para etapa: Conferencia inicial
         cy.get('#btn-abrir-modal-pular-etapa').click();
         cy.get('#btn-avancar-etapa').click();

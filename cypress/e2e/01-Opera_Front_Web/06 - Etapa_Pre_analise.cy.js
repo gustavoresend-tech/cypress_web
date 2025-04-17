@@ -41,6 +41,13 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
         cy.get('#btn-iniciar-atividade').click();
         // Captura print para evidencia
         cy.screenshot('06-Ativ_Aprovar',{overwrite: true});
+        // Verifica existência dos campos | ENVIO, STATUS, RETORNO
+        cy.get('#atividades > .card > :nth-child(3) > :nth-child(1) > div > :nth-child(1)')        
+        .contains("ENVIO");
+        cy.get(':nth-child(2) > [style="min-width: 200px"] > :nth-child(1)')
+        .contains("STATUS");
+        cy.get('.card > :nth-child(3) > .col > .m-0')
+        .contains("RETORNO");
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
         cy.get('#observacao-aprovar-atividade').type('Teste-QA');
@@ -68,6 +75,13 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
         cy.get('#btn-iniciar-atividade').click();
         // Captura print para evidencia
         cy.screenshot('06-Ativ_Aprovar-03',{overwrite: true});
+        // Verifica existência dos campos | ENVIO, STATUS, RETORNO
+        cy.get('#atividades > .card > :nth-child(3) > :nth-child(1) > div > :nth-child(1)')        
+        .contains("ENVIO");
+        cy.get(':nth-child(2) > [style="min-width: 200px"] > :nth-child(1)')
+        .contains("STATUS");
+        cy.get('.card > :nth-child(3) > .col > .m-0')
+        .contains("RETORNO");
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
         cy.get('#observacao-aprovar-atividade').type('Teste-QA');
@@ -117,6 +131,13 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
         cy.contains('Análise de compliance').click();
         // clica no btn "Iniciar"
         cy.get('#btn-iniciar-atividade').click();
+        // Verifica existência dos campos | ENVIO, STATUS, RETORNO
+        cy.get('#atividades > .card > :nth-child(3) > :nth-child(1) > div > :nth-child(1)')        
+        .contains("ENVIO");
+        cy.get(':nth-child(2) > [style="min-width: 200px"] > :nth-child(1)')
+        .contains("STATUS");
+        cy.get('.card > :nth-child(3) > .col > .m-0')
+        .contains("RETORNO");
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação

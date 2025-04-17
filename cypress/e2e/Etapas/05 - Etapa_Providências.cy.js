@@ -41,7 +41,7 @@
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#observacao-aprovar-atividade').type('Teste-QA').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
@@ -54,7 +54,7 @@
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#observacao-aprovar-atividade').type('Teste-QA').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
@@ -67,7 +67,7 @@
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#observacao-aprovar-atividade').type('Teste-QA').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
@@ -80,7 +80,7 @@
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#observacao-aprovar-atividade').type('Teste-QA').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
@@ -93,7 +93,7 @@
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#observacao-aprovar-atividade').type('Teste-QA').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
@@ -106,7 +106,7 @@
         // clica no btn "Finalizar"
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        cy.get('#observacao-aprovar-atividade').type('Teste-QA').type('Teste-QA')
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
