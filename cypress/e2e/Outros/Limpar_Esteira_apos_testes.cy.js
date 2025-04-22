@@ -22,7 +22,7 @@ describe('Validar Atividades "Finalizar Esteira"', () => {
         });
     });
 
-    Cypress._.times(5, () => {
+    Cypress._.times(2, () => {
     it('Limpeza de esteira 01"', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA-Analise de calculo').click();

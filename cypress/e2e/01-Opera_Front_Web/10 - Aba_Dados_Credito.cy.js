@@ -40,6 +40,8 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
 
         // Valida se os campos da aba proposta estão presentes
 
+        // Informações básicas
+
         // Precatório
         cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(2) > .text-label')
         .contains("Precatório");
@@ -66,34 +68,61 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
         cy.wait(1000); // Aguarda 1 segundos
 
         // Vencimento
-        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(7) > .text-label')
+        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(8) > .text-label')
         .contains("Vencimento");
         cy.wait(1000); // Aguarda 1 segundos
 
+        // Expectativa de vencimento
+        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(9) > .text-label')
+        .contains("Expectativa de vencimento");
+        cy.wait(1000); // Aguarda 1 segundos
+
         // Ente devedor
-        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(8) > .text-label')
+        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(10) > .text-label')
         .contains("Ente devedor");
         cy.wait(1000); // Aguarda 1 segundos
 
         // Orgão devedor
-        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(9) > .text-label')
+        cy.get(':nth-child(1) > .card > :nth-child(11) > .text-label')
         .contains("Orgão devedor");
         cy.wait(1000); // Aguarda 1 segundos
 
-        // Data de autuação do precatório
-        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(10) > .text-label')
-        .contains("Data de autuação do precatório");
+        // CNPJ do pagador
+        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(12) > .text-label')
+        .contains("CNPJ do pagador");
         cy.wait(1000); // Aguarda 1 segundos
 
+        // // Data de autuação do precatório
+        // cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(10) > .text-label')
+        // .contains("Data de autuação do precatório");
+        // cy.wait(1000); // Aguarda 1 segundos
+
         // Tipo de crédito
-        cy.get(':nth-child(1) > .card > :nth-child(11) > .text-label')
+        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(13) > .text-label')
         .contains("Tipo de crédito");
         cy.wait(1000); // Aguarda 1 segundos
 
-        // Data base
-        cy.get('#tab-dados-credito > .row > :nth-child(1) > .card > :nth-child(12) > .text-label')
-        .contains("Data base");
+        // Processo originario
+        cy.get(':nth-child(14) > .text-label')        
+        .contains("Processo originário");
         cy.wait(1000); // Aguarda 1 segundos
+
+        // Cessionário
+        cy.get(':nth-child(15) > .text-label')
+        .contains("Cessionário");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Processo de conhecimento
+        cy.get(':nth-child(16) > .text-label')
+        .contains("Processo de conhecimento");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // processo de execução
+        cy.get(':nth-child(17) > .text-label')
+        .contains("Processo de execução");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Advogado
 
         // Nome
         cy.get('#tab-dados-credito > .row > :nth-child(2) > :nth-child(1) > :nth-child(2) > .text-label')
@@ -109,6 +138,50 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
         cy.get('#tab-dados-credito > .row > :nth-child(2) > :nth-child(1) > :nth-child(4) > .text-label')
         .contains("OAB");
         cy.wait(1000); // Aguarda 1 segundos
+
+        // Datas
+
+        // Distribuição
+        cy.get(':nth-child(2) > :nth-child(2) > :nth-child(2) > .text-label')
+        .contains("Distribuição");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Citação
+        cy.get(':nth-child(2) > :nth-child(2) > :nth-child(3) > .text-label')
+        .contains("Citação");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Trânsito em julgado
+        cy.get(':nth-child(2) > :nth-child(4) > .text-label')
+        .contains("Trânsito em julgado");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Autuação do precatório
+        cy.get('#tab-dados-credito > .row > :nth-child(2) > :nth-child(2) > :nth-child(5) > .text-label')
+        .contains("Autuação do precatório");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Data do protocolo
+        cy.get(':nth-child(2) > :nth-child(6) > .text-label')
+        .contains("Data do protocolo");
+        cy.wait(1000); // Aguarda 1 segundos   
+
+        // Data base
+        cy.get(':nth-child(2) > :nth-child(7) > .text-label')
+        .contains("Data base"); 
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Penhora
+        cy.get(':nth-child(2) > :nth-child(8) > .text-label')
+        .contains("Penhora");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Última movimentação
+        cy.get(':nth-child(2) > :nth-child(9) > .text-label')
+        .contains("Última movimentação");
+        cy.wait(1000); // Aguarda 1 segundos
+
+        // Outras informações
 
         // Informações para recebimento
         cy.get('.mb-4 > :nth-child(2) > .text-label')
@@ -160,9 +233,9 @@ describe('Validar Edição de Dados - CRÉDITO', () => {
         .contains("EC-62");
         cy.wait(1000); // Aguarda 1 segundos
 
-        // Senha de acesso
+        // Dados de acesso
         cy.get('.mb-4 > :nth-child(12) > .text-label')
-        .contains("Senha de acesso");
+        .contains("Dados de acesso");
         cy.wait(1000); // Aguarda 1 segundos
 
     });
