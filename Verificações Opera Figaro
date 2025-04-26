@@ -1,0 +1,70 @@
+Observações da Reunião dia 24/04
+Nomenclatura dos documentos
+1- Tipo de documento, não precisa de deixar o código, apenas o nome do tipo de documento;
+V
+
+2- Comitê de deliberação - observar, pois é uma atividade sob demanda e apareceu no teste
+38861 [Opera] - Atividade Comitê de Deliberação
+
+
+3- Validação e edição dos campos na aba estudo do processo
+estória
+
+4- Configurar a defesa da BRL para aparecer apenas quando o retorno da BRL for positivo
+
+Testando em Integração BRL
+
+5- Na renegociação mesmo estando dentro da faixa tem de inserir um documento - pode ser um e-mail do negociador para comprovar a renegociação (tela de renegociação)
+
+estoria
+
+6- Bug botão duplicado - aprovar e reprovar - tela de renegociação
+N/C
+
+
+7- Sendo o valor da proposta do negociador dentro ou fora da faixa de aceite serão inseridos dois documentos:
+  a- Nova proposta aceita 
+  b- Autorização para exceção de compra (autorização da TIR abaixo/autorização do gestor)
+
+estoria
+
+
+8- Atividade Conferencia inicial -> conferencia dos dados bancários - seria automático - observar que o Banco do Brasil exige o dígito da conta e como iremos validar essa conta???
+
+9- Estudo do processo: trazer em cada bloco documentos caso tenha os documentos já inseridos (CND por exemplo). 
+Trazer do lado direito as informações do bloco.
+FIX 38872
+
+10 - Todos os arquivos - fazer blocos arquivos do credor-> arquivos pessoais, cnd (seguir modelo do SISPJUS).
+FIX 38874
+
+11- Conferencia final - > gerar parecer prévio - > em todos as informações que tem da operação/do cliente  
+- Isadora tem de passar quais são as informações que devem vir no Parecer- ter opção de fazer upload de documento.
+
+
+12- Gerar Atividade Elaborar o Parecer jurídico 
+-> insere tudo que foi redigido no estudo do processo. Tem de ser criada -> atividade que vai surgir depois da conferencia final. 
+(Trabalhar fora do Opera, no word, e ter opção de fazer upload do documento assinado para ficar registrado na etapa.)
+
+14 - Conferência final do parecer -> atividade comitê de aprovação - solicitação na análise do processo
+
+15 - Criar atividade Confecção da escritura em um documento padrão - disponibiliza word com todas as informações necessárias ao trabalho do parecerista - colocar upload para subir o definitivo
+ 
+17- Conferencia do traslado - upload de documento
+18- Confecção da Petição - criar docx e ter opção de upload
+19- Protocolo de Cessão - ter opção de subir o arquivo de protocolo 
+20- Disponibilizar o comprovante de pagamento da cessão ao credor- disponibilizar o arquivo no Opera 
+- > último documento que chega antes de enviar ao TWT
+ 
+ 
+Teste-> abrir 2 operações para Isadora e Lívia testarem
+ 
+OBS - As guias são emitidas no dia do pagamento ao credor 
+- Na minuta não é descrito o valor da guia de tributos/ adiantamentos - o valor que vai para a BRL é o valo da proposta menos os adiantamentos.
+ 
+Com todas as etapas concluídas a operação sai da esteira e teremos uma visãode todas as operações pagas em outro board .
+ 
+Para Casa:
+1- Ajustes na aba estudo do processo - trazer as informações de cada bloco
+2- Isadora passar os compor necessários para cada etapa de documentos - Parecer e Minuta
+3- Verificar onde as ativiaddes começam e terminam - atualizar com a última versão Sistema Operacional

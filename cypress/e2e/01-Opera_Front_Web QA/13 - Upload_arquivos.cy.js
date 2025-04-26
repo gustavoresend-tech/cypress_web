@@ -11,7 +11,7 @@
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
-            cy.visit('https://opera.hml.pjus.com.br/board');
+            cy.visit('https://opera.qa.pjus.com.br/board');
             // Configura exibição da tela de teste
             cy.viewport(1280, 720);
             // Insere e-mail e submete

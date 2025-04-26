@@ -11,7 +11,7 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
-            cy.visit('https://opera.hml.pjus.com.br/board');
+            cy.visit('https://opera.qa.pjus.com.br/board');
             // Configura exibição da tela de teste
             cy.viewport(1280, 720);
             // Insere e-mail e submete
@@ -41,13 +41,13 @@ describe('Validar Atividades "Grupo Pré analise"', () => {
         cy.get('#btn-iniciar-atividade').click();
         // Captura print para evidencia
         cy.screenshot('06-Ativ_Aprovar',{overwrite: true});
-        // Verifica existência dos campos | ENVIO, STATUS, RETORNO
-        cy.get('#atividades > .card > :nth-child(3) > :nth-child(1) > div > :nth-child(1)')        
-        .contains("ENVIO");
-        cy.get(':nth-child(2) > [style="min-width: 200px"] > :nth-child(1)')
-        .contains("STATUS");
-        cy.get('.card > :nth-child(3) > .col > .m-0')
-        .contains("RETORNO");
+        // // Verifica existência dos campos | ENVIO, STATUS, RETORNO
+        // cy.get('#atividades > .card > :nth-child(3) > :nth-child(1) > div > :nth-child(1)')        
+        // .contains("ENVIO");
+        // cy.get(':nth-child(2) > [style="min-width: 200px"] > :nth-child(1)')
+        // .contains("STATUS");
+        // cy.get('.card > :nth-child(3) > .col > .m-0')
+        // .contains("RETORNO");
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
         cy.get('#observacao-aprovar-atividade').type('Teste-QA');

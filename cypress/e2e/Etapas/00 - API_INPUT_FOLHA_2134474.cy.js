@@ -24,8 +24,8 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
   body: { // Corpo da requisição
     // Informacoes do titular do crédito
     "titular": {
-      "nome": "Teste-QA-Workflow",
-      "documento": "02262239061",
+      "nome": "2134474 - CELIO DONIZETE PEREIRA (NAO USAR)", //
+      "documento": "099.276.788-19", //
       "dataNascimento": "1985-06-15T12:57:31.215Z",
       "nomePai": "QA Silva",
       "nomeMae": "QA Souza",
@@ -42,13 +42,13 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
       "cep": "01010-000",
       "cidade": "Belo Horizonte",
       "estado": "MG",
-      "banco": "Banco do Brasil",
-      "codigoBanco": "001",
+      "banco": "Santander",
+      "codigoBanco": "033",
       "operacaoBancaria": "001",
-      "agencia": "12364",
+      "agencia": "0947",
       "agenciaDigito": "0",
-      "conta": "5678908",
-      "contaDigito": "0",
+      "conta": "07672912",
+      "contaDigito": "6",
       "tipoConta": "Corrente",
       "cidadeNascimento": "Belo Horizonte",
       "estadoNascimento": "MG",
@@ -70,30 +70,30 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
 },
 // Informacoes do credito precatorio
     "credito": {
-      "sistemaExternoId": 1001,
-      "processo": "0001234-56.2020.8.26.0001",
-      "precatorio": "2023-0001123456",
-      "estadoSigla": "RJ",
+      "sistemaExternoId": 0, //
+      "processo": "1005471-22.2018.8.26.0269", //
+      "precatorio": "a20240166203", //
+      "estadoSigla": "SP",
       "esfera": 2,
       "tribunalSigla": "TRF1",
       "vencimento": 2026,
-      "enteDevedor": "União Federal",
-      "orgaoDevedor": "Ministério da Fazenda",
-      "dataAutuacao": "2023-05-10T12:57:31.215Z",
+      "enteDevedor": "INSS - INSTITUTO NACIONAL DO SEGURO SOCIAL", //
+      "orgaoDevedor": "FUNDO DO REGIME GERAL DE PREVIDENCIA SOCIAL", //
+      "dataAutuacao": "2023-05-10T12:57:31.215Z", //
       "tipoCredito": 2,
-      "dataBase": "2024-01-01T12:57:31.215Z",
+      "dataBase": "2024-01-01T12:57:31.215Z", //
       "informacoesRecebimento": "Pagamento previsto para o segundo semestre",
-      "naturezaCredito": "Alimentar",
+      "naturezaCredito": "Alimentar", //
       "numeroJuizo": "12ª Vara Cível",
       "descritivoJuizo": "Vara de Fazenda Pública",
-      "comarca": "São Paulo",
+      "comarca": "Minas Gerais",
       "acaoColetiva": false,
-      "valorFace": 1300590,
-      "processoDepre": "0005678-90.2020.8.26.0001",
+      "valorFace": 75569858, //
+      "processoDepre": "DEPRE-2023-56789", //
       "processoSei": "SEI-123456",
       "senhaAcesso": "senha@123",
       "ec62": false,
-      "operacaoCodigo": "TRF1F",
+      "operacaoCodigo": "TRF1F", 
       "operacaoDescricao": "Compra de crédito alimentar",
       "classificacaoOperacao": "CompraTotalidade",
       "classificacaoTitular": "Originario",
@@ -102,35 +102,35 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
   },
     // Informações da proposta do precatorio
     "proposta": {
-      "valorProposta": 1300505,
+      "valorProposta": 37000000, //
       "possuiValorFuturo": false,
-      "dataAceiteProposta": "2025-04-01T00:00:00Z",
-      "tabelaPrecoCodigo": "TRF1F",
+      "dataAceiteProposta": "2025-04-01T00:00:00Z", //
+      "tabelaPrecoCodigo": "TRF1F", //
       "cessionario": "Abeto",
       "possuiIntermediario": true,
-      "intermediarioNome": "José Almeida",
-      "possuiPatrono": true,
-      "patronoNome": "Dr. Luiz Roberto",
+      "intermediarioNome": "NE", //
+      "possuiPatrono": false,
+      "patronoNome": "NE", //
       "negociadorEmail": "negociador@xp.com.br",
       "dadosCalculoProposta": {
-          "adiantamento": 50000,
+          "adiantamento": 0, //Pagamento de Tributo
           "anoVencimento": 2026,
           "calculoHunterEditouImpostoRenda": false,
-          "comissaoXp": 12500,
+          "comissaoXp": 12500, 
           "controlePreValoresXp": 0,
           "dataAceitePreProposta": "2025-03-20T00:00:00Z",
           "dataAceiteProposta": "2025-04-01T00:00:00Z",
           "dataAlteracaoProposta": "2025-04-10T00:00:00Z",
           "dataAutuacao": "2023-03-15T00:00:00Z",
-          "dataEc": "2025-07-01",
+          "dataEc": "2025-07-01", //Data EC-62:
           "dataExpedicao": "2025-02-15T00:00:00Z",
           "dataFimFormacao": "2025-07-01",
           "dataInicioFormacao": "2025-06-01",
           "dataLiquidacao": "2026-01-10T00:00:00Z",
           "dataRegistro": "2025-04-22T00:00:00Z",
           "dataUltimaAtualizacao": "2025-04-22T00:00:00Z",
-          "descontoPrevidencia": 3000,
-          "honorarios": 17500,
+          "descontoPrevidencia": 0,
+          "honorarios": 23888388, //
           "id": 789,
           "idImpostoDeRenda": 456,
           "idResumo": "RES-9876",
@@ -146,23 +146,23 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
           "prePropostaXp": 275000,
           "preValoresXpAprovado": true,
           "preValoresXpRejeitado": false,
-          "previdencia": 10000,
-          "propostaXp": 250000,
-          "retencao": 15000,
-          "tabelaMaximaUltimoCalculo": 350000,
+          "previdencia": 0,
+          "propostaXp": 54067384,
+          "retencao": 0,
+          "tabelaMaximaUltimoCalculo": 0, //
           "tipoDescontoPrevidencia": 1,
           "tipoImpostoDeRenda": 2,
           "tributo": 5000,
-          "valorContraProposta": 265000,
-          "valorEc": 300000,
+          "valorContraProposta": 0,
+          "valorEc": 0,
           "valoresXpAprovado": true,
           "valoresXpRejeitado": false,
-          "valorJuros": 15000,
-          "valorMaximoTabela": 360000,
-          "valorMinimoTabela": 230000,
+          "valorJuros": 0,
+          "valorMaximoTabela": 36549552, //
+          "valorMinimoTabela": 0,
           "valorPenhora": 0,
-          "valorPrincipal": 350000,
-          "valorProposta": 250000
+          "valorPrincipal": 79627959,
+          "valorProposta": 370000000
     }
   }
 }
