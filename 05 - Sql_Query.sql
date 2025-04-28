@@ -29,3 +29,41 @@ DELETE FROM dbo.Operacao;
 
 DELETE FROM dbo.TipoAtividade
 WHERE Nome LIKE '%Teste%';
+
+================================================
+-- Validação
+
+SELECT TOP (10) [Id]
+      ,[IdValidacao]
+      ,[StatusValidoBasico]
+      ,[StatusValidoMicroDeposito]
+      ,[DataSolicitacaoValidacaoBasica]
+      ,[DataRetornoValidacaoBasica]
+      ,[DataSolicitacaoValidacaoMicroDeposito]
+      ,[DataRetornoValidacaoMicroDeposito]
+      ,[DataRetornoPreValidacaoMicroDeposito]
+      ,[Informativo]
+      ,[TipoConta]
+      ,[Banco]
+      ,[CodigoBanco]
+      ,[OperacaoBancaria]
+      ,[Agencia]
+      ,[AgenciaDigito]
+      ,[Conta]
+      ,[ContaDigito]
+      ,[Pessoa_Id]
+      ,[RegistroExcluido]
+  FROM [pjusdadosbancarios].[dbo].[Validacao]
+  ORDER BY [ID] DESC
+
+  -- log requisições
+
+  SELECT TOP (10) [Id]
+      ,[Date]
+      ,[Thread]
+      ,[Level]
+      ,[Logger]
+      ,[Message]
+      ,[Exception]
+  FROM [pjusdadosbancarios].[dbo].[LogRequisicoes]
+  ORDER BY [ID] DESC

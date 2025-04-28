@@ -9,7 +9,7 @@
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
-            cy.visit('https://opera.hml.pjus.com.br/board');
+            cy.visit(Cypress.env('URL_OPERA') + '/board');
             // Configura exibição da tela de teste
             cy.viewport(1280, 800);
             // Insere e-mail e submete
@@ -22,7 +22,7 @@
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
             cy.get('[id="idSIButton9"]').click();
-            });    
+            });
         });
 
         // INICIO DOS TESTES
@@ -57,8 +57,8 @@
         cy.get('#btn-aprovar-atividade').click();
         cy.wait(2000); // Aguarda 2 segundos
 
-        // Acessa, inicializa e Aprova => "Emissão de CNDs manuais"
-        cy.contains('Emissão de CNDs manuais').click();
+        // Acessa, inicializa e Aprova => "Emissão de CNDs"
+        cy.contains('Emissão de CNDs').click();
         // Captura print para evidencia
         cy.screenshot('01-Ativ_Iniciar-02',{overwrite: true});
         cy.get('#btn-iniciar-atividade').click();

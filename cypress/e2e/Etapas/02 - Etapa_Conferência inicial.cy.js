@@ -10,7 +10,7 @@
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
-            cy.visit('https://opera.hml.pjus.com.br/board');
+            cy.visit(Cypress.env('URL_OPERA') + '/board');
             // Configura exibição da tela de teste
             cy.viewport(1280, 800);
             // Insere e-mail e submete
@@ -35,8 +35,8 @@
 
         // APROVACAO ATIVIDADES DA ETAPA: "Conferência inicial"
 
-        // clicar em "Conferência de documentos"
-        cy.contains('Conferência de documentos').click();
+        // clicar em "Conferência inicial"
+        cy.contains('Pendente').click(); // Ajustado para capturar o botão "Conferência inicial"
         // clica no btn "Iniciar"
         cy.get('#btn-iniciar-atividade').click();
         // clica no btn "Finalizar"

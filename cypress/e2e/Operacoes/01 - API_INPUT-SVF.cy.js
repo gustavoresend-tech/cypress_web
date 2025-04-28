@@ -13,7 +13,7 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
       // Método da requisição
       method: 'POST',
       // URL da API
-      url: Cypress.env('URL_API') + '/api/V1/Operacoes',
+      url: 'https://opera.api.hml.pjus.com.br/api/V1/Operacoes',
       // Cabeçalhos da requisição
       headers: {
         // Tipo de conteúdo aceito
@@ -24,15 +24,15 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
   body: { // Corpo da requisição
     // Informacoes do titular do crédito
     "titular": {
-      "nome": "Teste-QA-Workflow - (NAO USAR)",
-      "documento": "01199292605",
+      "nome": "Testes QA - (NAO USAR)",
+      "documento": "22124270850",
       "dataNascimento": "1980-01-01T12:57:31.215Z",
       "nomePai": " ",
-      "nomeMae": "TESTE NETO",
+      "nomeMae": "MAURETE PALMA DE OLIVEIRA NETO",
       "tipoPessoa": 0,
       "estadoCivil": 1,
       "regimeBens": 1,
-      "conjuge": "TESTE OLIVEIRA",
+      "conjuge": "JECIENE ROCHA SANTOS OLIVEIRA",
       "telefone": "(73) 3202-2386",
       "email": "Teste-QA@teste.com.br",
       "logradouro": "RUA EDNA VIEIRA REZENDE",
@@ -42,14 +42,14 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
       "cep": "45570-000",
       "cidade": "Ipiaú",
       "estado": "BA",
-      "banco": "Santander",
-      "codigoBanco": "033",
+      "banco": "Banco do Brasil S.A.",
+      "codigoBanco": "001",
       "operacaoBancaria": "001",
-      "agencia": "2960",
+      "agencia": "357",
       "agenciaDigito": "0",
-      "conta": "03029746",
-      "contaDigito": "6",
-      "tipoConta": "1",
+      "conta": "35872",
+      "contaDigito": "0",
+      "tipoConta": "0",
       "cidadeNascimento": "Ipiaú",
       "estadoNascimento": "BA",
       "cartorioNascimento": "1º Cartório",
@@ -170,6 +170,9 @@ describe('API Operacao - Valor Futuro CNPJ', () => {
       }).then((response) => {
       // Verifique o status da resposta
       expect(response.status).to.eq(200);
+      // Captura print para evidencia
+      cy.screenshot('01 - API_VF_CNPJ',{overwrite: true});
+
       // Adicione mais verificações conforme necessário
 
     });

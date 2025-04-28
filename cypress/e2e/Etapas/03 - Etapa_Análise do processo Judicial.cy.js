@@ -1,15 +1,15 @@
     // DADO: que preciso simular o workflow completo de um precatório na plataforma Opera
     // E: avançar individualmente as etapas para validação do fluxo
     // QUANDO: entro no detalhamento de um card
-    // E: aprovo as atividades da etapa: Parecer do cedente
-    // ENTAO: o card deve se mover para a etapa: Conferência final
+    // E: aprovo as atividades da etapa: Análise do processo
+    // ENTAO: o card deve se mover para a etapa: Análise do cedente
 
-    describe('Validar etapa: "Parecer do cedente"', () => {
+    describe('Validar etapa: "Análise do processo"', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
-            cy.visit('https://opera.hml.pjus.com.br/board');
+            cy.visit(Cypress.env('URL_OPERA') + '/board');
             // Configura exibição da tela de teste
             cy.viewport(1280, 800);
             // Insere e-mail e submete
@@ -27,34 +27,25 @@
 
         // INICIO DOS TESTES
 
-        it('Validar etapa: "Parecer do cedente"', () => {
+        it('Validar etapa: "Análise do processo"', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA-Workflow').click();
-        cy.screenshot('07-Etapa-Parecer de cedente_INICIO',{overwrite: true});
+        cy.screenshot('03-Etapa-Análise do processo_INICIO',{overwrite: true});
 
-        // APROVACAO ATIVIDADES DA ETAPA: "Parecer do cedente"
+        // APROVACAO ATIVIDADES DA ETAPA: "Análise do processo"
 
-        // clicar em "Parecer do cedente"
-        cy.contains('Pendente').click();
+        // clicar em "Análise do ativo"
+        cy.contains('Análise do ativo').click();
         // clica no btn "Iniciar"
-        //cy.get('#btn-iniciar-atividade').click();
-        //cy.get('#atividades > .btn').click();
+        cy.get('#btn-iniciar-atividade').click();
+        // clica no btn "Finalizar"
+        cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação
-        // cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-        // cy.get('#btn-aprovar-atividade').click();
-        // cy.wait(1000); // Aguarda 1 segundos
+        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia
-        cy.screenshot('05-Parecer do cedente',{overwrite: true});
-        cy.wait(2000); // Aguarda 1 segundos
-
-        // Ajuste
-
-        // Vai para proxima etapa: tratamento temporário
-        cy.get('#btn-abrir-modal-pular-etapa').click();
-        cy.get('#btn-avancar-etapa').click();
-
-
-
+        cy.screenshot('03-Análise do processo',{overwrite: true});
 
         });
     });
