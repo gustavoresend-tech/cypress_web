@@ -1,5 +1,5 @@
 cypress/screenshots
-cypress/e2e/Outros
+cypress/e2e/Outros/
 cypress/e2e/Massa
 cypress/e2e/Excecoes
 cypress/videos

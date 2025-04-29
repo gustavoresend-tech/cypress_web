@@ -6,12 +6,12 @@
 // E: clico na lupa para pesquisar o conteúdo
 // ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
 
-    describe('Validar "Pesquisar Atividades"', () => {
+    describe('Verifica Emissão CND Autom.', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
-            cy.visit('https://opera.qa.pjus.com.br/board');
+            cy.visit(Cypress.env('URL_OPERA') + '/board');
             // Configura exibição da tela de teste
             cy.viewport(1280, 720);
             // Insere e-mail e submete
@@ -27,16 +27,28 @@
             });
         });
     
-        it('Validar "Pesquisar Atividades"', () => {
+        it('Verifica Emissão CND Autom.', () => {
             // Acessa o primeiro card dispoível no worlflow
-            cy.contains('Teste-QA - NAO USAR (Automação)').click();
+            cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
 
-            // Clicar criar atividades
-            cy.get('#btn-link-para-criar-atividade').click();
-            cy.get('#input-filtrar-nova-atividade').click().type('Ajuste');
-            cy.wait(1000); // Aguarda 1 segundos
+            // Verifica se a atividade "Emissão CND Autom" está disponível e clica
+            cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
+            .contains('Emissão de CNDs automáticas').click();
+
+            // Iniciar atividades
+            cy.get('#btn-iniciar-atividade').click();
+
+
+            // Verifica se os campos: ENVIO, STATUS, RETORNO estão disponíveis
+            cy.get('#atividades > .card').should('be.visible')
+            .contains('ENVIO');
+            cy.get('#atividades > .card').should('be.visible')
+            .contains('STATUS');
+            cy.get('#atividades > .card').should('be.visible')
+            .contains('RETORNO');
+
             // Captura print para evidencia
-            cy.screenshot('11-Pesquisa_Atividades',{overwrite: true});
+            cy.screenshot('07-Verifica Emissão CND AUTOM',{overwrite: true});
             cy.wait(1000); // Aguarda 1 segundos
 
         });

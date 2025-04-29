@@ -43,13 +43,6 @@
         cy.get('#btn-iniciar-atividade').click();
         // Captura print para evidencia
         cy.screenshot('01-Ativ_Aprovar',{overwrite: true});
-        // Verifica existência dos campos | ENVIO, STATUS, RETORNO
-        cy.get('#atividades > .card > :nth-child(3) > :nth-child(1) > div > :nth-child(1)')        
-        .contains("ENVIO");
-        cy.get(':nth-child(2) > [style="min-width: 200px"] > :nth-child(1)')
-        .contains("STATUS");
-        cy.get('.card > :nth-child(3) > .col > .m-0')
-        .contains("RETORNO");
         // Finaliza Atividade
         cy.get('#btn-finalizar-atividade').click();
         //Preenche modal de observação

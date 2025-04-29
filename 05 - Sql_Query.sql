@@ -1,3 +1,15 @@
+DELETE FROM dbo.SolicitacaoCnd
+WHERE OperacaoId IN (
+  SELECT OperacaoId 
+  FROM dbo.Operacao
+  WHERE EXISTS (
+    SELECT 1
+    FROM dbo.atividade a
+    WHERE OperacaoId = a.OperacaoId
+  )
+  );
+
+
 DELETE FROM dbo.HistoricoExecucaoRegraAutomatica
 WHERE AtividadeId IN (
   SELECT a.ID
