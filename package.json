@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "cypress.config.js",
   "scripts": {
-    "Cypress Run": "npx cypress run --spec './cypress/e2e/01-Opera_Front_Web/*.cy.js' --browser edge",
+    "Funcionais": "npx cypress run --spec './cypress/e2e/01-Opera_Funcionais/*.cy.js' --browser edge",
     "Cypress Run Etapas": "npx cypress run --spec './cypress/e2e/Etapas/*.cy.js' --browser edge",
     "Cypress Run Limpar Esteira": "npx cypress run --spec ./cypress/e2e/Outros/Limpar_Esteira_apos_testes.cy.js --browser edge",    
     "Cypress Open": "npx cypress open --browser edge"

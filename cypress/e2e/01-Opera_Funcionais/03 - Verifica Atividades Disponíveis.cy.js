@@ -4,7 +4,7 @@
 // E: clico no btn "Criar Atividade"
 // ENTAO: as atividades devem estar disponíveis para inserção manual
 
-describe('Verifica atividades para input manual', () => {
+describe('Verifica Atividades Disponíveis (Criar Atividades)', () => {
     Cypress.config('pageLoadTimeout', 15000);
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
@@ -18,7 +18,7 @@ describe('Verifica atividades para input manual', () => {
             cy.get('[type="submit"]').click();
             cy.wait(1000); // aguarda 1 segundos
             // Insere e-senha e submete
-            cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
+            cy.get('#i0118').type(`${Cypress.env('password')}`, { force: true });
             cy.wait(1000); // aguarda 1 segundos
             cy.get('[type="submit"]').click();
             cy.wait(1000); // aguarda 1 segundos
@@ -26,7 +26,7 @@ describe('Verifica atividades para input manual', () => {
         });
     });
 
-    it('Verifica atividades para input manual', () => {
+    it('Verifica Atividades Disponíveis (Criar Atividades)', () => {
         // Acessa o card dispoível no worlflow
         cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
         // Clica em "Criar Atividade"

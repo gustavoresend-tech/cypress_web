@@ -18,7 +18,7 @@ describe('Verifica Detalhes da operação', () => {
             cy.get('[type="submit"]').click();
             cy.wait(1000); // aguarda 1 segundos
             // Insere e-senha e submete
-            cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
+            cy.get('#i0118').type(`${Cypress.env('password')}`, { force: true });
             cy.wait(1000); // aguarda 1 segundos
             cy.get('[type="submit"]').click();
             cy.wait(1000); // aguarda 1 segundos
@@ -75,9 +75,13 @@ describe('Verifica Detalhes da operação', () => {
         // Responsável
         cy.get('#atividades > .table-responsive > .table > thead > tr > :nth-child(4)').should('be.visible');
 
+        // Captura print para evidencia
+        cy.screenshot('02-Detalhes-Operacao',{overwrite: true});
+        cy.wait(1000); // Aguarda 1 segundos
 
-
-
+            // Captura print para evidencia
+    cy.screenshot('01-Grupos e Etapas',{overwrite: true});
+    cy.wait(1000); // Aguarda 1 segundos
 
 
     });

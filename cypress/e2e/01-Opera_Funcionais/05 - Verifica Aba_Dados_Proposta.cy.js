@@ -3,7 +3,7 @@
 // E: Seleciono a opção "Proposta"
 // ENTAO: devem ser exibidas os campos da aba Proposta
 
-describe('Validar Edição de Dados - PROPOSTA', () => {
+describe('Verifica Campos Aba "PROPOSTA"', () => {
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -16,7 +16,7 @@ describe('Validar Edição de Dados - PROPOSTA', () => {
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
             // Insere e-senha e submete
-            cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
+            cy.get('#i0118').type(`${Cypress.env('password')}`, { force: true });
             cy.wait(2000); // aguarda 2 segundos
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
@@ -26,7 +26,7 @@ describe('Validar Edição de Dados - PROPOSTA', () => {
 
     // Validar "Edição de Dados - PROPOSTA'
 
-    it('Validar Edição de Dados - PROPOSTA', () => {
+    it('Verifica Campos Aba "PROPOSTA"', () => {
         // Acessa o primeiro card dispoível no worlflow
         cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
 

@@ -6,7 +6,7 @@
 // E: clico na lupa para pesquisar o conteúdo
 // ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
 
-    describe('Verifica Emissão CND Autom.', () => {
+    describe('Verifica Etapa Conferência Inicial', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -19,7 +19,7 @@
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
             // Insere e-senha e submete
-            cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
+            cy.get('#i0118').type(`${Cypress.env('password')}`, { force: true });
             cy.wait(2000); // aguarda 2 segundos
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
@@ -27,7 +27,7 @@
             });
         });
     
-        it('Verifica Emissão CND Autom.', () => {
+        it('Verifica Etapa Conferência Inicial', () => {
             // Acessa o primeiro card dispoível no worlflow
             cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
 

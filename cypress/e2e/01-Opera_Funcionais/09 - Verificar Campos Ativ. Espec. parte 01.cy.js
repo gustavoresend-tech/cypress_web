@@ -19,7 +19,7 @@
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
             // Insere e-senha e submete
-            cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
+            cy.get('#i0118').type(`${Cypress.env('password')}`, { force: true });
             cy.wait(2000); // aguarda 2 segundos
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
@@ -64,7 +64,7 @@
             cy.get('#observacao-modal-aprovar-atividade-personalizada').type('Teste-QA');
             cy.get('#btn-aprovar-modal-aprovar-atividade-personalizada').click();
 
-            // ANÁLISE DO CEDENTE
+            // Estudo do processo judicial
 
             // Verifica se a atividade Estudo do processo judicial" está disponível e clica
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
