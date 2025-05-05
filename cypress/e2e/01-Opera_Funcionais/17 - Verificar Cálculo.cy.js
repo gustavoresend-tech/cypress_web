@@ -13,6 +13,8 @@
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
             cy.visit(Cypress.env('URL_OPERA') + '/board');
+            // Configura exibição da tela de teste
+            cy.viewport(1280, 720);
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.get('[type="submit"]').click();
