@@ -6,7 +6,7 @@
 // E: clico na lupa para pesquisar o conteúdo
 // ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
 
-    describe('Verifica Atividades Especificas parte 01.', () => {
+    describe('Verifica Atividades Especificas.', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {

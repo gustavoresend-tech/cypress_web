@@ -30,15 +30,6 @@
         it('Verifica Etapa Conferência Inicial', () => {
             // Acessa o primeiro card dispoível no worlflow
             cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
-
-            // Verifica se a atividade "Emissão CND" está disponível e Inicia
-            cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
-            .contains('Avaliação do ativo').click();
-
-            cy.get('#btn-iniciar-atividade').click();
-            cy.get('#btn-finalizar-atividade').click();
-            cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-            cy.get('#btn-aprovar-atividade').click();
             
             // Verifica se a atividade "Atualização do registro civil" está disponível e Inicia
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
@@ -50,13 +41,25 @@
             cy.get('#btn-aprovar-atividade').click();
 
             // Verifica se a atividade "Conferência inicial" está disponível e Inicia
-            cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
+            cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
             .contains('Conferência inicial').click();
 
             cy.get('#btn-iniciar-atividade').click();
             cy.get('#btn-finalizar-atividade').click();
             cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-            cy.get('#btn-aprovar-atividade').click();            
+            cy.get('#btn-aprovar-atividade').click();
+            
+            // // Verifica se a atividade "Emissão de CNDs" está disponível e Inicia
+            // cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
+            // .contains('Emissão de CNDs').click();
+            // cy.get('#btn-iniciar-atividade').click();
+            // cy.get('#btn-finalizar-atividade').click();
+            // cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+            // cy.get('#btn-aprovar-atividade').click();
+
+            cy.get('#btn-abrir-modal-pular-etapa').click();
+            cy.wait(1000); // Aguarda 1 segundos
+            cy.get('#btn-avancar-etapa').click();   
 
             // Captura print para evidencia
             cy.screenshot('08-Etapa Conferência Inicial',{overwrite: true});

@@ -62,7 +62,9 @@
 
             // Verirfica btn´s de valor futuro
             cy.get('[for="CalcularValorFuturoSim"]').should('exist')
-            cy.get('[for="CalcularValorFuturoNao"]').should('exist');
+            .click();
+            cy.get('[for="CalcularValorFuturoNao"]').should('exist')
+            .click();
 
             // Verifica btn reprovar
             cy.get('#btn-abrir-modal-reprovar-recalculo').should('exist');
@@ -73,6 +75,20 @@
             .then((valor) => {
               cy.get('#input-ValorProposta').type(valor);
             });
+
+            // Clica em finlizar
+            cy.get('#btn-abrir-modal-finalizar-recalculo').click();
+
+            // Verifica modal de observação "Atenção"
+            cy.get('.modal-content > .modal-body').should('exist');
+
+            // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
+            cy.get('#btn-upload-file-input-arquivo-justificativa-label').selectFile('Teste_Upload.pdf');
+            cy.get('#observacao-aprovar-atividade-recalculo').type('Teste-QA');
+            cy.wait(2000); // Aguarda 2 segundos
+
+            // Clicar em "Finalizar atividade"
+            cy.get('#btn-aprovar-atividade-recalculo').click();
 
         });
     });    

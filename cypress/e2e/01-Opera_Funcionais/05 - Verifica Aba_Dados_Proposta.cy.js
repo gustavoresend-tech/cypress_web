@@ -42,8 +42,12 @@ describe('Verifica Campos Aba "PROPOSTA"', () => {
         cy.get(':nth-child(1) > .d-flex > .text-secondary')
         .contains("Data do aceite");
 
+        // Tabela
+        cy.get('.col > .d-flex > .text-secondary')
+        .contains("Tabela");
+
         // Negociador
-        cy.get('.justify-content-between > :nth-child(2) > .d-flex > .text-secondary')
+        cy.get('.justify-content-between > :nth-child(3) > .d-flex > .text-secondary')
         .contains("Negociador");
 
         // Valor a vista
@@ -51,21 +55,32 @@ describe('Verifica Campos Aba "PROPOSTA"', () => {
         .contains("Valor a vista");
 
         // Intermediário
-        cy.get('.mt-3 > :nth-child(1) > :nth-child(2) > .text-label')
+        cy.get(':nth-child(1) > .background-2 > :nth-child(1) > .text-label')
         .contains("Intermediário");
 
         // Patrono
-        cy.get('.mt-3 > :nth-child(2) > :nth-child(2) > .text-label')
+        cy.get(':nth-child(2) > .background-2 > :nth-child(1) > .text-label')
         .contains("Patrono");
 
         // Nome do intermediário
-        cy.get('.mt-3 > :nth-child(1) > :nth-child(3) > .text-label')
+        cy.get(':nth-child(1) > .background-2 > .border-0 > .text-label')
         .contains("Nome do intermediário");
 
         // Nome do patrono
-        cy.get('.mt-3 > :nth-child(2) > :nth-child(3) > .text-label')        
+        cy.get(':nth-child(2) > .background-2 > .border-0 > .text-label')        
         .contains("Nome do patrono");
 
+        // Pagamento
+        cy.get('.col-12 > .table-responsive > .table > thead > tr > :nth-child(1)')
+        .contains("Pagamento");
+
+        // Valor
+        cy.get('.col-12 > .table-responsive > .table > thead > tr > :nth-child(2)')
+        .contains("Valor");
+
+        // Data
+        cy.get('.col-12 > .table-responsive > .table > thead > tr > :nth-child(3)')
+        .contains("Data");
 
     });
 

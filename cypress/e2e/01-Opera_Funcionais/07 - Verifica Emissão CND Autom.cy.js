@@ -35,10 +35,6 @@
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
             .contains('Emissão de CNDs automáticas').click();
 
-            // Iniciar atividades
-            cy.get('#btn-iniciar-atividade').click();
-
-
             // Verifica se os campos: ENVIO, STATUS, RETORNO estão disponíveis
             cy.get('#atividades > .card').should('be.visible')
             .contains('ENVIO');
@@ -50,6 +46,10 @@
             // Captura print para evidencia
             cy.screenshot('07-Verifica Emissão CND AUTOM',{overwrite: true});
             cy.wait(1000); // Aguarda 1 segundos
+
+            // Voltar para atividades
+            cy.get('#btn-link-voltar-para-listagem-atividades > .d-flex > ds-icon').click();
+
 
         });
     });    
