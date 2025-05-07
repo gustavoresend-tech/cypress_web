@@ -76,6 +76,8 @@
               cy.get('#input-ValorProposta').type(valor);
             });
 
+            // Insere arquivo obrigatorio
+            cy.get('#btn-upload-file-input-arquivo-comprovante-negociacao-label').selectFile('Teste_Upload.pdf');
             // Clica em finlizar
             cy.get('#btn-abrir-modal-finalizar-recalculo').click();
 

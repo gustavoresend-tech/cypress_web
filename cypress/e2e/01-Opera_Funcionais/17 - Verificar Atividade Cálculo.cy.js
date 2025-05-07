@@ -107,11 +107,6 @@
         cy.get('.formValidator > .justify-content-end > .col-auto > .btn').click();
         cy.wait(1000); // aguarda 1 segundo
 
-        // Captura print para evidencia
-        cy.screenshot('15 - Folha de calculo',{overwrite: true});
-        cy.wait(1000); // Aguarda 1 segundos
-
-
         // Verifica campos da folha de cálculo
         
         // Ano vencimento
@@ -184,23 +179,21 @@
         cy.get('.formValidator > .justify-content-end > .col-auto > .btn').click();
         cy.wait(1000); // aguarda 1 segundo
 
-        // clina finalizar
+        // clica finalizar
         cy.get('#btn-abrir-modal-finalizar-calculo').click();
         cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#input-calculo-CriarAtividadeRenegociacao').click();
-        cy.get('#input-calculo-PossuiTributos').click();
-        cy.get('#btn-aprovar-atividade').click();
 
         // Verificar atividade "Guias de tributo"
-        cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
-        .contains('Guias de tributo');
+        cy.get('.d-flex > .text-2').should('exist')
+        .contains('Tributos');
 
-        // Verificar atividade "Renegociação da proposta"
-        cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
-        .contains('Renegociação da proposta');
-
+        // finalizar atividade
+        cy.get('#btn-aprovar-atividade').click();
+        cy.wait(1000); // aguarda 1 segundo
+        
         // Captura print para evidencia
-        cy.screenshot('15 - Novas Atividades Finais,{overwrite: true}');
+        cy.screenshot('17 - Atividade Cálculo,{overwrite: true}');
         cy.wait(1000); // Aguarda 1 segundos
 
     });

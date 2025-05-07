@@ -79,10 +79,5 @@ describe('Verifica Detalhes da operação', () => {
         cy.screenshot('02-Detalhes-Operacao',{overwrite: true});
         cy.wait(1000); // Aguarda 1 segundos
 
-            // Captura print para evidencia
-    cy.screenshot('01-Grupos e Etapas',{overwrite: true});
-    cy.wait(1000); // Aguarda 1 segundos
-
-
     });
 });

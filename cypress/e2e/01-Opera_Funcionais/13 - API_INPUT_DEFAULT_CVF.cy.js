@@ -6,7 +6,7 @@
 
 
 // Descreve o bloco de testes para a API de Operação - Valor Futuro CNPJ
-describe('Input Default - API Operacao - Sem Valor Futuro', () => {
+describe('Input Default - API Operacao - Valor Futuro', () => {
   // Descreve o teste individual para a API
   it('Validar API Operacao - Valor Futuro CNPJ', () => {
     cy.request({
@@ -118,67 +118,81 @@ describe('Input Default - API Operacao - Sem Valor Futuro', () => {
     // Informações da proposta do precatorio
     "proposta": {
       "valorProposta": 14253.37,
-      "possuiValorFuturo": false,
+      "possuiValorFuturo": true,
+      "valorFuturos": [
+          {
+              "valorOferecido": 15253.37,
+              "prazo": "2026-06-30T12:57:31.215Z"
+          },
+          {
+              "valorOferecido": 16253.37,
+              "prazo": "2026-07-30T12:57:31.215Z"
+          },
+          {
+              "valorOferecido": 17253.37,
+              "prazo": "2026-08-30T12:57:31.215Z"
+          }
+      ],
       "dataAceiteProposta": "2025-04-01T00:00:00Z",
       "tabelaPrecoCodigo": "TRF1F",
       "cessionario": "Abeto",
       "possuiIntermediario": true,
       "intermediarioNome": "NE",
       "possuiPatrono": true,
-      "patronoNome": "Teste Patrono",
+      "patronoNome": "",
       "negociadorEmail": "pedro.costa@pjus.com.br",
       "dadosCalculoProposta": {
-          "adiantamento": 0,
-          "anoVencimento": 2026,
-          "calculoHunterEditouImpostoRenda": false,
-          "comissaoXp": 0,
-          "controlePreValoresXp": 0,
-          "dataAceitePreProposta": "2025-03-20T00:00:00Z",
-          "dataAceiteProposta": "2025-04-01T00:00:00Z",
-          "dataAlteracaoProposta": "2025-04-24T00:00:00Z",
-          "dataAutuacao": "2025-04-24T00:00:00Z",
-          "dataEc": null,
-          "dataExpedicao": "2025-04-24T00:00:00Z",
-          "dataFimFormacao": "2025-04-24T00:00:00Z",
-          "dataInicioFormacao": "2025-04-24T00:00:00Z",
-          "dataLiquidacao": "2022-02-03T00:00:00Z",
-          "dataRegistro": "2023-10-20T00:00:00Z",
-          "dataUltimaAtualizacao": "2025-04-24T00:00:00Z",
-          "descontoPrevidencia": 0,
-          "honorarios": 15,
-          "id": 1731764,
-          "idImpostoDeRenda": 0,
-          "idResumo": "4347a890-e1a5-4f76-972e-4e4a7fcd0acc",
-          "idTipoPrevidencia": 0,
-          "idUsuarioAcaoFinalXp": 11357,
-          "idUsuarioAcaoXp": 0,
-          "idUsuarioUltimaAtualizacao": 10639,
-          "indiceFatorDeAjuste": 20,
-          "outrasDespesas": 0,
-          "percentualAdquirido": 33.4,
-          "percentualHonorarioAdvogado": 20,
-          "preComissaoXp": 2,
-          "prePropostaXp": 0,
-          "preValoresXpAprovado": false,
-          "preValoresXpRejeitado": false,
-          "previdencia": 15,
-          "propostaXp": 0,
-          "retencao": 0,
-          "tabelaMaximaUltimoCalculo": 3340,
-          "tipoDescontoPrevidencia": 0,
-          "tipoImpostoDeRenda": 0,
-          "tributo": 1,
-          "valorContraProposta": 0,
-          "valorEc": 0,
-          "valoresXpAprovado": false,
-          "valoresXpRejeitado": false,
-          "valorJuros": 12478.74,
-          "valorMaximoTabela": 14253.37,
-          "valorMinimoTabela": 8552.02,
-          "valorPenhora": 0,
-          "valorPrincipal": 40844.49,
-          "valorProposta": 14253.37
-  }
+        "adiantamento": 0,
+        "anoVencimento": 2026,
+        "calculoHunterEditouImpostoRenda": false,
+        "comissaoXp": 0,
+        "controlePreValoresXp": 0,
+        "dataAceitePreProposta": "2025-03-20T00:00:00Z",
+        "dataAceiteProposta": "2025-04-01T00:00:00Z",
+        "dataAlteracaoProposta": "2025-04-24T00:00:00Z",
+        "dataAutuacao": "2025-04-24T00:00:00Z",
+        "dataEc": null,
+        "dataExpedicao": "2025-04-24T00:00:00Z",
+        "dataFimFormacao": "2025-04-24T00:00:00Z",
+        "dataInicioFormacao": "2025-04-24T00:00:00Z",
+        "dataLiquidacao": "2022-02-03T00:00:00Z",
+        "dataRegistro": "2023-10-20T00:00:00Z",
+        "dataUltimaAtualizacao": "2025-04-24T00:00:00Z",
+        "descontoPrevidencia": 0,
+        "honorarios": 15,
+        "id": 1731764,
+        "idImpostoDeRenda": 0,
+        "idResumo": "4347a890-e1a5-4f76-972e-4e4a7fcd0acc",
+        "idTipoPrevidencia": 0,
+        "idUsuarioAcaoFinalXp": 11357,
+        "idUsuarioAcaoXp": 0,
+        "idUsuarioUltimaAtualizacao": 10639,
+        "indiceFatorDeAjuste": 20,
+        "outrasDespesas": 0,
+        "percentualAdquirido": 33.4,
+        "percentualHonorarioAdvogado": 20,
+        "preComissaoXp": 2,
+        "prePropostaXp": 0,
+        "preValoresXpAprovado": false,
+        "preValoresXpRejeitado": false,
+        "previdencia": 15,
+        "propostaXp": 0,
+        "retencao": 0,
+        "tabelaMaximaUltimoCalculo": 3340,
+        "tipoDescontoPrevidencia": 0,
+        "tipoImpostoDeRenda": 0,
+        "tributo": 1,
+        "valorContraProposta": 0,
+        "valorEc": 0,
+        "valoresXpAprovado": false,
+        "valoresXpRejeitado": false,
+        "valorJuros": 12478.74,
+        "valorMaximoTabela": 14253.37,
+        "valorMinimoTabela": 8552.02,
+        "valorPenhora": 0,
+        "valorPrincipal": 40844.49,
+        "valorProposta": 14253.37
+}
   }
 }
       // testes assert

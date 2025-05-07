@@ -29,39 +29,43 @@ describe('Verifica Grupo de Etapas e Etapas', () => {
     it('Verifica Grupo de Etapas e Etapas', () => {
 
         // Verifica o grupo de Etapas: Análise preliminar
-        cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .row.py-1 > .col > .text-pjus').contains('Análise preliminar');
+        cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .row.py-1 > .col > .text-pjus').should('exist')
+        .contains('Análise preliminar');
         // Verifica as etapas do grupo
-        cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(1) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
+        cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(1) > .px-2 > .justify-content-between > :nth-child(1) > .m-0').should('exist')
         .contains('Documentos preliminares');
-        cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(2) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
+        cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(2) > .px-2 > .justify-content-between > :nth-child(1) > .m-0').should('exist')
         .contains('Conferência inicial');
-        cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(3) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
+        cy.get('[style="background-color: rgba(159, 159, 159, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(3) > .px-2 > .justify-content-between > :nth-child(1) > .m-0').should('exist')
         .contains('Avaliação do ativo');    
 
-        // Verifica o grupo de Etapas: Análise definitiva
-        cy.get('[style="background-color: rgba(254, 195, 60, 0.1)"] > .row > .col > .text-pjus').contains('Análise definitiva');
-        // Verifica as etapas do grupo
-        cy.get('[style="background-color: rgba(254, 195, 60, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(1) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
-        .contains('Parecer do titular');
-        cy.get('[style="background-color: rgba(254, 195, 60, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(2) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
-        .contains('Providências jurídicas'); 
-
         // Verifica o grupo de Etapas: Diligências
-        cy.get('[style="background-color: rgba(8, 88, 197, 0.1)"] > .row > .col').contains('Diligências');
-        cy.get('[style="background-color: rgba(8, 88, 197, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(1) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
+        cy.get('[style="background-color: rgba(8, 88, 197, 0.1)"] > .row > .col > .text-pjus').should('exist')
+        .contains('Diligências');
+        // Verifica as etapas do grupo
+        cy.get('[style="background-color: rgba(8, 88, 197, 0.1)"] > .h-100').should('exist')
+        .contains('Parecer do titular');
+        cy.get('[style="background-color: rgba(8, 88, 197, 0.1)"] > .h-100').should('exist')
+        .contains('Providências jurídicas');
+
+        // Verifica o grupo de Etapas: Análise definitiva
+        cy.get('[style="background-color: rgba(254, 195, 60, 0.1)"] > .row > .col > .text-pjus').should('exist')
+        .contains('Análise definitiva');
+        cy.get('[style="background-color: rgba(254, 195, 60, 0.1)"] > .h-100').should('exist')
         .contains('Conferência final');
-        cy.get('[style="background-color: rgba(8, 88, 197, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(2) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')    
+        cy.get('[style="background-color: rgba(254, 195, 60, 0.1)"] > .h-100').should('exist')
         .contains('Parecer jurídico'); 
 
         // Verifica o grupo de Etapas: Formalização
-        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .row > .col > .text-pjus').contains('Formalização');
-        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(1) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
+        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .row > .col > .text-pjus').should('exist')
+        .contains('Formalização');
+        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .h-100').should('exist')
         .contains('Confecção de documentos'); 
-        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(2) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
+        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .h-100').should('exist')
         .contains('Assinatura'); 
-        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .h-100 > :nth-child(1) > :nth-child(3) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
+        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .h-100').should('exist')
         .contains('Protocolo de cessão');
-        cy.get(':nth-child(4) > .px-2 > .justify-content-between > :nth-child(1) > .m-0')
+        cy.get('[style="background-color: rgba(14, 133, 87, 0.1)"] > .h-100').should('exist')
         .contains('Pagamento');
 
         // Captura print para evidencia

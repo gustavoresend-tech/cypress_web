@@ -79,7 +79,7 @@
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
         cy.get('#btn-upload-file-input-arquivo-label').selectFile('Teste_Upload.pdf');
         // seleciona o tipo de documento       
-        cy.get('.row > :nth-child(2) > .form-select').select('Certidao de Casamento');
+        cy.get('.row > :nth-child(2) > .form-select').select('Certidão de Casamento');
         // clica no btn "Enviar"
         cy.get('#btn-enviar-arquivo-operacao').click();
 

@@ -30,7 +30,7 @@ describe('Verifica Atividade Conferencia final', () => {
         .contains('Conferência final').click();
 
         // Inicia a atividade
-        //cy.get('#btn-iniciar-atividade').click();
+        cy.get('#btn-iniciar-atividade').click();
 
         // Captura print para evidencia
         cy.screenshot('22-Conferência final',{overwrite: true});

@@ -62,7 +62,7 @@
             // FINALIZAR
             cy.get('#btn-abrir-modal-aprovar-atividade-personalizada').click();
             cy.get('#observacao-modal-aprovar-atividade-personalizada').type('Teste-QA');
-            cy.get('#btn-aprovar-modal-aprovar-atividade-personalizada').click();+
+            cy.get('#btn-aprovar-modal-aprovar-atividade-personalizada').click();
 
             // Captura print para evidencia
             cy.screenshot('09-Verificar Campos Ativ. Espec. parte 01',{overwrite: true});
