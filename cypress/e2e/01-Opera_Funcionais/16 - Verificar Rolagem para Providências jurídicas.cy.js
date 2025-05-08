@@ -67,15 +67,11 @@
             // Verifica se a atividade "Compliance interno" está disponível e clica
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
             .contains('Compliance interno').click();
-            cy.get('#btn-iniciar-atividade').click();
-            // Finaliza atividade
-            cy.get('#btn-finalizar-atividade').click();
-            cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-            cy.get('#btn-aprovar-atividade').click();
+            cy.get('#btn-link-voltar-para-listagem-atividades > .d-flex > ds-icon').click();
 
             // Verifica se a atividade "Advogados" está disponível e clica
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
-            .contains('Advogados').click();
+            .contains('Análise do ativo - Advogados').click();
             cy.get('#btn-iniciar-atividade').click();
             // Finaliza atividade
             cy.get('#btn-abrir-modal-aprovar-atividade-personalizada').click();
@@ -84,7 +80,8 @@
 
             // Verifica se a atividade "Compliance externo" está disponível 
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
-            .contains('Compliance externo')
+            .contains('Compliance externo').click();
+            cy.get('#btn-link-voltar-para-listagem-atividades > .d-flex > ds-icon').click();
 
             // Verifica se a atividade "Análise do ativo - Análise do cedente" está disponível e clica
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
@@ -119,7 +116,6 @@
             cy.get('#btn-abrir-modal-pular-etapa').click();
             cy.wait(1000); // Aguarda 1 segundos
             cy.get('#btn-avancar-etapa').click();
-
 
             // Captura print para evidencia
             cy.screenshot('16-Rolagem Parecer do Titular',{overwrite: true});
