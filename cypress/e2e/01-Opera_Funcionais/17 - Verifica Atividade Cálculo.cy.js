@@ -1,4 +1,5 @@
-// DADO: que preciso executar a atividade de cálculo
+// DADO: que estou na página de detalhamento de uma operação
+// E: preciso executar a atividade de cálculo
 // QUANDO: acesso o detalhamento de uma operação
 // E: Inicio a atividade de cálculo
 // E: verifico os valores preenchidos no cálculo
@@ -7,7 +8,7 @@
 // E: a folha de cálculo deve ser exibida na tela
 
 
-        describe('Validar "Cálculo"', () => {
+        describe('Verifica Atividade Cálculo', () => {
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -28,7 +29,7 @@
         });
     });
 
-    it('Validar "Cálculo"', () => {
+    it('Verifica Atividade Cálculo', () => {
         // Acessa o primeiro card dispoível no worlflow
         cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
 
@@ -177,12 +178,20 @@
 
         // clica btn calcular
         cy.get('.formValidator > .justify-content-end > .col-auto > .btn').click();
-        cy.wait(1000); // aguarda 1 segundo
+        cy.wait(2000); // aguarda 2 segundos
+
+        // Captura print para evidencia
+        cy.screenshot('17-Folha de Cálculo,{overwrite: true}');
+        cy.wait(1000); // Aguarda 1 segundos
 
         // clica finalizar
         cy.get('#btn-abrir-modal-finalizar-calculo').click();
         cy.get('#observacao-aprovar-atividade').type('Teste-QA');
         cy.get('#input-calculo-CriarAtividadeRenegociacao').click();
+
+        // Captura print para evidencia
+        cy.screenshot('17-Modal Finaliza Cálculo,{overwrite: true}');
+        cy.wait(1000); // Aguarda 1 segundos
 
         // Verificar atividade "Guias de tributo"
         cy.get('.d-flex > .text-2').should('exist')
@@ -193,7 +202,7 @@
         cy.wait(1000); // aguarda 1 segundo
         
         // Captura print para evidencia
-        cy.screenshot('17 - Atividade Cálculo,{overwrite: true}');
+        cy.screenshot('17-Atividade Cálculo Aprovada,{overwrite: true}');
         cy.wait(1000); // Aguarda 1 segundos
 
     });

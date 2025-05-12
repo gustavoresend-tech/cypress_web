@@ -1,9 +1,10 @@
-// DADO: que estou logado na plataforma precisando operar a esteira para realização do cálculo
-// QUANDO: acesso o detalhamento do cliente / lead
-// E: aprovo as atividades de cada etapa
-// ENTAO: a atividade "Cáclculo" deverá estar disponível na etapa " Providências jurídicas"
+// DADO: que estou na página de detalhamento de uma operação
+// E: preciso simular a rolagem da operação para etapa "Providências jurídicas"
+// QUANDO: acesso o detalhamento da operação
+// E: aprovo as atividades de cada uma das etapas anteriores
+// ENTAO: a operação deverá ser direcionada para etapa " Providências jurídicas"
 
-        describe('Validar rolagem para " Providências jurídicas"', () => {
+        describe('Verifica Operação etapa Providências jurídicas', () => {
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -24,18 +25,23 @@
         });
     });
 
-    it('Validar rolagem para " Providências jurídicas"', () => {
+    it('Verifica Operação etapa Providências jurídicas', () => {
         // Acessa o primeiro card dispoível no worlflow
         cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
+
+            // Verifica se a atividade "Emissão de CNDs" está disponível e Inicia
+            cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
+            .contains('Emissão de CNDs').click();
+            cy.get('#btn-iniciar-atividade').click();
+            cy.get('#btn-finalizar-atividade').click();
+            cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+            cy.get('#btn-aprovar-atividade').click();
 
             // Verifica se a atividade "Atualização do registro civil" está disponível e Inicia
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
             .contains('Atualização do registro civil').click();
-            cy.get('#btn-iniciar-atividade').click();
-            // Finaliza atividade
-            cy.get('#btn-finalizar-atividade').click();
-            cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-            cy.get('#btn-aprovar-atividade').click();
+            cy.get('#btn-link-voltar-para-listagem-atividades > .d-flex > ds-icon').click();
+            cy.wait(1000); // aguarda 1 segundos
 
             // Verifica se a atividade "Conferência inicial" está disponível e Inicia
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
@@ -104,13 +110,13 @@
             cy.get('#btn-aprovar-atividade').click();
 
             // Verifica se a atividade "Informações sobre CNDs" está disponível e clica
-            cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
-            .contains('Informações sobre CNDs').click();
-            cy.get('#btn-iniciar-atividade').click();
-            // Finaliza atividade
-            cy.get('#btn-finalizar-atividade').click();
-            cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-            cy.get('#btn-aprovar-atividade').click();
+            // cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
+            // .contains('Informações sobre CNDs').click();
+            // cy.get('#btn-iniciar-atividade').click();
+            // // Finaliza atividade
+            // cy.get('#btn-finalizar-atividade').click();
+            // cy.get('#observacao-aprovar-atividade').type('Teste-QA');
+            // cy.get('#btn-aprovar-atividade').click();
 
             // Clica btn "Pular Etapa"
             cy.get('#btn-abrir-modal-pular-etapa').click();
@@ -118,7 +124,7 @@
             cy.get('#btn-avancar-etapa').click();
 
             // Captura print para evidencia
-            cy.screenshot('16-Rolagem Parecer do Titular',{overwrite: true});
+            cy.screenshot('16-Etapa Providencias jurídicas',{overwrite: true});
             cy.wait(1000); // Aguarda 1 segundos           
 
 

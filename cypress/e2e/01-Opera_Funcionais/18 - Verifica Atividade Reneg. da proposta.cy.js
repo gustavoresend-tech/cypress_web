@@ -1,12 +1,13 @@
-// DADO: que estou na pagina de detalhamento de um card/precatório aba "Atividades"
-// E: quero pesquisar por uma atividade
-// QUANDO: clico no btn "Criar atividade"
-// E: seleciono o campo de pesquisa
-// E: preencho o conteúdo a ser pesquisado
-// E: clico na lupa para pesquisar o conteúdo
-// ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
+// DADO: que estou na pagina de detalhamento de uma operação
+// E: preciso verificar a atividade: Renegociação da proposta
+// QUANDO: clico na respectiva atividade
+// E: clico no btn "Iniciar" exibido
+// ENTAO: a atividade deve ser iniciada
+// E: os campos exibidos conforme definição
+// E: os btn´s "Finalizar" e "Reprovar" DEVEM ser exibidos
+// E: a atividade precisa ser finaliza com sucesso
 
-    describe('Verificar Atividade "Renegociação da proposta"', () => {
+    describe('Verifica Atividade "Renegociação da proposta"', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -27,7 +28,7 @@
             });
         });
     
-        it('Verificar Atividade "Renegociação da proposta"', () => {
+        it('Verifica Atividade "Renegociação da proposta"', () => {
             // Acessa o primeiro card dispoível no worlflow
             cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
         
@@ -37,7 +38,7 @@
             cy.get('#btn-iniciar-atividade').click();
 
             // Captura print para evidencia
-            cy.screenshot('16 - Renegociação da proposta',{overwrite: true});
+            cy.screenshot('18-Renegociação da proposta',{overwrite: true});
             cy.wait(1000); // Aguarda 1 segundos
 
             // Tratamento atividade "Renegociação da proposta"
@@ -91,6 +92,8 @@
 
             // Clicar em "Finalizar atividade"
             cy.get('#btn-aprovar-atividade-recalculo').click();
+            cy.wait(2000); // Aguarda 2 segundos
+
 
         });
     });    

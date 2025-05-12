@@ -40,6 +40,21 @@ describe('Verifica Atividade "Parecer jurídico"', () => {
         cy.get('#btn-upload-file-input-arquivo-justificativa-label').selectFile('Teste_Upload.pdf');
         cy.get('#btn-aprovar-atividade-parecer').click();
         cy.wait(1000); // Aguarda 1 segundos
+
+            //Verifica se a atividade "Última movimentação processual" está disponível e clica
+            cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
+            .contains('Última movimentação processual').click();
+            cy.get('#btn-iniciar-atividade').click();
+            // insere data no campo: Data da ultima movimentação no momento do protocolo
+            // Finaliza atividade
+            cy.get('#btn-abrir-modal-aprovar-atividade-personalizada').click();
+            cy.get('#observacao-modal-aprovar-atividade-personalizada').type('Teste-QA');
+            cy.get('#btn-aprovar-modal-aprovar-atividade-personalizada').click();
+            
+            cy.get('#btn-abrir-modal-pular-etapa').click();
+            cy.wait(1000); // Aguarda 1 segundos
+            cy.get('#btn-avancar-etapa').click();   
+
         
 
     });

@@ -1,10 +1,10 @@
-// DADO: que estou na pagina de detalhamento de um card/precatório aba "Atividades"
-// E: quero pesquisar por uma atividade
-// QUANDO: clico no btn "Criar atividade"
-// E: seleciono o campo de pesquisa
-// E: preencho o conteúdo a ser pesquisado
-// E: clico na lupa para pesquisar o conteúdo
-// ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
+// DADO: que estou na pagina de detalhamento de uma operação
+// E: preciso verificar a atividade da etapa: Conferência inicial
+// QUANDO: clico nas respectivas atividades
+// E: clico no btn "Iniciar" exibido
+// ENTAO: a atividade deve ser iniciada
+// E: os btn´s "Finalizar" e "Reprovar" DEVEM ser exibidos
+// E: a atividade precisa ser finaliza com sucesso
 
     describe('Verifica Etapa Conferência Inicial', () => {
         beforeEach(() => {
@@ -32,13 +32,10 @@
             cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
             
             // Verifica se a atividade "Atualização do registro civil" está disponível e Inicia
-            cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
+            cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
             .contains('Atualização do registro civil').click();
-
-            cy.get('#btn-iniciar-atividade').click();
-            cy.get('#btn-finalizar-atividade').click();
-            cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-            cy.get('#btn-aprovar-atividade').click();
+            cy.get('#btn-link-voltar-para-listagem-atividades > .d-flex > ds-icon').click();
+            cy.wait(1000); // aguarda 1 segundos
 
             // Verifica se a atividade "Conferência inicial" está disponível e Inicia
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')

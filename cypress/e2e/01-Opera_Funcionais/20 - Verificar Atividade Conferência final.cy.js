@@ -60,7 +60,6 @@ describe('Verifica Atividade Conferencia final', () => {
         // Captura print para evidencia
         cy.screenshot('22-Conferencia final',{overwrite: true});
         cy.wait(1000); // Aguarda 1 segundos
-
         
         // Finaliza Atividade
         cy.get('#btn-abrir-modal-aprovar-conferencia-final').click();

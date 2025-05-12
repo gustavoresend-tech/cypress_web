@@ -1,12 +1,18 @@
-// DADO: que estou na pagina de detalhamento de um card/precatório aba "Atividades"
-// E: quero pesquisar por uma atividade
-// QUANDO: clico no btn "Criar atividade"
-// E: seleciono o campo de pesquisa
-// E: preencho o conteúdo a ser pesquisado
-// E: clico na lupa para pesquisar o conteúdo
-// ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
+// DADO: que estou na pagina de detalhamento de uma operação
+// E: preciso verificar a atividade: Estudo do processo judicial
+// QUANDO: clico na respectiva atividade
+// E: clico no btn "Iniciar" exibido
+// ENTAO: a atividade deve ser iniciada
+// E: os campos exibidos conforme definição
+// E: os btn´s "Finalizar" e "Reprovar" DEVEM ser exibidos
+// E: a atividade precisa ser finaliza com sucesso
 
-    describe('Verifica Atividades Especificas.', () => {
+// Definição de campos AQUI
+
+//
+
+
+    describe('Verifica Atividade Análise do ativo - Estudo do processo judicial', () => {
         beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -27,7 +33,7 @@
             });
         });
     
-        it('Verifica Atividades Especificas parte 01', () => {
+        it('Verifica Atividade Análise do ativo - Estudo do processo judicial', () => {
             // Acessa o primeiro card dispoível no worlflow
             cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
 
@@ -65,7 +71,7 @@
             cy.get('#btn-aprovar-modal-aprovar-atividade-personalizada').click();
 
             // Captura print para evidencia
-            cy.screenshot('09-Verificar Campos Ativ. Espec. parte 01',{overwrite: true});
+            cy.screenshot('10-Análise do ativo - Estudo do processo judicial',{overwrite: true});
             cy.wait(1000); // Aguarda 1 segundos
 
         });

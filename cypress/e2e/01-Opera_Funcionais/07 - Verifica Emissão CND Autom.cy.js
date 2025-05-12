@@ -1,10 +1,9 @@
-// DADO: que estou na pagina de detalhamento de um card/precatório aba "Atividades"
-// E: quero pesquisar por uma atividade
-// QUANDO: clico no btn "Criar atividade"
-// E: seleciono o campo de pesquisa
-// E: preencho o conteúdo a ser pesquisado
-// E: clico na lupa para pesquisar o conteúdo
-// ENTAO: as atividades com o conteúdo pesquisado devem ficar disponíveis para seleção
+// DADO: que estou na pagina de detalhamento de uma operação
+// E: preciso verificar a atividade: Emissão CND Autom.
+// QUANDO: clico na respectiva atividade
+// ENTAO: a tela com detalhes da atividade dever ser exibida
+// E: o btn "Iniciar" NAO dever ser exibido
+// E: os campos: ENVIO, STATUS, RETORNO devem estar visíveis
 
     describe('Verifica Emissão CND Autom.', () => {
         beforeEach(() => {
@@ -44,7 +43,7 @@
             .contains('RETORNO');
 
             // Captura print para evidencia
-            cy.screenshot('07-Verifica Emissão CND AUTOM',{overwrite: true});
+            cy.screenshot('07-Atividade Emissão CND AUTOM',{overwrite: true});
             cy.wait(1000); // Aguarda 1 segundos
 
             // Voltar para atividades

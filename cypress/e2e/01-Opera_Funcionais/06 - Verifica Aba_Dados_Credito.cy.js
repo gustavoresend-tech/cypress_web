@@ -1,7 +1,11 @@
-// DADO: que estou logado e na pagina de detalhamento de um card/precatório
-// QUANDO: clico na opção "Dados"
+// DADO: que estou na página de detalhamento de uma operação
+// QUANDO: clico na aba "Dados"
 // E: Seleciono a opção "Crédito"
-// ENTAO: devem ser exibidas os campos da aba Crédito
+// ENTAO: devem ser exibidas os campos definidos para esse tela
+
+// Definição de campos AQUI
+
+//
 
 describe('Verifica Campos Aba "CRÉDITO"', () => {
     beforeEach(() => {
@@ -36,7 +40,7 @@ describe('Verifica Campos Aba "CRÉDITO"', () => {
         cy.wait(1000); // Aguarda 1 segundos
         cy.get('#btn-tab-dados-credito').click();
         // Captura print para evidencia
-        cy.screenshot('06-Dados_Credito',{overwrite: true});
+        cy.screenshot('06-Aba Dados_Credito',{overwrite: true});
 
         // Valida se os campos da aba proposta estão presentes
 

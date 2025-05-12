@@ -1,9 +1,10 @@
-// DADO: que estou logado na plataforma precisando operar a esteira para realização do cálculo
-// QUANDO: acesso o detalhamento do cliente / lead
-// E: aprovo as atividades de cada etapa
-// ENTAO: a atividade "Cáclculo" deverá estar disponível na etapa " Providências jurídicas"
+// DADO: que estou na página de detalhamento de uma operação
+// E: preciso simular a rolagem da operação para etapa "Conferência final"
+// QUANDO: acesso o detalhamento da operação
+// E: aprovo as atividades de cada uma das etapas anteriores
+// ENTAO: a operação deverá ser direcionada para etapa " Conferência final"
 
-        describe('Validar rolagem para " Providências jurídicas"', () => {
+        describe('Verifica Operação etapa Conferência final', () => {
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -24,10 +25,9 @@
         });
     });
 
-    it('Validar rolagem para " Providências jurídicas"', () => {
+    it('Verifica Operação etapa Conferência final', () => {
         // Acessa o primeiro card dispoível no worlflow
         cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
-
 
             // Verifica se a atividade "Ligação de confirmação" está disponível e clica
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
@@ -63,21 +63,8 @@
             cy.get('#btn-finalizar-atividade').click();
             cy.get('#observacao-aprovar-atividade').type('Teste-QA');
             cy.get('#btn-aprovar-atividade').click();
-
-            //Verifica se a atividade "Última movimentação processual" está disponível e clica
-            cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
-            .contains('Última movimentação processual').click();
-            cy.get('#btn-iniciar-atividade').click();
-            // insere data no campo: Data da ultima movimentação no momento do protocolo
-            // Finaliza atividade
-            cy.get('#btn-abrir-modal-aprovar-atividade-personalizada').click();
-            cy.get('#observacao-modal-aprovar-atividade-personalizada').type('Teste-QA');
-            cy.get('#btn-aprovar-modal-aprovar-atividade-personalizada').click();
-
             // Captura print para evidencia
-            cy.screenshot('16-Rolagem Parecer do Titular',{overwrite: true});
-            cy.wait(1000); // Aguarda 1 segundos           
-
-
+            cy.screenshot('19-Etapa Conferência final',{overwrite: true});
+            cy.wait(1000); // Aguarda 1 segundos
     });
 });

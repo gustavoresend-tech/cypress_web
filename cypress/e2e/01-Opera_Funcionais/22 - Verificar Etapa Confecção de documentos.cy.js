@@ -52,9 +52,10 @@ describe('Verifica Etapa "Confecção de documentos', () => {
         cy.wait(1000); // Aguarda 1 segundos
 
         // Finaliza atividade
-        cy.get('#btn-finalizar-atividade').click();
-        cy.get('#observacao-aprovar-atividade').type('Teste-QA');
-        cy.get('#btn-aprovar-atividade').click();
+        cy.get('#btn-abrir-modal-aprovar-atividade-escritura').click();
+        cy.get('#btn-upload-file-input-arquivo-escritura-label').selectFile('Teste_Upload.pdf');
+        cy.wait(1000); // Aguarda 1 segundos
+        cy.get('#btn-aprovar-atividade-escritura').click();
         cy.wait(1000); // Aguarda 1 segundos        
 
     });

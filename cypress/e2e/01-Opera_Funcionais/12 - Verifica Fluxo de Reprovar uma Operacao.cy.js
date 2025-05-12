@@ -1,11 +1,10 @@
-// DADO: que estou logado na plataforma Opera web
-// E: preciso Verificar a reprovação de uma operação
-// QUANDO: entro no detalhe de uma operação
-// E: clico no botão de reprovação
+// DADO: que estou na pagina de detalhamento de uma operação
+// E: preciso reprovar a operação
+// QUANDO: clico no btn "Reprovar Operação"
 // ENTAO: a operação deve ser reprovada
-// E: a operação deve ser retirada da esteira
+// E: o card relacionado deve ser retirada da esteira
 
-describe('Verifica Reprovação de Operação', () => {
+describe('Verifica Fluxo de Reprovar uma Operacao', () => {
     Cypress.config('pageLoadTimeout', 15000);
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
@@ -17,7 +16,7 @@ describe('Verifica Reprovação de Operação', () => {
             // Insere e-mail e submete
             cy.get('[name="loginfmt"]').type(`${Cypress.env('email')}`, { force: true });
             cy.get('[type="submit"]').click();
-            cy.wait(1000); // aguarda 1 segundos
+            cy.wait(2000); // aguarda 2 segundos
             // Insere e-senha e submete
             cy.get('#i0118').type(`${Cypress.env('password')}`, { force: true });
             cy.wait(1000); // aguarda 1 segundos
@@ -27,7 +26,7 @@ describe('Verifica Reprovação de Operação', () => {
         });
     });
 
-    it('Verifica Reprovação de Operação', () => {
+    it('Verifica Fluxo de Reprovar uma Operacao', () => {
 
     // Acessa o primeiro card dispoível no worlflow
     cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
@@ -37,7 +36,7 @@ describe('Verifica Reprovação de Operação', () => {
     // Preenche o modal de observação    
     cy.get('#observacao-reprovar-operacao').type('Teste-QA');
     // Captura print para evidencia
-    cy.screenshot('10-Reprovação de Operação',{overwrite: true});
+    cy.screenshot('12-Reprovação de Operação',{overwrite: true});
     cy.wait(1000); // Aguarda 1 segundos
     // Clica no botão de reprovação
     cy.get('#btn-reprovar-operacao').click();

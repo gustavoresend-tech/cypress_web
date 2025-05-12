@@ -1,8 +1,12 @@
-// DADO: que estou logado na plataforma Opera web
+// DADO: que estou logado na plataforma Opera
 // E: preciso Verifica os Detalhes da operação de um card
 // QUANDO: entro na tela inicial
 // E: Acesso um card / Operação
 // ENTAO: os campos relacionados devem estar disponíveis
+
+// Definição de campos AQUI
+
+//
 
 describe('Verifica Detalhes da operação', () => {
     Cypress.config('pageLoadTimeout', 15000);

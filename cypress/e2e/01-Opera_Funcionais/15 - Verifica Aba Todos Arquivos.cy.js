@@ -1,8 +1,15 @@
-// DADO: que estou logado e na pagina de detalhamento de um precatório/lead
-// QUANDO: clico na aba "Estudo do processo"
-// ENTAO: as opções descritas abaixo devem estar disponíveis
-// e: para cada opções deve ser possível inserir e salvar informações, de texto e mídia
+// DADO: que estou na página de detalhamento de uma operação
+// QUANDO: clico na aba "Todos os arquivos"
+// ENTAO: devo ser redirecionado para tela de upload de arquivos
+// E: devem ser exibidas as opções de upload
+// E: devem ser exibidos os arquivos já anexados
 
+// Definição de campos AQUI
+
+// btn "Adicionar arquivos"
+// campo para seleção do tipo de arquivo a ser anexado
+// campo para status, quando tipo = CND´s
+// Colunas: TIPO, DATA, AÇÕES
 
         describe('Validar aba "Todos os arquivos"', () => {
     beforeEach(() => {
@@ -119,9 +126,8 @@
         // clica no btn "Enviar"
         cy.get('#btn-enviar-arquivo-operacao').click();
 
-
         // Captura print para evidencia
-        cy.screenshot('13-Todos Arquivos',{overwrite: true});
+        cy.screenshot('15-Aba Todos Arquivos',{overwrite: true});
         cy.wait(1000); // Aguarda 1 segundos
 
     });

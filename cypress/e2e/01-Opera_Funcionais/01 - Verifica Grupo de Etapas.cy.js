@@ -1,8 +1,23 @@
-// DADO: que estou logado na plataforma Opera web
-// E: preciso Verificar a disponibilidade dos grupos e etapas
+// DADO: que estou logado na plataforma Opera
+// E: preciso verificar o layout de apresentação dos grupos de etapas e etapas
 // QUANDO: entro na tela inicial
 // ENTAO: os grupos de etapas devem estar visíveis
-// E: as etapas devem estar visíveis
+// E: as etapas devem estar visíveis dentro dos grupos
+
+// Grupo de Etapa	            Descrição da Etapa
+
+// Análise preliminar	        Documentos preliminares
+// Análise preliminar	        Conferência inicial
+// Análise preliminar	        Avaliação do ativo
+// Diligências	                Providências jurídicas
+// Diligências	                Parecer do titular
+// Análise definitiva	        Conferência final
+// Análise definitiva	        Parecer jurídico
+// Formalização	                Confecção de documentos
+// Formalização	                Assinatura
+// Formalização	                Protocolo de cessão
+// Formalização	                Pagamento
+
 
 describe('Verifica Grupo de Etapas e Etapas', () => {
     Cypress.config('pageLoadTimeout', 15000);

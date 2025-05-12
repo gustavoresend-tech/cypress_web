@@ -1,7 +1,11 @@
-// DADO: que estou logado e na pagina de detalhamento de um card/precatório
-// QUANDO: clico na opção "Dados"
+// DADO: que estou na página de detalhamento de uma operação
+// QUANDO: clico na aba "Dados"
 // E: Seleciono a opção "Proposta"
-// ENTAO: devem ser exibidas os campos da aba Proposta
+// ENTAO: devem ser exibidas os campos definidos para esse tela
+
+// Definição de campos AQUI
+
+//
 
 describe('Verifica Campos Aba "PROPOSTA"', () => {
     beforeEach(() => {
@@ -34,7 +38,7 @@ describe('Verifica Campos Aba "PROPOSTA"', () => {
         cy.get('#dados-operacao-tab').click();
         cy.get('#btn-tab-dados-proposta').click();
         // Captura print para evidencia
-        cy.screenshot('05-Dados_Proposta',{overwrite: true});
+        cy.screenshot('05-Aba Dados_Proposta',{overwrite: true});
 
         // Valida se os campos da aba proposta estão presentes
 

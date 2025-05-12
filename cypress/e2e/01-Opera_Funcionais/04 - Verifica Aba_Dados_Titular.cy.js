@@ -1,7 +1,12 @@
-// DADO: que estou logado e na pagina de detalhamento de um card/precatório
-// QUANDO: clico na opção "Dados"
+// DADO: que estou na página de detalhamento de uma operação
+// QUANDO: clico na aba "Dados"
 // E: Seleciono a opção "Titular"
-// ENTAO: devem ser exibidas os campos da aba Titular
+// ENTAO: devem ser exibidas os campos definidos para esse tela
+
+// Definição de campos AQUI
+
+//
+
 
 describe('Verifica Campos Aba "TITULAR"', () => {
     beforeEach(() => {
@@ -28,14 +33,12 @@ describe('Verifica Campos Aba "TITULAR"', () => {
         // Acessa o primeiro card dispoível no worlflow
         cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
         cy.wait(1000); // Aguarda 1 segundos
-        // Captura print para evidencia        
-        cy.screenshot('04-Tela-Inicial',{overwrite: true});
 
         // Clica Dados/Titular
         cy.get('#dados-operacao-tab').click();
         cy.wait(1000); // Aguarda 1 segundos
         // Captura print para evidencia        
-        cy.screenshot('04-Dados-Titular',{overwrite: true});
+        cy.screenshot('04-Aba Dados_Titular',{overwrite: true});
         cy.wait(1000); // Aguarda 1 segundos
 
         // Valida se os campos da aba titular estão presentes

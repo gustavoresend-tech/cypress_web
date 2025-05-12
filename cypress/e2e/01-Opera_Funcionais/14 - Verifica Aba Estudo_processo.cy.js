@@ -1,10 +1,23 @@
-// DADO: que estou logado e na pagina de detalhamento de um precatório/lead
+// DADO: que estou na página de detalhamento de uma operação
 // QUANDO: clico na aba "Estudo do processo"
-// ENTAO: as opções descritas abaixo devem estar disponíveis
-// e: para cada opções deve ser possível inserir e salvar informações, de texto e mídia
+// ENTAO: os blocos de estudo precisam ser exibidos conforme definição
+// E: os blocos de estudo precisam ser funcionais permitindo inserção de texto e anexos 
+
+// Definição de campos AQUI
+
+// Bloco 1: Identifica o caso e a sentença
+// Bloco 2: Informações para o cálculo
+// Bloco 3: Atuação frente às CNDs e processos ajuizados
+// Bloco 3.1: Necessidades do antifraude
+// Bloco 4: Considerações sobre estado civil
+// Bloco 4.1: Necessidade de atestados e termos
+// Bloco 5: Advogados que atuaram no feito
+// Bloco 5.1: Necessidade de termos do advogado
+// Bloco 6: Contrato de honorários e sucumbência
 
 
-        describe('Validar aba "Estudo do processo"', () => {
+
+        describe('Verifica aba "Estudo do processo"', () => {
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
@@ -25,7 +38,7 @@
         });
     });
 
-    it('Validar aba "Estudo do processo"', () => {
+    it('Verifica aba "Estudo do processo"', () => {
         // Acessa o primeiro card dispoível no worlflow
         cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
 
@@ -35,25 +48,33 @@
         // verificar se os itens do menu suspenso estão disponíveis
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 1: Identifica o caso e a sentença');
+
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 2: Informações para o cálculo');
+
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 3: Atuação frente às CNDs e processos ajuizados');
+
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 3.1: Necessidades do antifraude');
+
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 4: Considerações sobre estado civil');
+
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 4.1: Necessidade de atestados e termos');
+
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 5: Advogados que atuaram no feito');
+
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 5.1: Necessidade de termos do advogado');
+
         cy.get('#estudo-processo > .card > .background-2').should('be.visible')
         .contains('Bloco 6: Contrato de honorários e sucumbência'); 
 
         // Captura print para evidencia
-        cy.screenshot('12-Estudo do processo',{overwrite: true});
+        cy.screenshot('14-Estudo do processo',{overwrite: true});
         cy.wait(1000); // Aguarda 1 segundos
 
     });
