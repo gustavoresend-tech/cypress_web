@@ -4,8 +4,7 @@
   "main": "cypress.config.js",
   "scripts": {
     "Funcionais": "npx cypress run --spec './cypress/e2e/01-Opera_Funcionais/*.cy.js' --browser edge",
-    "Cypress Run Etapas": "npx cypress run --spec './cypress/e2e/Etapas/*.cy.js' --browser edge",
-    "Cypress Run Limpar Esteira": "npx cypress run --spec ./cypress/e2e/Outros/Limpar_Esteira_apos_testes.cy.js --browser edge",    
+    "Input Operação": "npx cypress run --spec './cypress/e2e/01-Opera_Funcionais/00-API_INPUT_DEFAULT_CVF.cy.js' --browser edge",    
     "Cypress Open": "npx cypress open --browser edge"
   },
   "keywords": [],
