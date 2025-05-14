@@ -41,6 +41,15 @@
             cy.get('#observacao-modal-aprovar-atividade-personalizada').type('Teste-QA');
             cy.get('#btn-aprovar-modal-aprovar-atividade-personalizada').click();
 
+            // Verifica se a atividade "Conferência final" está disponível e clica
+            cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
+            .contains('Conferência final').click();
+            cy.get('#btn-iniciar-atividade').click();
+            // Finaliza atividade
+            cy.get('#btn-abrir-modal-aprovar-atividade-personalizada').click();
+            cy.get('#observacao-modal-aprovar-atividade-personalizada').type('Teste-QA');
+            cy.get('#btn-aprovar-modal-aprovar-atividade-personalizada').click();
+
             // Verifica se a atividade "Certificado digital" está disponível e clica
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
             .contains('Certificado digital').click();

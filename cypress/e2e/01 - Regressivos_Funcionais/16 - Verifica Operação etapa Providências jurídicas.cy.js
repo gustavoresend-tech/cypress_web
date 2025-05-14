@@ -31,7 +31,7 @@
 
             // Verifica se a atividade "Emissão de CNDs" está disponível e Inicia
             cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
-            .contains('Emissão de CNDs').click();
+            .contains(/^Emissão de CNDs$/, { exact: true }).click();
             cy.get('#btn-iniciar-atividade').click();
             cy.get('#btn-finalizar-atividade').click();
             cy.get('#observacao-aprovar-atividade').type('Teste-QA');

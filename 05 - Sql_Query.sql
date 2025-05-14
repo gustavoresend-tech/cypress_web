@@ -42,7 +42,7 @@ DELETE FROM dbo.Operacao;
 DELETE FROM dbo.TipoAtividade
 WHERE Nome LIKE '%Teste%';
 
-================================================
+ ============================================================================================
 -- Validação
 
 SELECT TOP (10) [Id]
@@ -79,3 +79,5 @@ SELECT TOP (10) [Id]
       ,[Exception]
   FROM [pjusdadosbancarios].[dbo].[LogRequisicoes]
   ORDER BY [ID] DESC
+
+ ============================================================================================

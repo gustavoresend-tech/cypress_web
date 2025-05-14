@@ -38,7 +38,7 @@ describe('Verifica Atividade Conferencia final', () => {
 
         // Verifica campos
         cy.get(':nth-child(1) > .col-auto > .form-label').should('exist');
-        cy.get('#PercentualComissaoPjus').clear().type('100');
+        cy.get('#PercentualComissaoPjus').clear().type('10,01');
         cy.get('#PercentualComissaoPjus').should('exist');
 
         // Verificar btn´s Não
@@ -51,11 +51,11 @@ describe('Verifica Atividade Conferencia final', () => {
 
         // Percentual cartório alternativo
         cy.get('#div-PercentualCartorioAlternativo > .form-label').should('exist');
-        cy.get('#PercentualCartorioAlternativo').clear().type('10');     
+        cy.get('#PercentualCartorioAlternativo').clear().type('10,02');     
 
         // Prazo em meses
         cy.get('#div-PrazoAlternativo > .form-label').should('exist');
-        cy.get('#PrazoAlternativo').clear().type('10');
+        cy.get('#PrazoAlternativo').clear().type('10,03');
 
         // Captura print para evidencia
         cy.screenshot('22-Conferencia final',{overwrite: true});
@@ -69,6 +69,12 @@ describe('Verifica Atividade Conferencia final', () => {
         cy.get('#observacao-aprovar-atividade-conferencia-final').type('Teste-QA');
         cy.get('#btn-aprovar-atividade-conferencia-final').click();
         cy.wait(1000); // Aguarda 1 segundos
+
+            // Clica btn "Pular Etapa"
+            cy.get('#btn-abrir-modal-pular-etapa').click();
+            cy.wait(1000); // Aguarda 1 segundos
+            cy.get('#btn-avancar-etapa').click();
+
 
     });
 });    

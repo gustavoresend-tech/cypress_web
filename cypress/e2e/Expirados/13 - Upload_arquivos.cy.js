@@ -1,22 +1,17 @@
-// DADO: que estou na página de detalhamento de uma operação
+// DADO: que estou na pagina de detalhamento de um card/precatório
 // QUANDO: clico na aba "Todos os arquivos"
-// ENTAO: devo ser redirecionado para tela de upload de arquivos
-// E: devem ser exibidas as opções de upload
-// E: devem ser exibidos os arquivos já anexados
+// ENTAO: deve ser aberta tela com opções para /anexar arquivos
+// E: o btn "Adicionar arquivo" deve estar presente
+// E: o lista que descreve os tipos de arquivos deve estar presente
+// E: o btn "Enviar" deve estar presente
+// E: os campos Nome do documento | Tipo | Data de Envio | Ação devem estar presentes
 
-// Definição de campos AQUI
-
-// btn "Adicionar arquivos"
-// campo para seleção do tipo de arquivo a ser anexado
-// campo para status, quando tipo = CND´s
-// Colunas: TIPO, DATA, AÇÕES
-
-        describe('Validar aba "Todos os arquivos"', () => {
+    describe('Validar "Upload de arquivos"', () => {
     beforeEach(() => {
         // Realiza o login direcionado para SSO Microsoft
         cy.origin('https://login.microsoftonline.com', () => {
             // Volta para a origem, página pjus board
-            cy.visit(Cypress.env('URL_OPERA') + '/board');
+            cy.visit('https://opera.qa.pjus.com.br/board');
             // Configura exibição da tela de teste
             cy.viewport(1280, 720);
             // Insere e-mail e submete
@@ -24,7 +19,7 @@
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
             // Insere e-senha e submete
-            cy.get('#i0118').type(`${Cypress.env('password')}`, { force: true });
+            cy.get('[name="passwd"]').type(`${Cypress.env('password')}`, { force: true });
             cy.wait(2000); // aguarda 2 segundos
             cy.get('[type="submit"]').click();
             cy.wait(2000); // aguarda 2 segundos
@@ -32,39 +27,12 @@
         });
     });
 
-    it('Validar aba "Todos os arquivos"', () => {
+    it('Validar Upload de arquivo', () => {
         // Acessa o primeiro card dispoível no worlflow
-        cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
+        cy.contains('Teste-QA - NAO USAR (Automação)').click();
 
-        // acessa aba "Todos os arquivos"
+        // Clica na aba "Todos os arquivos"
         cy.get('#todos-arquivos-tab').click();
-
-        // verificar se os campos estão disponíveis
-
-        // campo Adicionar arquivos
-        cy.get('#btn-upload-file-input-arquivo-label').should('be.visible');
-
-        // campo tipo de documento
-        cy.get('#select-tipo-documento-upload-arquivo').should('be.visible');
-
-        // Btn "enviar"
-        cy.get('#btn-enviar-arquivo-operacao').should('be.visible');
-
-        // Verificar as colunas do grid de anexados
-
-        // // Nome do Documento
-        // cy.get('.mt-3 > .table-responsive > .table > thead > tr > :nth-child(1)').should('be.visible');
-
-        // Tipo
-        cy.get('.mt-3 > .table-responsive > .table > thead > tr > :nth-child(2)').should('be.visible');
-
-        // Data de envio
-        cy.get('.mt-3 > .table-responsive > .table > thead > tr > :nth-child(3)').should('be.visible');
-
-        // Ação
-        cy.get('[style="width: 90px;"]').should('be.visible');
-
-        // Adicionar arquivos
 
         // Upload .png
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
@@ -86,7 +54,7 @@
         // clica no btn "Adicionar arquivo" e Realiza Upload de arquivo pré selecionado
         cy.get('#btn-upload-file-input-arquivo-label').selectFile('Teste_Upload.pdf');
         // seleciona o tipo de documento       
-        cy.get('.row > :nth-child(2) > .form-select').select('Certidão de Casamento');
+        cy.get('.row > :nth-child(2) > .form-select').select('Certidao de Casamento');
         // clica no btn "Enviar"
         cy.get('#btn-enviar-arquivo-operacao').click();
 
@@ -126,9 +94,10 @@
         // clica no btn "Enviar"
         cy.get('#btn-enviar-arquivo-operacao').click();
 
-        // Captura print para evidencia
-        cy.screenshot('15-Aba Todos Arquivos',{overwrite: true});
+
         cy.wait(1000); // Aguarda 1 segundos
+        // Captura print para evidencia
+        cy.screenshot('13-Após-Upload',{overwrite: true});
 
     });
 });

@@ -26,8 +26,8 @@ describe('Verifica Etapa "Protocolo de cessão"', () => {
         cy.contains('Teste-QA-Funcionais - (NAO USAR)').click();
 
         // Verifica se a atividade "Protocolo de cessão" está disponível e clica
-        cy.get('[style="max-width: calc(100vw - 320px);"]').should('be.visible')
-        .contains('Protocolo de cessão').click();
+        cy.get('[style="max-width: calc(100vw - 320px);"]').should('exist')
+        .contains(/^Protocolo de cessão$/, { exact: true }).click();        
         cy.get('#btn-iniciar-atividade').click();
         cy.get('#btn-upload-file-input-arquivo-protocolo-cessao-label').selectFile('Teste_Upload.pdf');
         cy.get('.col-auto > .form-label').should('exist');

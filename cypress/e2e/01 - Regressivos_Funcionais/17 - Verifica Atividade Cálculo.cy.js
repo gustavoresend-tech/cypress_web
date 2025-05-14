@@ -205,5 +205,14 @@
         cy.screenshot('17-Atividade Cálculo Aprovada,{overwrite: true}');
         cy.wait(1000); // Aguarda 1 segundos
 
+            // Clica btn "Pular Etapa"            
+            cy.get('#btn-abrir-modal-pular-etapa').click();
+            cy.wait(1000); // Aguarda 1 segundos
+            cy.get('#btn-avancar-etapa').click();
+                   
+            // Clica btn "Pular Etapa"            
+            cy.get('#btn-abrir-modal-pular-etapa').click();
+            cy.wait(1000); // Aguarda 1 segundos
+            cy.get('#btn-avancar-etapa').click();       
     });
 });
